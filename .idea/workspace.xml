@@ -41,24 +41,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="820cf882-c95a-41de-b998-331962b12595" name="Default Changelist" comment="Начать с 0">
-      <change afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/GameExit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/GameInstruction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/GamePlay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/GameStartGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/module/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/module/Visualizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/StateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/StateMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/MenuStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/MenuStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/CardHand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/module/CardHand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Visualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/module/Visualizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" afterDir="false" />
-    </list>
+    <list default="true" id="820cf882-c95a-41de-b998-331962b12595" name="Default Changelist" comment="Начать с 0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,6 +157,16 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -227,22 +220,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632822670049" />
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1632952520524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
+    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1632952520524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
+    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1632952520524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
+    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1632952520524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
+    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
     <state width="1493" height="6" key="GridCell.Tab.1.bottom" timestamp="1632948542434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -267,10 +260,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="446" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1632927170240" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1632823097616">
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1632952933976">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1632823097616" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1632952933976" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632944393100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -287,11 +280,6 @@
           <properties class="java.io.EOFException" package="java.io" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/telegram/commands/MenuStart.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/telegram/commands/MenuInformation.java</url>
           <line>7</line>
