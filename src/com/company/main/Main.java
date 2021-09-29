@@ -39,7 +39,7 @@ public class Main {
         }
 
         // this uses h2 by default but change to match your database
-        String databaseUrl = "jdbc:sqlite::memory:";
+        String databaseUrl = "jdbc:sqlite:./mydatabase.db";
         // create a connection source to our database
         ConnectionSource connectionSource =
                 new JdbcConnectionSource(databaseUrl);
@@ -50,14 +50,6 @@ public class Main {
 
         // if you need to create the 'accounts' table make this call
         TableUtils.createTable(connectionSource, User.class);
-
-        // create an instance of Account
-        User user = new User();
-        user.setBank(1000);
-        user.setChatId("string1111");
-
-        // persist the account object to the database
-        userDao.create(user);
 
 //        // retrieve the account from the database by its id field (name)
 //        User searching_user = userDao.query("Jim Coakley");

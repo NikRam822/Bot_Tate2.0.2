@@ -1,6 +1,8 @@
 package com.company.telegram.commands;
 
+import java.sql.SQLException;
+
 public interface ICommand {
 
-    String execute();
+    String execute() throws SQLException;
 }
