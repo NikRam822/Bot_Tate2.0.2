@@ -8,70 +8,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9c9ef09-b28e-4c83-8eaf-a210c3fda222" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/speedbaccara/ISpeedBaccara.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/speedbaccara/SpeedBaccara.java" afterDir="false" />
+    <list default="true" id="82fdf623-78da-48f7-b655-2a12248170ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_1_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_2_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_framework_2_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_http_2_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_http_server_2_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_jakarta_inject_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_grizzly2_http_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_server_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_inject_jersey_hk2_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_jaxb_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_29_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_CR2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20180813.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_telegram_telegrambots_4_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_telegram_telegrambots_meta_4_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_09_2021_0_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_09_2021_0_35__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/commands/MenuInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/commands/MenuInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Bet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/CardHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/module/CardHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/speedbaccara/SpeedBaccara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/speedbaccara/SpeedBaccara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Bet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/CardHand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Deck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Exodus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Visualizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/StateMachine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameExit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameInstruction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GamePlay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameStartGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/ICommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuHelp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuStart.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +54,30 @@
   </component>
   <component name="ProjectId" id="1krpTSrfrodH739eMEthpVwopYP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/company" />
-  </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate2.0.2\src\com\company" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.main" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.main.Main" />
+      <module name="Bot_Tate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,22 +120,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632822670049" />
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1632955486975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
+    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1632955486975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
+    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1632955486975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1632951688840">
+    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
+    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1632955486975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632951688840" />
+    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
     <state width="1493" height="6" key="GridCell.Tab.1.bottom" timestamp="1632948542434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

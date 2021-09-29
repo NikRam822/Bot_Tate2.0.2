@@ -86,7 +86,7 @@ public class CardHand {
     private boolean doDecisionPlayer() {
 
 
-          String takeCard = in.nextLine();
+          String takeCard =""; /*in.nextLine();*/
 
         if (takeCard.equals("/yes")) {
             return true;

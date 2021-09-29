@@ -1,3 +1,4 @@
+/*
 package com.company.speedbaccara;
 
 
@@ -12,9 +13,10 @@ import java.util.Stack;
 import static com.company.module.Visualizer.getBet;
 
 
-/**
+*
  * Класс для реализации игры SpeedBaccara.
- */
+
+
 public class SpeedBaccara implements IGame, ISpeedBaccara {
 
     @Override
@@ -136,3 +138,4 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
         }
     }
 }
+*/
