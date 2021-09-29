@@ -23,13 +23,13 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
 
-
     public void onUpdateReceived(Update update) {//метод для приема сообщений
         if (update.hasMessage()) {
             Message message = update.getMessage();
             if (message.hasText()) {
+
                 String command = message.getText();
-                //sendMsg(message,"kjxxxxxx");
+
             }
         }
     }
