@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb077ad7-6ccf-4cfb-99b3-c11408da451c" name="Changes" comment="prepare db">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/MenuStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/MenuStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/ICommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/ICommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuStart.class" afterDir="false" />
+    <list default="true" id="fb077ad7-6ccf-4cfb-99b3-c11408da451c" name="Changes" comment="When gamer click /start game, User with chat id and bank push to db">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +89,7 @@
       <workItem from="1632937755281" duration="300000" />
       <workItem from="1632938073985" duration="5995000" />
       <workItem from="1632944598298" duration="970000" />
-      <workItem from="1632953097432" duration="5047000" />
+      <workItem from="1632953097432" duration="5288000" />
     </task>
     <task id="LOCAL-00001" summary="update .gitignore">
       <created>1632931092768</created>
@@ -170,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632956276466</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="When gamer click /start game, User with chat id and bank push to db">
+      <created>1632958419216</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632958419216</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +191,8 @@
     <MESSAGE value="update .gitignore" />
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="prepare db" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare db" />
+    <MESSAGE value="When gamer click /start game, User with chat id and bank push to db" />
+    <option name="LAST_COMMIT_MESSAGE" value="When gamer click /start game, User with chat id and bank push to db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
