@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb077ad7-6ccf-4cfb-99b3-c11408da451c" name="Changes" comment="prepare db">
+    <list default="true" id="82fdf623-78da-48f7-b655-2a12248170ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" afterDir="false" />
@@ -17,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/ICommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/ICommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuStart.class" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
