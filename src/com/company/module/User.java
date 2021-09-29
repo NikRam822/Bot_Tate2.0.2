@@ -1,20 +1,29 @@
 package com.company.module;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "users")
 public class User {
-    private   String chatId;
+    public static final String BANK = "bank";
+
+    @DatabaseField(id = true)
+    private String chatId;
+    @DatabaseField(columnName = BANK)
     private int bank;
 
+    public User() {
+        // ORMLite needs a no-arg constructor
+    }
 
     /**
      * Метод для обращения к банку пользователя.
      * @return банк пользователя.
      */
-    public  int getBank(){
+    public int getBank(){
 
         return this.bank;
     }
-
-
 
     /**
      * Метод для обращения к логину пользователя.
@@ -32,7 +41,8 @@ public class User {
         this.bank = bank;
     }
 
-
-
+    public void setChatId(String chatId){
+        this.chatId = chatId;
+    }
 
 }
