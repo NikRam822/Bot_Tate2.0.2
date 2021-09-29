@@ -2,11 +2,9 @@ package com.company.telegram.commands;
 
 import com.company.module.Visualizer;
 
-public class MenuStart extends Command {
-
+public class GameInstruction extends Command {
     @Override
     public String execute() {
-        return Visualizer.getHello();
+        return Visualizer.getHowPlay();
     }
-
 }

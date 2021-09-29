@@ -1,5 +1,6 @@
 package com.company.main;
 
+import com.company.telegram.StateMachine;
 import com.company.telegram.TelegramBot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -11,6 +12,7 @@ public class Main {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try{
+            StateMachine.setHashMap();
             TelegramBot bot = new TelegramBot();
             telegramBotsApi.registerBot(bot);
 

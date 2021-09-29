@@ -3,8 +3,10 @@ package com.company.module;
 import java.util.Map;
 
 public class Visualizer {
-
-
+    /**
+     *
+     */
+    private static final String MENU_EXIT ="Возвращайтесь еще!\n /play - начать игру.\n/information - получить информацию о работе бота.";
     /**
      * Класс для описания сущности GameVisualizer.
      */
@@ -12,13 +14,13 @@ public class Visualizer {
     private static final String MENU_HELP =
             """
                     Опции:
-                      
+                      /play - начать игру.
                       /information - получить информацию о работе бота.
                     """;
     /**
      * Информация о работе бота.
      */
-    private static final String INFORMATION = "Игровой бот Tote. Бот включает в себя игры: SpeedBaccara.\nЭтот бот помогает симуллировать игру в азартные игры, не тратя свои деньги!\n";
+    private static final String INFORMATION = "Игровой бот Tote. Бот включает в себя игры: SpeedBaccara.\nЭтот бот помогает симуллировать игру в азартные игры, не тратя свои деньги!\n Напиши /play , чтобы начать игру";
 
 
     /**
@@ -29,7 +31,7 @@ public class Visualizer {
     /**
      * Приветсвие бота.
      */
-    private static final String GREETING_BOT = "Вас приветствует бот Tote!\nНапиши команду /information чтобы узнать, что я могу!\n\n";
+    private static final String GREETING_BOT = "Вас приветствует бот Tote!\nНапиши команду /information чтобы узнать, что я могу!\nНапишите /play чтобы начать игру SpeedBaccara\n";
 
     /**
      * Приветсвие в игре.
@@ -39,7 +41,7 @@ public class Visualizer {
     /**
      * Опции.
      */
-    private static final String INSTRUCTION_SPEED_BACCARA = "Опции:\n/start - начать игру\n/instrumentation - инстуркция к игре\n/exit - выход";
+    private static final String INSTRUCTION_SPEED_BACCARA = "Опции:\n/startGame - начать игру\n/instrumentation - инстуркция к игре\n/exit - выход";
 
     /**
      * Ставки и коэффиценты в игре.
@@ -80,14 +82,17 @@ public class Visualizer {
                 4. Будет натуральная победа - Банкир: x10.00
                 5. Будет натуральная победа - Игрок: x10.00
                 В случае ничьи ставки на победу Игрока и Банкира возвращаются с коэфициентом x1.00.
+                
+                /startGame - начать игру
+                /exit - выход
             """;
 
     /**
      * Метод для визуализации инструкции пользователю.
      */
-    public static void getInstructionGreeting() {
-        System.out.println(GREETING_SPEED_BACCARA);
-        System.out.println(INSTRUCTION_SPEED_BACCARA);
+    public static String getInstructionGreeting() {
+
+        return GREETING_SPEED_BACCARA +"\n"+ INSTRUCTION_SPEED_BACCARA ;
     }
 
     /**
@@ -100,8 +105,8 @@ public class Visualizer {
     /**
      * Метод для визуализации правил игры SpeedBaccara.
      */
-    public static void getHowPlay() {
-        System.out.println(MANUAL);
+    public static String getHowPlay() {
+        return MANUAL;
     }
 
     /**
@@ -166,7 +171,14 @@ public class Visualizer {
      * @return
      */
     public static String getMenuHelp() {
-        System.out.println(MENU_HELP);
         return MENU_HELP;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static String getMenuExit(){
+        return MENU_EXIT;
     }
 }
