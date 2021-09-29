@@ -84,9 +84,9 @@ public class CardHand {
      * @return решение о взятие карты
      */
     private boolean doDecisionPlayer() {
-//        Scanner in = new Scanner(System.in);
-        //TODO: ПЕРЕДЕЛАТЬ БЕЗ SCANNER
-          String takeCard = "";
+
+
+          String takeCard =""; /*in.nextLine();*/
 
         if (takeCard.equals("/yes")) {
             return true;
