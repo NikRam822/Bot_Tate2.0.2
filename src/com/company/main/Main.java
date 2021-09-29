@@ -1,5 +1,6 @@
 package com.company.main;
 
+import com.company.telegram.StateMachine;
 import com.company.telegram.TelegramBot;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
@@ -22,6 +23,7 @@ public class Main {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try{
+            StateMachine.setHashMap();
             TelegramBot bot = new TelegramBot();
             telegramBotsApi.registerBot(bot);
 

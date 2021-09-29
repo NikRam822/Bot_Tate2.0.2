@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class TelegramBot extends TelegramLongPollingBot {
-
+StateMachine stateMachine = new StateMachine();
     public void sendMsg(Message message, String text) {
 
         SendMessage sendMessage = new SendMessage();
@@ -29,6 +29,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.hasText()) {
 
                 String command = message.getText();
+//                sendMsg(message,message.getChatId().toString());
+                sendMsg(message,stateMachine.doCommand(command));
 
             }
         }
