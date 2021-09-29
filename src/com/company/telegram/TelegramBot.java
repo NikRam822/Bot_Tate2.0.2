@@ -29,6 +29,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.hasText()) {
 
                 String command = message.getText();
+                sendMsg(message,message.getChatId().toString());
 
             }
         }

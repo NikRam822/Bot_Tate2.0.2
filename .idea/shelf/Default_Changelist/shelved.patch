@@ -1,0 +1,1415 @@
+Index: src/com/company/commands/AuthorizationGuest.java
+===================================================================
+--- src/com/company/commands/AuthorizationGuest.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/AuthorizationGuest.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,38 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.main.Menu;
+-import com.company.module.User;
+-import java.text.SimpleDateFormat;
+-import java.util.Date;
+-import java.util.Scanner;
+-
+-public class AuthorizationGuest extends Command{
+-    public static String dynamicPartOfPasswordGuest;
+-    @Override
+-    public void execute() {
+-        Menu menu = new Menu();
+-        Scanner in = new Scanner(System.in);
+-        Date dateNow = new Date();
+-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("E yyyy.MM.dd"+" "+"hh:mm:ss a zzz");
+-        dynamicPartOfPasswordGuest = formatForDateNow.format(dateNow);
+-        User guest = new User();
+-        guest.setLogin("Dbr3{gnsTmP{8bJhX*I{Cgf*72EkH|qDL7TMn~$*ymNbXIJ$Kt$o|O?bSVTjmEXD%vu4r#G4*RRoAlAdt?XEHQ*GkVmlFwm@@*N48*N?hxnz4x~~L{rCnl9{pSG88L#uLPGOjfjA6H@~aTA#c?%$r0N75o~yHB|9");
+-        guest.setPassword("Dbr3{gnsTmP{8bJhX*I{Cgf*72EkH|qDL7TMn~$*ymNbXIJ$Kt$o|O?bSVTjmEXD%vu4r#G4*RRoAlAdt?XEHQ*GkVmlFwm@@*N48*N?hxnz4x~~L{rCnl9{pSG88L#uLPGOjfjA6H@~aTA#c?%$r0N75o~yHB|9" + dynamicPartOfPasswordGuest);
+-        guest.setBank(15000);
+-        AuthorizationRegistration.user = guest;
+-        //TODO:ИНФОРМАЦИЯ О ГОСТЕВОМ ВХОДЕ И ВОЗМОЖНОСТЬ ИГРАТЬ
+-        System.out.println("""
+-                Добро пожаловать в гостевой аккаунт!
+-                Возможности гостевого аккаунта:
+-                1) Демо-банк: Вам выдается 15000.
+-                2) Вы не учититываетесь в рейтинге игроков.
+-                3) Прогресс не сохраняется, достижения не будут получены, банк не сохранен.
+-                4) Вам достпуны все игры, кроме игр из раздела Slots.
+-                Узнать возможности авторизированного аккаунта /accounts.
+-                """);
+-        System.out.println("Добро пожаловть в пользовательсоке меню!\nОпции:\n/play - начать игру.\n/exit - закончить работу с ботом и перейти в раздел авторизации.");
+-        for(;;) {
+-            menu.doCommandOfMenu(in.nextLine());
+-        }
+-    }
+-}
+Index: src/com/company/commands/AuthorizationHelp.java
+===================================================================
+--- src/com/company/commands/AuthorizationHelp.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/AuthorizationHelp.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,10 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.speedbaccara.GameVisualizer;
+-
+-public class AuthorizationHelp extends Command {
+-    @Override
+-    public void execute() {
+-        GameVisualizer.getAuthorizationHelp();
+-    }
+-}
+Index: src/com/company/commands/AuthorizationInformation.java
+===================================================================
+--- src/com/company/commands/AuthorizationInformation.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/AuthorizationInformation.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,10 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.speedbaccara.GameVisualizer;
+-
+-public class AuthorizationInformation extends Command {
+-    @Override
+-    public void execute() {
+-        GameVisualizer.getInformation();
+-    }
+-}
+Index: src/com/company/commands/AuthorizationLogin.java
+===================================================================
+--- src/com/company/commands/AuthorizationLogin.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/AuthorizationLogin.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,96 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.main.Menu;
+-import com.company.module.User;
+-
+-import java.util.Arrays;
+-import java.util.Scanner;
+-
+-public class AuthorizationLogin extends Command {
+-    @Override
+-    public void execute() {
+-       // if(AuthorizationRegistration.usersBase.isEmpty()){AuthorizationRegistration.readAllUsersFromFile();}
+-        System.out.println("до");
+-        for (User value : AuthorizationRegistration.usersBase) {
+-            System.out.println(value.login + ": " + value.getBank());
+-        }
+-        AuthorizationRegistration.readAllUsersFromFile();
+-
+-        System.out.println("после");
+-        System.out.println("Кол-во обьектов :" + AuthorizationRegistration.usersBase.size());
+-        for (User value : AuthorizationRegistration.usersBase) {
+-            System.out.println(value.login + ": " + value.getBank());
+-        }
+-
+-
+-        Scanner in = new Scanner(System.in);
+-        System.out.print("Введите логин для входа в аккаунт: ");
+-        String login = in.nextLine();
+-        checkExistLoginInUsersBase(login);
+-    }
+-
+-    /**
+-     * Метод для проверки логина в базе пользователей.
+-     *
+-     * @param login введенный пользователем логин.
+-     */
+-    private void checkExistLoginInUsersBase(String login) {
+-        Menu menu = new Menu();
+-        Scanner in = new Scanner(System.in);
+-        boolean loginIsExist = false;
+-        for (int i = 0; i < AuthorizationRegistration.usersBase.size(); i++) {
+-            if (AuthorizationRegistration.usersBase.get(i).login.equals(login)) {
+-                loginIsExist = true;
+-                AuthorizationRegistration.user = AuthorizationRegistration.usersBase.get(i);
+-
+-                System.out.print("Введите пароль для входа в аккаунт: ");
+-                String password = in.nextLine();
+-                enterAndCheckPassword(password);
+-                break;
+-            }
+-        }
+-        if (loginIsExist == false) {
+-            String[] authorizationCommands = {"/registration", "/login", "/guest", "/information", "/help"};
+-            System.out.println("Введенного вами логина не существует!\nПовторите попытку,или введите /help для получения справки о возможных командах!");
+-            String newLoginOrCommand = in.nextLine();
+-            if (Arrays.asList(authorizationCommands).contains(newLoginOrCommand)) {
+-
+-                menu.doCommandOfRegistration(newLoginOrCommand);
+-            } else {
+-                checkExistLoginInUsersBase(newLoginOrCommand);
+-            }
+-
+-        }
+-    }
+-
+-    /**
+-     * Метод для ввода и проверки пароля.
+-     * @param password пароль пользователя.
+-     */
+-    private void enterAndCheckPassword(String password) {
+-       Menu menu = new Menu();
+-        Scanner in = new Scanner(System.in);
+-
+-            if (AuthorizationRegistration.user.password.equals(password)) {
+-                System.out.println("Добро пожаловать, " + AuthorizationRegistration.user.login + "!");
+-                System.out.println("Ваш банк: " + AuthorizationRegistration.user.bank + " руб.");
+-                 System.out.println("Добро пожаловать в пользовательское меню!\nОпции:\n/play - начать игру.\n/exit - закончить работу с ботом и перейти в раздел авторизации.");
+-            for(;;){
+-                menu.doCommandOfMenu(in.nextLine());
+-            }
+-
+-            }
+-            else{
+-                String[] authorizationCommands = {"/registration", "/login", "/guest", "/information", "/help"};
+-                System.out.println("Неверный пароль!\nПовторите попытку,или введите /help для получения справки о возможных командах!");
+-                String newPasswordOrCommand = in.nextLine();
+-                if (Arrays.asList(authorizationCommands).contains(newPasswordOrCommand)) {
+-
+-                    menu.doCommandOfRegistration(newPasswordOrCommand);
+-                } else {
+-                    enterAndCheckPassword(newPasswordOrCommand);
+-                }
+-            }
+-
+-        }
+-    }
+Index: src/com/company/commands/AuthorizationRegistration.java
+===================================================================
+--- src/com/company/commands/AuthorizationRegistration.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/AuthorizationRegistration.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,144 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.module.User;
+-import java.io.*;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.Scanner;
+-
+-public class AuthorizationRegistration extends Command {
+-    public static User user = new User();
+-    public static List<User> usersBase = new ArrayList<>();
+-
+-    @Override
+-    public void execute() {
+-        System.out.println("до");
+-        for (User value : usersBase) {
+-            System.out.println(value.login);
+-        }
+-
+-       readAllUsersFromFile();
+-
+-        //todo:для визулизации логинов в файле .Оставил на всякий случай
+-       // System.out.println(usersBase.size());
+-        System.out.println("после");
+-        for (User value : usersBase) {
+-            System.out.println(value.login);
+-        }
+-
+-        Scanner in = new Scanner(System.in);
+-        System.out.print("Добро пожаловать в раздел Регистрации!\nПридумайте логин для своего аккаунта: ");
+-        String login = in.nextLine();
+-        login = checkRepeatLogin(login);
+-        String password = creatingAndCheckPassword();
+-        user.setLogin(login);
+-        user.setPassword(password);
+-        user.setBank(10000);
+-
+-        recordUserInBase(user);
+-        System.out.println("Аккаунт зарегистрирован!\nНапишите /login, чтобы войти.");
+-    }
+-
+-    /**
+-     * Метод для записи пользователя в базу данных.
+-     *
+-     * @param user пользователь.
+-     */
+-    public static void recordUserInBase(User user) {
+-        boolean userExistInBase=false;
+-        for (int i=0;i<usersBase.size();i++) {
+-            if (usersBase.get(i).login.equals(user.login)) {
+-                userExistInBase = true;
+-                usersBase.get(i).bank = user.bank;
+-                break;
+-            }
+-        }
+-        if (userExistInBase == false) {
+-            usersBase.add(user);
+-}
+-        try {
+-            FileOutputStream usersFile = new FileOutputStream("Users.bin");
+-            ObjectOutputStream objectUsersFile = new ObjectOutputStream(usersFile);
+-
+-            objectUsersFile.write(usersBase.size());
+-
+-            for (int i=0;i<usersBase.size();i++) {
+-                objectUsersFile.writeObject(usersBase.get(i));
+-            }
+-
+-            objectUsersFile.close();
+-        } catch (IOException e) {
+-            e.printStackTrace();
+-        }
+-    }
+-
+-    /**
+-     * Метод для проверки уникальности введенного логина.
+-     *
+-     * @param login логин, введенный пользователм.
+-     */
+-    private String checkRepeatLogin(String login) {
+-        Scanner in = new Scanner(System.in);
+-        try {
+-            FileInputStream usersFile = new FileInputStream("Users.bin");
+-            ObjectInputStream objectUsersFile = new ObjectInputStream(usersFile);
+-            int usersCount = objectUsersFile.read();
+-            for (int i = 0; i < usersCount; i++) {
+-                if (usersBase.get(i).login.equals(login)) {
+-                    while (usersBase.get(i).login.equals(login)) {
+-                        System.out.print("Такой логин уже существует.\nВведите логин повторно: ");
+-                        login = in.nextLine();
+-                    }
+-                }
+-            }
+-            objectUsersFile.close();
+-        } catch (IOException e) {
+-            e.printStackTrace();
+-        }
+-        return login;
+-    }
+-
+-    /**
+-     * Метод создания и подтверждения пароля.
+-     *
+-     * @return пароль пользователя.
+-     */
+-    private String creatingAndCheckPassword() {
+-        Scanner in = new Scanner(System.in);
+-        System.out.print("Придумайте пароль для своего аккаунта: ");
+-        String firstPassword = in.nextLine();
+-        System.out.print("Повторите пароль: ");
+-        String secondPassword = in.nextLine();
+-        while (!firstPassword.equals(secondPassword)) {
+-            System.out.println("Пароли не совпадают! Повторите попытку!");
+-            System.out.print("Новый пароль: ");
+-            firstPassword = in.nextLine();
+-            System.out.print("Повторите пароль: ");
+-            secondPassword = in.nextLine();
+-        }
+-        return secondPassword;
+-    }
+-
+-    /**
+-     * Метод для чтения всех пользователей и записи их в usersBase.
+-     */
+-    public static void readAllUsersFromFile() {
+-        List<User> users = new ArrayList<>();
+-        try {
+-            FileInputStream usersFile = new FileInputStream("Users.bin");
+-            ObjectInputStream objectUsersFile = new ObjectInputStream(usersFile);
+-
+-            int usersCount = objectUsersFile.read();
+-            //todo: Для визуализации кол-ва обьектов в файле.
+-            System.out.println("Обьекты в файле: " + usersCount);
+-            for (int i = 0; i < usersCount; i++) {
+-                users.add((User) objectUsersFile.readObject());
+-            }
+-            usersBase = users;
+-
+-            objectUsersFile.close();
+-        } catch (IOException | ClassNotFoundException e) {
+-            e.printStackTrace();
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: src/com/company/module/Bet.java
+===================================================================
+--- src/com/company/module/Bet.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/module/Bet.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,37 +0,0 @@
+-package com.company.module;
+-
+-import com.company.speedbaccara.GameVisualizer;
+-import java.util.ArrayList;
+-import java.util.Arrays;
+-
+-/**
+- * Сущность ставка.
+- */
+-public class Bet {
+-
+-    /**
+-     * Метод для обработки введнных ставок.
+-     * @param userLine введенные ставки
+-     * @return ставки в значении int
+-     */
+-    public static ArrayList<Integer> takeBet(String userLine, int bank) {
+-        int sumBet = 0;
+-        try {
+-            ArrayList<Integer> betsValue = new ArrayList<>();
+-            String[] bets = userLine.split(" ");
+-            for (String bet : bets) {
+-                betsValue.add(Integer.parseInt(bet));
+-                sumBet = sumBet + Integer.parseInt(bet);
+-            }
+-            if (sumBet > bank || betsValue.size()!=5) {
+-                GameVisualizer.getDistributionError();
+-                return new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
+-            }
+-            return betsValue;
+-        } catch (Exception exception) {
+-            GameVisualizer.getDistributionError();
+-            return new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0));
+-        }
+-    }
+-
+-}
+\ No newline at end of file
+Index: src/com/company/module/Card.java
+===================================================================
+--- src/com/company/module/Card.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/module/Card.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,27 +0,0 @@
+-package com.company.module;
+-
+-/**
+- * Сущность карта.
+- */
+-public class Card {
+-
+-    /**
+-     * Номинал карты.
+-     */
+-    public String valueCards;
+-
+-    /**
+-     * Масть карты.
+-     */
+-    public String suit;
+-
+-    /**
+-     * Конструктор для присваевания полей сущности Карта.
+-     * @param value номинал карты.
+-     * @param suit масть масть.
+-     */
+-    public Card (String value, String suit) {
+-       this.valueCards = value;
+-       this.suit = suit;
+-    }
+-}
+Index: src/com/company/module/CardHand.java
+===================================================================
+--- src/com/company/module/CardHand.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/module/CardHand.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,111 +0,0 @@
+-package com.company.module;
+-
+-import java.util.ArrayList;
+-import java.util.Scanner;
+-import java.util.Stack;
+-
+-/**
+- * Сущности: Рука с Картами.
+- */
+-public class CardHand {
+-
+-    /**
+-     * Массив карт в руке.
+-     */
+-    ArrayList<Card> cardsInHand;
+-
+-    /**
+-     * Конструктор для присваевания полей сущности Рука с Картами.
+-     * @param cardsInHand карты в руке
+-     */
+-    public CardHand(ArrayList<Card> cardsInHand) {
+-        this.cardsInHand = cardsInHand;
+-    }
+-
+-    /**
+-     * Переопределенный метод для взятия элемента.
+-     * @param index индекс элемента массива
+-     * @return элемент массива
+-     */
+-    public Card get(int index) {
+-        return this.cardsInHand.get(index);
+-    }
+-
+-    /**
+-     * Переопределенный метод для взятия размера массива.
+-     * @return размер массива
+-     */
+-    public int size() {
+-        return this.cardsInHand.size();
+-    }
+-
+-    /**
+-     * Переопределнный метод для добавления карты в руку.
+-     * @param deck колода
+-     */
+-    private void addCard(Stack<Card> deck) {
+-        Deck newCard = new Deck();
+-        this.cardsInHand.add(newCard.getCard(deck));
+-    }
+-
+-    /**
+-     * Метод для взятия суммы карт в руке.
+-     * @return сумма карт в руке
+-     */
+-    public int getSum() {
+-        int countA = 0;
+-        int sum = 0;
+-        for (Card value : this.cardsInHand) {
+-            String card = value.valueCards;
+-            if (card.equals("A")) { countA++; }
+-            sum = sum + toValueCard(card);
+-        }
+-        if (sum > 21) { sum = sum - 10 * countA; }
+-        return sum;
+-    }
+-
+-    /**
+-     * Метод для перевода карт значения String в тип int.
+-     * @param card значение карты
+-     * @return значение карты типа int
+-     */
+-    private int toValueCard(String card) {
+-        return switch (card) {
+-            case "K", "Q", "J" -> 10;
+-            case "A" -> 11;
+-            default -> Integer.parseInt(card);
+-        };
+-    }
+-
+-
+-
+-
+-    /**
+-     * Метод принятия решения Игрока.
+-     * @return решение о взятие карты
+-     */
+-    private boolean doDecisionPlayer() {
+-        Scanner in = new Scanner(System.in);
+-        String takeCard = in.nextLine();
+-        if (takeCard.equals("/yes")) {
+-            return true;
+-        } else {
+-            if (!takeCard.equals("/no")) {
+-                System.out.println("Не понял команду!");
+-                doDecisionPlayer();
+-            }
+-            return false;
+-        }
+-    }
+-
+-    /**
+-     * Метод принятия решения Банкира.
+-     * @param sumBanker сумма Банкира
+-     * @param sumPlayer сумма Игрока
+-     * @return решение о взятие карты
+-     */
+-    private boolean doDecisionBanker(int sumBanker, int sumPlayer) {
+-        if (sumPlayer > 21) { return false; }
+-        return ((sumBanker < sumPlayer) & sumBanker < 22);
+-    }
+-}
+\ No newline at end of file
+Index: src/com/company/commands/Command.java
+===================================================================
+--- src/com/company/commands/Command.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/Command.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,10 +0,0 @@
+-package com.company.commands;
+-
+-/**
+- * Класс сущности команда.
+- */
+-public abstract class Command implements ICommand {
+-    @Override
+-    public abstract void execute();
+-}
+-
+Index: src/com/company/module/Deck.java
+===================================================================
+--- src/com/company/module/Deck.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/module/Deck.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,90 +0,0 @@
+-package com.company.module;
+-
+-import com.company.speedbaccara.GameVisualizer;
+-import java.util.Collections;
+-import java.util.ArrayList;
+-import java.util.Arrays;
+-import java.util.Stack;
+-
+-/**
+- * Класс описывающий сущность колода.
+- */
+-public class Deck {
+-
+-    /**
+-     * Метод для генерации колод.
+-     * @return сгенерированная колода
+-     */
+-    public Stack<Card> creatingDeck() {
+-        int i = 0;
+-        Stack<Card> deck = new Stack<>();
+-        String[] deckChanged = new String[]{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+-        String[] deckSuit = new String[]{"♥", "♦", "♣", "♠"};
+-        Card[] deckStart = new Card[52];
+-        for (String changed : deckChanged){
+-            for (String suit : deckSuit) {
+-                deckStart[i] = new Card(changed, suit);
+-                i++;
+-            }
+-        }
+-        Collections.shuffle(Arrays.asList(deckStart));
+-        for(int j=0; j<52; j++) {
+-            deck.push(deckStart[j]);
+-        }
+-        return deck;
+-    }
+-
+-    /**
+-     * Метод для выдачи карты из колоды.
+-     * @param deckStart колода
+-     * @return карта выбранная из колоды
+-     */
+-    public  Card getCard( Stack<Card> deckStart) {
+-        Card card =deckStart.peek();
+-        return deckStart.pop();
+-    }
+-
+-    /**
+-     * Метод выдачи карт Банкиру и Игроку.
+-     * @param deckBanker колода Банкира
+-     * @param deckPlayer колода Игрока
+-     * @return карты Банкира и карты Игрока
+-     */
+-    public  int[] giveCards(Stack<Card> deckBanker, Stack<Card> deckPlayer, int numberGame) {
+-        Deck newCard=new Deck();
+-        Card cardBanker1 = newCard.getCard( deckBanker);
+-        Card cardBanker2 = newCard.getCard( deckBanker);
+-        Card cardPlayer1 = newCard.getCard( deckPlayer);
+-        Card cardPlayer2 = newCard.getCard(deckPlayer);
+-        CardHand handBanker = new CardHand(new ArrayList<>(Arrays.asList(cardBanker1,cardBanker2)));
+-        CardHand handPlayer = new CardHand(new ArrayList<>(Arrays.asList(cardPlayer1,cardPlayer2)));
+-        GameVisualizer.getDistributionNumber(numberGame);
+-        int sumBanker = resetPoints(toValueCard(cardBanker1.valueCards) + toValueCard(cardBanker2.valueCards));
+-        int sumPlayer = resetPoints(toValueCard(cardPlayer1.valueCards) + toValueCard(cardPlayer2.valueCards));
+-        GameVisualizer.getDistributionHands(handBanker,handPlayer);
+-        return new int[]{sumBanker, sumPlayer};
+-    }
+-
+-    /**
+-     * Метод для сброса очков привысивших или равных 10.
+-     * @param points очки Банкира или Игрока
+-     * @return очки меньше 10
+-     */
+-    private    int resetPoints(int points) {
+-        while (points >= 10) { points -= 10; }
+-        return points;
+-    }
+-
+-    /**
+-     * Метод для перевода карт значения String в тип int.
+-     * @param card значение карты
+-     * @return значение карты типа int
+-     */
+-    private  int toValueCard(String card) {
+-        return switch (card) {
+-            case "J", "Q", "K", "10" -> 0;
+-            case "A" -> 1;
+-            default -> Integer.parseInt(card);
+-        };
+-    }
+-}
+Index: src/com/company/module/Exodus.java
+===================================================================
+--- src/com/company/module/Exodus.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/module/Exodus.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,21 +0,0 @@
+-package com.company.module;
+-
+-/**
+- * Константы исходов игры.
+- */
+-public enum Exodus {
+-    BankerPlayer ("BankerPlayer"),
+-    Banker ("Banker"),
+-    Player ("Player"),
+-    Draw ("Draw"),
+-    Multicolored ("Multicolored"),
+-    Monochromatic ("Monochromatic"),
+-    None ("None");
+-
+-    /**
+-     * @param result строковое значение победителя.
+-     */
+-    Exodus(String result) { }
+-
+-}
+-
+Index: src/com/company/commands/GameExit.java
+===================================================================
+--- src/com/company/commands/GameExit.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/GameExit.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,8 +0,0 @@
+-package com.company.commands;
+-
+-public class GameExit extends Command {
+-    @Override
+-    public void execute() {
+-        System.out.println("/play - начать игру.\n/exit - закончить работу с ботом.");
+-    }
+-}
+Index: src/com/company/speedbaccara/GameVisualizer.java
+===================================================================
+--- src/com/company/speedbaccara/GameVisualizer.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/speedbaccara/GameVisualizer.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,175 +0,0 @@
+-package com.company.speedbaccara;
+-
+-import com.company.module.CardHand;
+-import java.util.Map;
+-
+-/**
+- * Класс для описания сущности GameVisualizer.
+- */
+-public class GameVisualizer {
+-private static final String AUTHORIZATION_HELP =
+-     """
+-             Опции:
+-               /login - войти.
+-               /registration - зарегистрироваться.
+-               /guest -  продолжить без регистрации.
+-               /information - получить информацию о работе бота.
+-             """;
+-    /**
+-     * Информация о работе бота.
+-     */
+-    private static final String INFORMATION = "Игровой бот Tote. Бот включает в себя игры: SpeedBaccara.\nЭтот бот помогает симуллировать игру в азартные игры, не тратя свои деньги!\nВ системе есть таблица рекордов среди всех зарегистрированных участников!\nВы можете играть, как гость или как зарегистрированный участник!\nВозможности аккаунтов: /informationAccounts";
+-
+-    /**
+-     * Команды для регистарци.
+-     */
+-    private static final String NO_REGISTRATION = "Вы не авторизированы!\nНапишите /login, чтобы войти.\nНапишите /registration, чтобы зарегистрироваться.\nНапишите /guest, чтобы продолжить без регистрации.";
+-
+-    /**
+-     * Некорректный ввод ставки.
+-     */
+-    private static final String ERROR_BET = "В этой раздаче ставка не действительна!";
+-
+-    /**
+-     * Приветсвие бота.
+-     */
+-    private static final String GREETING_BOT = "Вас приветствует бот Tote!\nНапиши команду /information чтобы узнать, что я могу!\n\n";
+-
+-    /**
+-     * Приветсвие в игре.
+-     */
+-    private static final String GREETING_SPEED_BACCARA = "Добро пожаловать в игру Baccara - быстрая версия!";
+-
+-    /**
+-     * Опции.
+-     */
+-    private static final String INSTRUCTION_SPEED_BACCARA = "Опции:\n/start - начать игру\n/instrumentation - инстуркция к игре\n/exit - выход";
+-
+-    /**
+-    * Ставки и коэффиценты в игре.
+-    */
+-    private static final String RATE_ODDS = """
+-
+-            Делайте Ваши ставки!
+-                1. Выиграет раздачу - Банкир: x2.00.
+-                2. Выиграет разадчу - Никто: x21.00.
+-                3. Выиграет раздачу - Игрок: x2.00.
+-                4. Будет натуральная победа - Банкир: x10.00.
+-                5. Будет натуральная победа - Игрок: x10.00.
+-                Для выхода напишите /exit
+-            Укажите суммы через пробел (Пример: 10 5 0 25 30)!
+-            """;
+-    /**
+-     * Инструкция к игре.
+-     */
+-    private static final String MANUAL = """
+-                 Баккара — карточная игра, в которой игроки стремятся набрать как можно больше очков.
+-                 В быстрой Баккаре используются только две карты.
+-                 Цель игры — набрать комбинацию карт с общим числом очков 9 или как можно более близким к 9.
+-                 Масти роли в игре не играют. Значения карт:
+-                 A - 1 очко, K - 0 очков, Q - 0 очков, J - 0 очков, 10 - 0 очков.
+-                 Остальные значения соотвествуют значениям карт.
+-                 Если общая сумма равна 10 или более, из неё читается 10.
+-                 Остаток учитывается при подсчетах результатов. Например: 7+6=13=3 или 4+6=10=0.
+-                 Игрок или Банкир, набравший 9 очков, выигрывает, это называется «Натуральная победа».
+-                 Игрок, набравший 8 очков, при условии, что противник набрал меньше, выигрывает.
+-                 В остальных играх выигрывает то, кто окажется ближе к 9.
+-                 Пользователь может сделать ставку на победу Игрока или Банкира, и/или Ничью.
+-                 Также пользователь может поставить на исход натуральной победы Банкира и/или Игрока.
+-                 За всю игру Банкир и Игрок получают по две карты.
+-                 Коэффициенты ставок:
+-                 1. Выиграет раздачу - Банкир: x2.00
+-                 2. Выиграет разадчу - Никто: x21.00
+-                 3. Выиграет раздачу - Игрок: x2.00
+-                 4. Будет натуральная победа - Банкир: x10.00
+-                 5. Будет натуральная победа - Игрок: x10.00
+-                 В случае ничьи ставки на победу Игрока и Банкира возвращаются с коэфициентом x1.00.
+-             """;
+-
+-    /**
+-     * Метод для визуализации инструкции пользователю.
+-     */
+-    public static void getInstructionGreeting() {
+-        System.out.println(GREETING_SPEED_BACCARA);
+-        System.out.println(INSTRUCTION_SPEED_BACCARA);
+-    }
+-
+-    /**
+-     * Метод для визуализации возможных ставок.
+-     **/
+-    public static void getBet() {
+-         System.out.print(RATE_ODDS);
+-    }
+-
+-    /**
+-     * Метод для визуализации правил игры SpeedBaccara.
+-     */
+-    public static void getHowPlay() {
+-         System.out.println(MANUAL);
+-    }
+-
+-    /**
+-     * Метод для визуализации раздачи.
+-     */
+-    public static void getDistributionNumber(int numberGame) {
+-        System.out.println("\nРаздача №" + numberGame + ".");
+-    }
+-
+-    /**
+-     * Метод для визуализации команды меню.
+-     */
+-    public static void getMenuCommand(Map<String, String> menuCommand, String command) {
+-        System.out.println(menuCommand.get(command));
+-    }
+-
+-    /**
+-     * Метод для визуализации команды игры.
+-     */
+-    public static void getMenuGame(Map<String, String> gameCommand, String command) {
+-        System.out.println(gameCommand.get(command));
+-    }
+-
+-    /**
+-     * Метод для визуализации команд бота.
+-     */
+-    public static void getHello() {
+-        System.out.print(GREETING_BOT);
+-    }
+-
+-    /**
+-     * Метод для визуализации ошибок раздачи.
+-     */
+-    public static void getDistributionError() {
+-        System.out.println(ERROR_BET);
+-    }
+-
+-    /**
+-     * Метод для визуализации сущностей рука Банкира и рука Игрока.
+-     * @param handBanker рука Банкира
+-     * @param handPlayer рука Игрока
+-     */
+-    public static void getDistributionHands(CardHand handBanker, CardHand handPlayer){
+-        System.out.print("Banker: " + handBanker.get(0).valueCards + handBanker.get(0).suit+ " " + handBanker.get(1).valueCards + handBanker.get(1).suit + " | " + handPlayer.get(0).valueCards + handPlayer.get(0).suit + " " + handPlayer.get(1).valueCards+handPlayer.get(1).suit + " :Player\n" );
+-    }
+-
+-    /**
+-     * Метод для визуализации команд регистрации.
+-     */
+-    public static void getNoRegistration(){
+-        System.out.println(NO_REGISTRATION);
+-    }
+-
+-    /**
+-     * Метод для визуализации информации о работе бота.
+-     */
+-    public static void getInformation(){
+-        System.out.println(INFORMATION);
+-    }
+-
+-    /**
+-     * Метод для визуализации опций команд авторизации.
+-     */
+-    public static void getAuthorizationHelp(){
+-        System.out.println(AUTHORIZATION_HELP);
+-    }
+-}
+\ No newline at end of file
+Index: src/com/company/commands/ICommand.java
+===================================================================
+--- src/com/company/commands/ICommand.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/ICommand.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,11 +0,0 @@
+-package com.company.commands;
+-
+-/**
+- * Интерфейс описывающий абстракцию команда.
+- */
+-public interface ICommand {
+-    /**
+-     * Метод (абстрактный) для обработки команд.
+-     */
+-    void execute();
+-}
+Index: src/com/company/main/IGame.java
+===================================================================
+--- src/com/company/main/IGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/main/IGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,35 +0,0 @@
+-package com.company.main;
+-
+-import java.util.ArrayList;
+-
+-/**
+- * Интерфейс для обязательной реализации методов игр.
+- */
+-public interface IGame {
+- /**
+-  * Метод обновления банка пользователей в базе.
+-  */
+- void updateBankOfUser();
+-
+-   /**
+-     * Метод для сравнения суммы очков Игрока и Банкира.
+-     * @param Player сумма очков Игрока
+-     * @param Banker сумма очков Банкира
+-     * @return победитель
+-     */
+-    String isGameOver(int Player, int Banker);
+-
+-    /**
+-     * Метод для игры.
+-     */
+-    void play();
+-
+-    /**
+-     * Метод для вычисления суммы в банке.
+-     * @param bets сумма ставок
+-     * @param exodus результат сравнения сумм очков Игрока и Банкира
+-     * @param exodusSpecial результат наличия наутральной победы у Игрока и/или Банкира
+-     * @return сумма в банке
+-     */
+-    int countOfBank(ArrayList<Integer> bets/*, int bank*/, String exodus, String exodusSpecial);
+-}
+Index: src/com/company/main/IMenu.java
+===================================================================
+--- src/com/company/main/IMenu.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/main/IMenu.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,17 +0,0 @@
+-package com.company.main;
+-
+-/**
+- * Интерфейс для обязательной реализации меню пользователя.
+- */
+-public interface IMenu {
+-    /**
+-     * Метод для обработки команд в меню игры.
+-     */
+-    void doCommandOfGame();
+-
+-    /**
+-     * Метод для обработки команд в меню бота.
+-     * @param command введеная польхователем команада.
+-     */
+-    void doCommandOfMenu(String command);
+-}
+Index: src/com/company/speedbaccara/ISpeedBaccara.java
+===================================================================
+--- src/com/company/speedbaccara/ISpeedBaccara.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/speedbaccara/ISpeedBaccara.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,40 +0,0 @@
+-package com.company.speedbaccara;
+-
+-import com.company.module.Card;
+-
+-import java.util.Stack;
+-
+-/**
+- * Интерфейс для обязательной реализации специальных методов игры SpeedBaccara.
+- */
+-public interface ISpeedBaccara {
+-
+-    /**
+-     * Основной цикл программы.
+-     */
+-    void doCycle();
+-
+-    /**
+-     * Метод для сравнения суммы очков на наличие наутральной победы у Игрока и/или у Банкира.
+-     * @param sumPlayer сумма очков Игрока
+-     * @param sumBanker сумма очков Банкира
+-     * @return результат наличия наутральной победы у Игрока и/или у Банкира
+-     */
+-    String paymentNaturalWin(int sumPlayer, int sumBanker);
+-
+-    /**
+-     * Метод для обработки основного кода программы.
+-     * @param deckBanker колода Банкира
+-     * @param deckPlayer колода Игрока
+-     //* @param bank сумма средств
+-     */
+-    void realizationGame(Stack<Card> deckBanker, Stack<Card> deckPlayer/*, int bank*/);
+-
+-    /**
+-     * Метод для проверки выхода из игры.
+-     * @param text текст от пользоваателя
+-     * @param deckBanker колода Банкира
+-     * @param deckPlayer колода Игрока
+-     */
+-    void countinuationResolution(Stack<Card> deckBanker, Stack<Card> deckPlayer, String text);
+-}
+Index: src/com/company/main/Menu.java
+===================================================================
+--- src/com/company/main/Menu.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/main/Menu.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,64 +0,0 @@
+-package com.company.main;
+-
+-import com.company.commands.*;
+-
+-import java.util.Scanner;
+-import java.util.HashMap;
+-import java.util.Map;
+-
+-/**
+- * Класс меню пользователя
+- */
+-public class Menu implements IMenu {
+-
+-    @Override
+-    public  void doCommandOfGame() {
+-        boolean exit = false;
+-        Scanner in = new Scanner(System.in);
+-        String command=in.nextLine();
+-        Map<String, Command> gameCommand = new HashMap<>();
+-        gameCommand.put("/SpeedBaccara", new SpeedBaccaraGame());
+-        //TODO:Для таска 3.
+-       // gameCommand.put("/BlackJack", new BlackJackGame());
+-        gameCommand.put("/exit", new GameExit());
+-        while (exit == false) {
+-            try {
+-                ICommand iCommand = gameCommand.get(command);
+-                iCommand.execute();
+-                exit = true;
+-            } catch (Exception exception) {
+-                System.out.println("Не понял команду! ИГРЫ!!");
+-                command = in.nextLine();
+-            }
+-        }
+-    }
+-
+-    @Override
+-    public  void doCommandOfMenu(String command) {
+-        Map<String, Command> menuCommand = new HashMap<>();
+-        menuCommand.put("/exit", new MenuExit());
+-        menuCommand.put("/help", new MenuHelp());
+-        menuCommand.put("/play", new MenuGame());
+-        try {
+-            ICommand iCommand = menuCommand.get(command);
+-            iCommand.execute();
+-        } catch (Exception exception) {
+-            System.out.println("Не понял команду! МЕНЮ!!");
+-        }
+-    }
+-
+-    public  void doCommandOfRegistration(String command) {
+-        Map <String,Command> registrationCommand = new HashMap<>();
+-        registrationCommand.put("/r"/*"/registration"*/, new AuthorizationRegistration());
+-        registrationCommand.put("/login", new AuthorizationLogin());
+-        registrationCommand.put("/guest", new AuthorizationGuest());
+-        registrationCommand.put("/information",new AuthorizationInformation());
+-        registrationCommand.put("/help",new AuthorizationHelp());
+-        try {
+-            ICommand iCommand =  registrationCommand.get(command);
+-            iCommand.execute();
+-        } catch (Exception exception) {
+-            System.out.println("Не понял команду! РЕГИСТРАЦИЯ!!");
+-        }
+-    }
+-}
+Index: src/com/company/commands/MenuExit.java
+===================================================================
+--- src/com/company/commands/MenuExit.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/MenuExit.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,18 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.main.Menu;
+-import java.util.Scanner;
+-
+-public class MenuExit extends Command {
+-    @Override
+-    public void execute() {
+-        Scanner in = new Scanner(System.in);
+-        Menu menu = new Menu();
+-        System.out.println("Всего хорошего! Возвращайтесь скорее!");
+-        System.out.println("Добро пожаловать в раздел авторизации!");
+-        System.out.println("Напиши команду /help чтобы узнать, что я могу!");
+-        for(;;) {
+-            menu.doCommandOfRegistration(in.nextLine());
+-        }
+-    }
+-}
+Index: src/com/company/commands/MenuGame.java
+===================================================================
+--- src/com/company/commands/MenuGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/MenuGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,12 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.main.Menu;
+-
+-public class MenuGame extends Command {
+-    @Override
+-    public  void execute() {
+-        Menu menu = new Menu();
+-        System.out.println("Добро пожаловать в раздел игр!\nИгры ИИ против ИИ:\n/SpeedBaccara - быстрая версия игры Баккара.\nОпции:\n/exit - выход.");
+-        menu.doCommandOfGame();
+-    }
+-}
+Index: src/com/company/commands/MenuHelp.java
+===================================================================
+--- src/com/company/commands/MenuHelp.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/MenuHelp.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,8 +0,0 @@
+-package com.company.commands;
+-
+-public class MenuHelp extends Command {
+-    @Override
+-    public void execute() {
+-        System.out.println("/play - начать игру.\n/exit - закончить работу с ботом.");
+-    }
+-}
+Index: src/com/company/speedbaccara/SpeedBaccara.java
+===================================================================
+--- src/com/company/speedbaccara/SpeedBaccara.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/speedbaccara/SpeedBaccara.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,143 +0,0 @@
+-package com.company.speedbaccara;
+-
+-import com.company.commands.AuthorizationGuest;
+-import com.company.commands.AuthorizationRegistration;
+-import com.company.main.IGame;
+-import com.company.module.Card;
+-import com.company.module.Deck;
+-import com.company.module.Exodus;
+-
+-import java.util.ArrayList;
+-import java.util.Scanner;
+-import java.util.Stack;
+-
+-import static com.company.speedbaccara.GameVisualizer.getBet;
+-
+-/**
+- * Класс для реализации игры SpeedBaccara.
+- */
+-public class SpeedBaccara implements IGame, ISpeedBaccara {
+-
+-    @Override
+-    public void updateBankOfUser() {
+-        System.out.println("Ваш банк: "+ AuthorizationRegistration.user.getBank() + ".");
+-        if(!AuthorizationRegistration.user.login.equals("Dbr3{gnsTmP{8bJhX*I{Cgf*72EkH|qDL7TMn~$*ymNbXIJ$Kt$o|O?bSVTjmEXD%vu4r#G4*RRoAlAdt?XEHQ*GkVmlFwm@@*N48*N?hxnz4x~~L{rCnl9{pSG88L#uLPGOjfjA6H@~aTA#c?%$r0N75o~yHB|9") && !AuthorizationRegistration.user.password.equals("Dbr3{gnsTmP{8bJhX*I{Cgf*72EkH|qDL7TMn~$*ymNbXIJ$Kt$o|O?bSVTjmEXD%vu4r#G4*RRoAlAdt?XEHQ*GkVmlFwm@@*N48*N?hxnz4x~~L{rCnl9{pSG88L#uLPGOjfjA6H@~aTA#c?%$r0N75o~yHB|9"+ AuthorizationGuest.dynamicPartOfPasswordGuest)){
+-            AuthorizationRegistration.recordUserInBase(AuthorizationRegistration.user);
+-        }
+-
+-    }
+-
+-    @Override
+-    public String isGameOver(int Player, int Banker) {
+-        if (Banker > Player) {
+-            System.out.println("Банкир выиграл!");
+-            return String.valueOf(com.company.module.Exodus.Banker);
+-        } else if (Banker < Player) {
+-            System.out.println("Игрок выиграл!");
+-            return String.valueOf(Exodus.Player);
+-        } else {
+-            System.out.println("Ого! Ничья!");
+-            return String.valueOf(Exodus.Draw);
+-        }
+-    }
+-
+-    @Override
+-    public void countinuationResolution(Stack<Card> deckBanker, Stack<Card> deckPlayer, String text) {
+-        if (text.equals("/exit")) {
+-            System.out.println("До свидания! Возвращайтесь еще!");
+-            updateBankOfUser();
+-            GameVisualizer.getInstructionGreeting();
+-            deckBanker.clear();
+-            deckPlayer.clear();
+-        }
+-    }
+-
+-    @Override
+-    public  String paymentNaturalWin(int sumPlayer, int sumBanker) {
+-        if (sumBanker == 9) {
+-            System.out.println("Вау! Натуральная победа у Банкира!");
+-            return String.valueOf(Exodus.Banker);
+-        } else if (sumPlayer == 9) {
+-            System.out.println("Вау! Натуральная победа у Игрока!");
+-            return String.valueOf(Exodus.Player);
+-        } else { return String.valueOf(Exodus.None); }
+-    }
+-
+-    @Override
+-    public int countOfBank(ArrayList<Integer> bets, String exodus, String exodusNaturalWin) {
+-        int win = 0;
+-        AuthorizationRegistration.user.setBank(AuthorizationRegistration.user.getBank()-(bets.get(0) + bets.get(1) + bets.get(2) + bets.get(3) + bets.get(4)));
+-        switch (exodus) {
+-            case "Banker" -> win = win + (bets.get(0) * 2);
+-            case "Player" -> win = win + (bets.get(2) * 2);
+-            case "Draw" -> win = win + (bets.get(3) * 21) + bets.get(0) + bets.get(2);
+-        }
+-        switch (exodusNaturalWin) {
+-            case "Banker" -> win = win + (bets.get(3) * 10);
+-            case "Player" -> win = win + (bets.get(4) * 10);
+-        }
+-        AuthorizationRegistration.user.setBank(AuthorizationRegistration.user.getBank()+win);
+-        return AuthorizationRegistration.user.getBank();
+-    }
+-
+-    @Override
+-    public void realizationGame(Stack<Card> deckBanker, Stack<Card> deckPlayer) {
+-        Deck deck = new Deck();
+-        Scanner scan = new Scanner(System.in);
+-        int numberGame = 0;
+-        while (deckBanker.size() + deckPlayer.size()>21 ) {
+-            numberGame++;
+-            getBet();
+-            String textAct = scan.nextLine();
+-            countinuationResolution(deckBanker,deckPlayer,textAct);
+-            if (!deckBanker.isEmpty() & !deckPlayer.isEmpty()) {
+-                int[] banks = deck.giveCards(deckBanker, deckPlayer, numberGame);
+-                String exodus = isGameOver(banks[1], banks[0]);
+-                String exodusNaturalWin = paymentNaturalWin(banks[1], banks[0]);
+-                ArrayList<Integer> takeBets = com.company.module.Bet.takeBet(textAct,AuthorizationRegistration.user.getBank());
+-                int win = (-1)*AuthorizationRegistration.user.getBank()+countOfBank(takeBets, exodus, exodusNaturalWin) ;
+-               if (win < 0) { win = 0; }
+-                System.out.println("Выигрыш: " + win + " руб.");
+-                updateBankOfUser();
+-            } else {
+-                deckBanker.clear();
+-                deckPlayer.clear();
+-            }
+-        }
+-        if ( numberGame == 21) {
+-            System.out.println("Колода закончилась! Начнем заново?\n/start - да\n/exit - нет");
+-        }
+-    }
+-
+-    @Override
+-    public void play() {
+-        GameVisualizer.getInstructionGreeting();
+-        doCycle();
+-    }
+-
+-    @Override
+-    public void doCycle() {
+-        Deck deck = new Deck();
+-        Scanner scan = new Scanner(System.in);
+-        boolean heartGame = true;
+-        while (heartGame) {
+-            String text = scan.nextLine();
+-            String textStartRepeat = "/start";
+-            String textStopNoRepeat = "/exit";
+-            if (textStartRepeat.contains(text) & !text.equals("")) {
+-                System.out.println("Хорошо! Колоды перетасованы!\nБанк: " + AuthorizationRegistration.user.getBank() + " руб.");
+-                realizationGame(deck.creatingDeck(), deck.creatingDeck());
+-            } else if (textStopNoRepeat.contains(text)) {
+-                System.out.println("Хорошо! Захочешь поиграть, заходи!");
+-                System.out.println("Добро пожаловть в пользовательсоке меню!\nОпции:\n/play - начать игру.\n/exit - закончить работу с ботом и перейти в раздел авторизации.");
+-                heartGame = false;
+-            } else if (text.equals("/instrumentation")) {
+-                System.out.println("Хорошо! Вот инструкция!");
+-                GameVisualizer.getHowPlay();
+-            } else {
+-                System.out.println("Не понял команду!");
+-            }
+-
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: src/com/company/commands/SpeedBaccaraGame.java
+===================================================================
+--- src/com/company/commands/SpeedBaccaraGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/commands/SpeedBaccaraGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,11 +0,0 @@
+-package com.company.commands;
+-
+-import com.company.speedbaccara.SpeedBaccara;
+-
+-public class SpeedBaccaraGame extends Command {
+-    @Override
+-    public  void execute() {
+-        SpeedBaccara speedBaccara = new SpeedBaccara();
+-        speedBaccara.play();
+-    }
+-}
+Index: src/com/company/module/User.java
+===================================================================
+--- src/com/company/module/User.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/module/User.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
+@@ -1,61 +0,0 @@
+-package com.company.module;
+-
+-import java.io.Serializable;
+-
+-public class User implements Serializable {
+-    private static final long serialVersionUID = 4529685098267757690L; // для Сериализации
+-    public  String login;
+-    public  String password;
+-    public  int bank;
+-
+-
+-   /**
+-     * Метод для обращения к банку пользователя.
+-     * @return банк пользователя.
+-     */
+-    public  int getBank(){
+-
+-        return this.bank;
+-    }
+-
+-   /**
+-     * Метод для обращения к паролю пользователя.
+-     * @return пароль пользователя
+-     */
+-    public String getPassword(){
+-        return this.password;
+-    }
+-
+-    /**
+-     * Метод для обращения к логину пользователя.
+-     * @return логин пользователя.
+-     */
+-    public String getLogin(){
+-        return this.login;
+-    }
+-
+-    /**
+-     * Метод для установления банка.
+-     * @param bank банк пользователя.
+-     */
+-    public void setBank(int bank){
+-        this.bank = bank;
+-    }
+-
+-    /**
+-     * Метод для установления логина пользователя.
+-     * @param login логин пользователь.
+-     */
+-    public void setLogin(String login){
+-       this.login =login;
+-    }
+-
+-    /**
+-     * Метод для учтановление пароля пользователя.
+-     * @param password пароль пользователя.
+-     */
+-    public void setPassword(String password){
+-        this.password =password;
+-    }
+-
+-}
+Index: Bot_Tate2.0.1/src/com/company/commands/MenuGame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company.commands;\r\n\r\nimport com.company.main.Menu;\r\n\r\npublic class MenuGame extends Command {\r\n    @Override\r\n    public  void execute() {\r\n        Menu menu = new Menu();\r\n        System.out.println(\"Добро пожаловать в раздел игр!\\nИгры ИИ против ИИ:\\n   /SpeedBaccara - быстрая версия игры Баккара.\\nОпции:\\n   /exit - выход.\");\r\n        menu.doCommandOfGame();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Bot_Tate2.0.1/src/com/company/commands/MenuGame.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ Bot_Tate2.0.1/src/com/company/commands/MenuGame.java	(date 1632894102281)
+@@ -1,7 +1,5 @@
+ package com.company.commands;
+ 
+-import com.company.main.Menu;
+-
+ public class MenuGame extends Command {
+     @Override
+     public  void execute() {
+Index: Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company.speedbaccara;\r\n\r\nimport com.company.main.IGame;\r\nimport com.company.module.Card;\r\nimport com.company.module.Deck;\r\nimport com.company.module.Exodus;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Scanner;\r\nimport java.util.Stack;\r\n\r\nimport static com.company.speedbaccara.GameVisualizer.getBet;\r\n\r\n/**\r\n * Класс для реализации игры SpeedBaccara.\r\n */\r\npublic class SpeedBaccara implements IGame, ISpeedBaccara {\r\n\r\n    @Override\r\n    public String isGameOver(int Player, int Banker) {\r\n        if (Banker > Player) {\r\n            System.out.println(\"Банкир выиграл!\");\r\n            return String.valueOf(com.company.module.Exodus.Banker);\r\n        } else if (Banker < Player) {\r\n            System.out.println(\"Игрок выиграл!\");\r\n            return String.valueOf(Exodus.Player);\r\n        } else {\r\n            System.out.println(\"Ого! Ничья!\");\r\n            return String.valueOf(Exodus.Draw);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void countinuationResolution(Stack<Card> deckBanker, Stack<Card> deckPlayer, String text) {\r\n        if (text.equals(\"/exit\")) {\r\n            System.out.println(\"До свидания! Возвращайтесь еще!\");\r\n            GameVisualizer.getInstractionGreeting();\r\n            deckBanker.clear();\r\n            deckPlayer.clear();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public  String paymentNaturalWin(int sumPlayer, int sumBanker) {\r\n        if (sumBanker == 9) {\r\n            System.out.println(\"Вау! Натуральная победа у Банкира!\");\r\n            return String.valueOf(Exodus.Banker);\r\n        } else if (sumPlayer == 9) {\r\n            System.out.println(\"Вау! Натуральная победа у Игрока!\");\r\n            return String.valueOf(Exodus.Player);\r\n        } else { return String.valueOf(Exodus.None); }\r\n    }\r\n\r\n    @Override\r\n    public int countOfBank(ArrayList<Integer> bets, int bank, String exodus, String exodusNaturalWin) {\r\n        int win = 0;\r\n        bank = bank - (bets.get(0) + bets.get(1) + bets.get(2) + bets.get(3) + bets.get(4));\r\n        switch (exodus) {\r\n            case \"Banker\" -> win = win + (bets.get(0) * 2);\r\n            case \"Player\" -> win = win + (bets.get(2) * 2);\r\n            case \"Draw\" -> win = win + (bets.get(3) * 21) + bets.get(0) + bets.get(2);\r\n        }\r\n        switch (exodusNaturalWin) {\r\n            case \"Banker\" -> win = win + (bets.get(3) * 10);\r\n            case \"Player\" -> win = win + (bets.get(4) * 10);\r\n        }\r\n        bank += win;\r\n        return bank;\r\n    }\r\n\r\n    @Override\r\n    public void realizationGame(Stack<Card> deckBanker, Stack<Card> deckPlayer, int bank) {\r\n        Deck deck = new Deck();\r\n        Scanner scan = new Scanner(System.in);\r\n        int numberGame = 0;\r\n        while (deckBanker.size() + deckPlayer.size()>21 ) {\r\n            numberGame++;\r\n            getBet();\r\n            String textAct = scan.nextLine();\r\n            countinuationResolution(deckBanker,deckPlayer,textAct);\r\n            if (!deckBanker.isEmpty() & !deckPlayer.isEmpty()) {\r\n                int[] banks = deck.giveCards(deckBanker, deckPlayer, numberGame);\r\n                String exodus = isGameOver(banks[1], banks[0]);\r\n                String exodusNaturalWin = paymentNaturalWin(banks[1], banks[0]);\r\n                ArrayList<Integer> takeBets = com.company.module.Bet.Takebet(textAct,bank);\r\n                int win = countOfBank(takeBets, bank, exodus, exodusNaturalWin) - bank;\r\n                if (win < 0) { win = 0; }\r\n                System.out.println(\"Выигрыш: \" + win + \" руб.\\nБанк: \" + countOfBank( takeBets , bank, exodus, exodusNaturalWin) + \" руб.\");\r\n                bank = countOfBank( takeBets , bank, exodus, exodusNaturalWin);\r\n            } else {\r\n                deckBanker.clear();\r\n                deckPlayer.clear();\r\n            }\r\n        }\r\n        if ( numberGame == 21) {\r\n            System.out.println(\"Колода закончилась! Начнем заново?\\n/start - да\\n/exit - нет\");\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void play() {\r\n        GameVisualizer.getInstractionGreeting();\r\n        doCycle();\r\n    }\r\n\r\n    @Override\r\n    public void doCycle() {\r\n        Deck deck = new Deck();\r\n        Scanner scan = new Scanner(System.in);\r\n        boolean heartGame = true;\r\n        while (heartGame) {\r\n            String text = scan.nextLine();\r\n            String textStartRepeat = \"/start\";\r\n            String textStopNoRepeat = \"/exit\";\r\n            if (textStartRepeat.contains(text) & !text.equals(\"\")) {\r\n                int bank = 10000;\r\n                System.out.println(\"Хорошо! Колоды перетасованы!\\nБанк: \" + bank + \" руб.\");\r\n                realizationGame(deck.creatingDeck(), deck.creatingDeck(), bank);\r\n            } else if (textStopNoRepeat.contains(text)) {\r\n                System.out.println(\"Хорошо! Захочешь поиграть, заходи!\");\r\n                System.out.println(\"Напиши команду /help чтобы узнать, что я могу!\");\r\n                heartGame = false;\r\n            } else if (text.equals(\"/instrumentation\")) {\r\n                System.out.println(\"Хорошо! Вот инструкция!\");\r\n                GameVisualizer.getHowPlay();\r\n            } else {\r\n                System.out.println(\"Не понял команду!\");\r\n            }\r\n\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java	(date 1632894102265)
+@@ -1,6 +1,5 @@
+ package com.company.speedbaccara;
+ 
+-import com.company.main.IGame;
+ import com.company.module.Card;
+ import com.company.module.Deck;
+ import com.company.module.Exodus;
+Index: src/com/company/main/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.company.main;\r\n\r\nimport com.company.speedbaccara.GameVisualizer;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Menu menu = new Menu();\r\n        Scanner input = new Scanner(System.in);\r\n        GameVisualizer.getHello();\r\n        GameVisualizer.getNoRegistration();\r\n        for (; ; ) {\r\n            String command = input.nextLine();\r\n            menu.doCommandOfRegistration(command);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/com/company/main/Main.java	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ src/com/company/main/Main.java	(date 1632894495988)
+@@ -1,17 +1,6 @@
+ package com.company.main;
+ 
+-import com.company.speedbaccara.GameVisualizer;
+-import java.util.Scanner;
+-
+ public class Main {
+     public static void main(String[] args) {
+-        Menu menu = new Menu();
+-        Scanner input = new Scanner(System.in);
+-        GameVisualizer.getHello();
+-        GameVisualizer.getNoRegistration();
+-        for (; ; ) {
+-            String command = input.nextLine();
+-            menu.doCommandOfRegistration(command);
+-        }
+     }
+ }
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1632822677667)
++++ .idea/vcs.xml	(date 1632822677667)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Users.bin
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>��\u0000\u0005w\u0001\u0011sr\u0000\u0017com.company.module.User>ܬ���Lz\u0002\u0000\u0003I\u0000\u0004bankL\u0000\u0005logint\u0000\u0012Ljava/lang/String;L\u0000\bpasswordq\u0000~\u0000\u0001xp\u0000\u0000,�t\u0000\u0007feldjert\u0000\u0006123456sq\u0000~\u0000\u0000\u0000\u0000$�t\u0000\u0005guestt\u0000\u0003555sq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u00011t\u0000\u00011sq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u00012t\u0000\u00012sq\u0000~\u0000\u0000\u0000\u0000$�t\u0000\u00013t\u0000\u00013sq\u0000~\u0000\u0000\u0000\u0000 \bt\u0000\u000Bfeldjer2021t\u0000\u0003123sq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u0004ghght\u0000\u0002ghsq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u0000q\u0000~\u0000\u0018sq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u0003123t\u0000\u0003123sq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u0012rtgnrjkgjrtgnjrtgnt\u0000\u00011sq\u0000~\u0000\u0000\u0000\u0000\"�t\u0000\u0006Nikitat\u0000\u00011sq\u0000~\u0000\u0000\u0000\u0000'\u0010t\u0000\u00010t\u0000\u00010sq\u0000~\u0000\u0000\u0000\u0000/�t\u0000\fСергейt\u0000\u00011sq\u0000~\u0000\u0000\u0000\u0000'�t\u0000\bМаксt\u0000\u00011sq\u0000~\u0000\u0000\u0000\u0000#�t\u0000\u00014t\u0000\u00014sq\u0000~\u0000\u0000\u0000\u0000,�t\u0000\nНастяt\u0000\nятсанsq\u0000~\u0000\u0000\u0000\u0000$�t\u0000\u000273t\u0000\u000273
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Users.bin	(revision 94b9fb7a7bd6d440974e105d6527a8e683cf4508)
++++ Users.bin	(date 1632829566574)
+@@ -1,3 +1,3 @@
+-�� wsr com.company.module.User>ܬ���Lz I bankL logint Ljava/lang/String;L passwordq ~ xp  ,�t feldjert 123456sq ~    $�t guestt 555sq ~    't 1t 1sq ~    't 2t 2sq ~    $�t 3t 3sq ~     t feldjer2021t 123sq ~    't ghght ghsq ~    't  q ~ sq ~    't 123t 123sq ~    't rtgnrjkgjrtgnjrtgnt 1sq ~    "�t Nikitat 1sq ~    't 0t 0sq ~    /�t Сергейt 1sq ~    '�t Максt 1sq ~    #�t 4t 4sq ~    ,�t 
++�� wsr com.company.module.User>ܬ���Lz I bankL logint Ljava/lang/String;L passwordq ~ xp  ,�t feldjert 123456sq ~    $�t guestt 555sq ~    't 1t 1sq ~    't 2t 2sq ~    $�t 3t 3sq ~     t feldjer2021t 123sq ~    't ghght ghsq ~    't  q ~ sq ~    't 123t 123sq ~    't rtgnrjkgjrtgnjrtgnt 1sq ~    "�t Nikitat 1sq ~    't 0t 0sq ~    /�t Сергейt 1sq ~    '�t Максt 1sq ~    #�t 4t 4sq ~    ,�t 
+ Настяt 
+-ятсанsq ~    $�t 73t 73
+\ No newline at end of file
++ятсанsq ~    $�t 73t 73sq ~    't 12t 12
+\ No newline at end of file
