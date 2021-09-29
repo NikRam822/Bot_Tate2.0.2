@@ -1,15 +1,11 @@
 package com.company.speedbaccara;
 
-import com.company.commands.AuthorizationGuest;
-import com.company.commands.AuthorizationRegistration;
 import com.company.main.IGame;
 import com.company.module.Card;
 import com.company.module.Deck;
 import com.company.module.Exodus;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 import static com.company.speedbaccara.GameVisualizer.getBet;
 
@@ -20,10 +16,8 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
 
     @Override
     public void updateBankOfUser() {
-        System.out.println("Ваш банк: "+ AuthorizationRegistration.user.getBank() + ".");
-        if(!AuthorizationRegistration.user.login.equals("Dbr3{gnsTmP{8bJhX*I{Cgf*72EkH|qDL7TMn~$*ymNbXIJ$Kt$o|O?bSVTjmEXD%vu4r#G4*RRoAlAdt?XEHQ*GkVmlFwm@@*N48*N?hxnz4x~~L{rCnl9{pSG88L#uLPGOjfjA6H@~aTA#c?%$r0N75o~yHB|9") && !AuthorizationRegistration.user.password.equals("Dbr3{gnsTmP{8bJhX*I{Cgf*72EkH|qDL7TMn~$*ymNbXIJ$Kt$o|O?bSVTjmEXD%vu4r#G4*RRoAlAdt?XEHQ*GkVmlFwm@@*N48*N?hxnz4x~~L{rCnl9{pSG88L#uLPGOjfjA6H@~aTA#c?%$r0N75o~yHB|9"+ AuthorizationGuest.dynamicPartOfPasswordGuest)){
-            AuthorizationRegistration.recordUserInBase(AuthorizationRegistration.user);
-        }
+        System.out.println("Ваш банк: "+ /*AuthorizationRegistration.user.getBank() +*/ ".");
+
 
     }
 
@@ -66,7 +60,7 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
     @Override
     public int countOfBank(ArrayList<Integer> bets, String exodus, String exodusNaturalWin) {
         int win = 0;
-        AuthorizationRegistration.user.setBank(AuthorizationRegistration.user.getBank()-(bets.get(0) + bets.get(1) + bets.get(2) + bets.get(3) + bets.get(4)));
+//        AuthorizationRegistration.user.setBank(AuthorizationRegistration.user.getBank()-(bets.get(0) + bets.get(1) + bets.get(2) + bets.get(3) + bets.get(4)));
         switch (exodus) {
             case "Banker" -> win = win + (bets.get(0) * 2);
             case "Player" -> win = win + (bets.get(2) * 2);
@@ -76,8 +70,9 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
             case "Banker" -> win = win + (bets.get(3) * 10);
             case "Player" -> win = win + (bets.get(4) * 10);
         }
-        AuthorizationRegistration.user.setBank(AuthorizationRegistration.user.getBank()+win);
-        return AuthorizationRegistration.user.getBank();
+//        AuthorizationRegistration.user.setBank(AuthorizationRegistration.user.getBank()+win);
+//        return AuthorizationRegistration.user.getBank();
+        return 10;
     }
 
     @Override
@@ -94,8 +89,8 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
                 int[] banks = deck.giveCards(deckBanker, deckPlayer, numberGame);
                 String exodus = isGameOver(banks[1], banks[0]);
                 String exodusNaturalWin = paymentNaturalWin(banks[1], banks[0]);
-                ArrayList<Integer> takeBets = com.company.module.Bet.takeBet(textAct,AuthorizationRegistration.user.getBank());
-                int win = (-1)*AuthorizationRegistration.user.getBank()+countOfBank(takeBets, exodus, exodusNaturalWin) ;
+                List<Integer> takeBets = Arrays.asList(0, 0, 0, 0, 0) /*com.company.module.Bet.takeBet(textAct,AuthorizationRegistration.user.getBank())*/;
+                int win = (-1)*1/*AuthorizationRegistration.user.getBank()+countOfBank(takeBets, exodus, exodusNaturalWin)*/ ;
                if (win < 0) { win = 0; }
                 System.out.println("Выигрыш: " + win + " руб.");
                 updateBankOfUser();
@@ -125,7 +120,7 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
             String textStartRepeat = "/start";
             String textStopNoRepeat = "/exit";
             if (textStartRepeat.contains(text) & !text.equals("")) {
-                System.out.println("Хорошо! Колоды перетасованы!\nБанк: " + AuthorizationRegistration.user.getBank() + " руб.");
+                System.out.println("Хорошо! Колоды перетасованы!\nБанк: " +  /*+ AuthorizationRegistration.user.getBank() +*/ " руб.");
                 realizationGame(deck.creatingDeck(), deck.creatingDeck());
             } else if (textStopNoRepeat.contains(text)) {
                 System.out.println("Хорошо! Захочешь поиграть, заходи!");

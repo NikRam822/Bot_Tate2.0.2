@@ -39,6 +39,7 @@ public class Menu implements IMenu {
         menuCommand.put("/exit", new MenuExit());
         menuCommand.put("/help", new MenuHelp());
         menuCommand.put("/play", new MenuGame());
+
         try {
             ICommand iCommand = menuCommand.get(command);
             iCommand.execute();
@@ -49,9 +50,6 @@ public class Menu implements IMenu {
 
     public  void doCommandOfRegistration(String command) {
         Map <String,Command> registrationCommand = new HashMap<>();
-        registrationCommand.put("/r"/*"/registration"*/, new AuthorizationRegistration());
-        registrationCommand.put("/login", new AuthorizationLogin());
-        registrationCommand.put("/guest", new AuthorizationGuest());
         registrationCommand.put("/information",new AuthorizationInformation());
         registrationCommand.put("/help",new AuthorizationHelp());
         try {
