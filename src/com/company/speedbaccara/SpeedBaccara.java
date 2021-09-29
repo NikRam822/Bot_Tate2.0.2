@@ -6,10 +6,10 @@ import com.company.module.Card;
 import com.company.module.Deck;
 import com.company.module.Exodus;
 import com.company.module.Visualizer;
-
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Stack;
+
+import static com.company.module.Visualizer.getBet;
 
 
 /**
@@ -80,7 +80,6 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
     @Override
     public void realizationGame(Stack<Card> deckBanker, Stack<Card> deckPlayer) {
         Deck deck = new Deck();
-        Scanner scan = new Scanner(System.in);
         int numberGame = 0;
         while (deckBanker.size() + deckPlayer.size()>21 ) {
             numberGame++;
@@ -115,7 +114,6 @@ public class SpeedBaccara implements IGame, ISpeedBaccara {
     @Override
     public void doCycle() {
         Deck deck = new Deck();
-        Scanner scan = new Scanner(System.in);
         boolean heartGame = true;
         while (heartGame) {
             String text = scan.nextLine();

@@ -98,8 +98,9 @@ public class Visualizer {
     /**
      * Метод для визуализации возможных ставок.
      **/
-    public static void getBet() {
+    public static String getBet() {
         System.out.print(RATE_ODDS);
+        return RATE_ODDS;
     }
 
     /**
