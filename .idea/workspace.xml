@@ -3,10 +3,50 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feuture" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fb077ad7-6ccf-4cfb-99b3-c11408da451c" name="Changes" comment="When gamer click /start game, User with chat id and bank push to db">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Default_Changelist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_09_2021_0_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_09_2021_0_35__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/GameVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/GameVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/ISpeedBaccara.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/ISpeedBaccara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Bet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/CardHand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/speedbaccara/ISpeedBaccara.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/speedbaccara/SpeedBaccara.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,11 +70,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/main/Main.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/com/company/DAO/mainDAO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/.gitignore" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/company/main/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1youumZBwhnsnPSU3FBZJ9dsh8P" />
   <component name="ProjectViewState">
@@ -193,6 +240,12 @@
     <MESSAGE value="prepare db" />
     <MESSAGE value="When gamer click /start game, User with chat id and bank push to db" />
     <option name="LAST_COMMIT_MESSAGE" value="When gamer click /start game, User with chat id and bank push to db" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632964298771">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632964298771" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

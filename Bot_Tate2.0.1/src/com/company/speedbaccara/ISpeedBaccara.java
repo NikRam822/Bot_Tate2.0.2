@@ -1,7 +1,5 @@
 package com.company.speedbaccara;
 
-import com.company.module.Card;
-
 import java.util.Stack;
 
 /**

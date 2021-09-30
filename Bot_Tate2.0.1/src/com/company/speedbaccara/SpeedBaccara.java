@@ -1,7 +1,5 @@
 package com.company.speedbaccara;
 
-import com.company.module.Card;
-import com.company.module.Deck;
 import com.company.module.Exodus;
 
 import java.util.ArrayList;
