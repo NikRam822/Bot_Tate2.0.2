@@ -5,7 +5,7 @@ import com.company.module.Visualizer;
 public class MenuHelp extends Command{
 
     @Override
-    public String execute() {
+    public String execute(String data) {
         return Visualizer.getMenuHelp();
     }
 }

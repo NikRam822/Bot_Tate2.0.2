@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class MenuStart extends Command {
 
     @Override
-    public String execute() throws SQLException {
+    public String execute(String data) throws SQLException {
         String chatId = TelegramBot.CHAT_ID;
 
         // create an instance of Account

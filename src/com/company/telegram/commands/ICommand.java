@@ -4,5 +4,5 @@ import java.sql.SQLException;
 
 public interface ICommand {
 
-    String execute() throws SQLException;
+    String execute(String data) throws SQLException;
 }

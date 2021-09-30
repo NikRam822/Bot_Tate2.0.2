@@ -28,7 +28,8 @@ public class StateMachine {
     public String doCommand(String command) {
         try {
             ICommand iCommand = menuCommand.get(command);
-            return iCommand.execute();
+            if(GameStartGame.gameCode!=0){return new GameStartGame().execute(command);}
+            return iCommand.execute(command);
         } catch (Exception exception) {
             return "Не понял команду!";
         }
