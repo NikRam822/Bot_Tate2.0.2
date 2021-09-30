@@ -4,44 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/feature/telegram-bot-clone" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <expand />
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="820cf882-c95a-41de-b998-331962b12595" name="Default Changelist" comment="Начать с 0" />
+    <list default="true" id="820cf882-c95a-41de-b998-331962b12595" name="Default Changelist" comment="Начать с 0">
+      <change afterPath="$PROJECT_DIR$/src/com/company/main/IGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/commands/MenuInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/commands/MenuInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Bet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/module/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/GameVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/GameVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/ISpeedBaccara.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/ISpeedBaccara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate2.0.1/src/com/company/speedbaccara/SpeedBaccara.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Bet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/CardHand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/module/Visualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/module/Visualizer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +73,7 @@
     <property name="JavaVariableFindUsagesOptions.isSearchForTextOccurrences" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../1313_Timus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/company" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -103,13 +85,14 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.company.main" />
+      <recent name="com.company.blackjack" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate2.0.2\src\com\company" />
+      <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate2.0.2\src\com\company\module" />
       <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate2.0.2" />
       <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate" />
       <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate\src" />
-      <recent name="C:\Users\Nikita\IdeaProjects\Bot_Tate\src\com\company\base" />
     </key>
   </component>
   <component name="RunManager">
@@ -196,22 +179,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Начать с 0" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1632939818307">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1632957988166">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1632939818307" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1632957988166" />
+    <state x="551" y="307" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1632959986028">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="551" y="307" width="433" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1632959986028" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1632942340978">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1632942340978" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632927765193">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632960596314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632927765193" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1632938353385">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632960596314" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1632957090459">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1632938353385" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1632957090459" />
     <state x="524" y="280" key="Github.ShareDialog" timestamp="1632894828849">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -220,22 +207,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632822670049" />
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1632952520524">
+    <state width="1493" height="425" key="GridCell.Tab.0.bottom" timestamp="1632957726758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1632952520524">
+    <state width="1493" height="425" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632957726758" />
+    <state width="1493" height="425" key="GridCell.Tab.0.center" timestamp="1632957726758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1632952520524">
+    <state width="1493" height="425" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632957726758" />
+    <state width="1493" height="425" key="GridCell.Tab.0.left" timestamp="1632957726758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1632952520524">
+    <state width="1493" height="425" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632957726758" />
+    <state width="1493" height="425" key="GridCell.Tab.0.right" timestamp="1632957726758">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632952520524" />
+    <state width="1493" height="425" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632957726758" />
     <state width="1493" height="6" key="GridCell.Tab.1.bottom" timestamp="1632948542434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -252,6 +239,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="6" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1632948542434" />
+    <state x="349" y="155" key="IDE.errors.dialog" timestamp="1632956811000">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1632956811000" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1632938303836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -272,6 +263,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" width="579" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1632925846272" />
+    <state x="209" y="33" key="new project wizard" timestamp="1632957066869">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1632957066869" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

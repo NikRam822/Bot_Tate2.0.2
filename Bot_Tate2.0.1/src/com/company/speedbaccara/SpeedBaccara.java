@@ -1,14 +1,10 @@
-package com.company.speedbaccara;
-
-import com.company.module.Card;
-import com.company.module.Deck;
-import com.company.module.Exodus;
+package com.company.magickNumber;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
-import static com.company.speedbaccara.GameVisualizer.getBet;
+import static com.company.magickNumber.GameVisualizer.getBet;
 
 /**
  * Класс для реализации игры SpeedBaccara.

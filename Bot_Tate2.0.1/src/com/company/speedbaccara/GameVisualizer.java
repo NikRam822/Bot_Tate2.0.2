@@ -1,6 +1,5 @@
-package com.company.speedbaccara;
+package com.company.magickNumber;
 
-import com.company.module.CardHand;
 import java.util.Map;
 
 /**

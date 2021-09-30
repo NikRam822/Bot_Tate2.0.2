@@ -1,7 +1,5 @@
 package com.company.main;
 
-import com.company.speedbaccara.GameVisualizer;
-
 import java.util.Scanner;
 
 public class Main {

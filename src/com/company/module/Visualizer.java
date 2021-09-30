@@ -146,15 +146,6 @@ public class Visualizer {
         System.out.println(ERROR_BET);
     }
 
-    /**
-     * Метод для визуализации сущностей рука Банкира и рука Игрока.
-     *
-     * @param handBanker рука Банкира
-     * @param handPlayer рука Игрока
-     */
-    public static void getDistributionHands(CardHand handBanker, CardHand handPlayer) {
-        System.out.print("Banker: " + handBanker.get(0).valueCards + handBanker.get(0).suit + " " + handBanker.get(1).valueCards + handBanker.get(1).suit + " | " + handPlayer.get(0).valueCards + handPlayer.get(0).suit + " " + handPlayer.get(1).valueCards + handPlayer.get(1).suit + " :Player\n");
-    }
 
 
 
