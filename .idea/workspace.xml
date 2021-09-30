@@ -3,63 +3,59 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand />
-    <select />
-  </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="82fdf623-78da-48f7-b655-2a12248170ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot_Tate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bot_Tate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/module/CardHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/module/CardHand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/speedbaccara/SpeedBaccara.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/speedbaccara/SpeedBaccara.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Bet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/CardHand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Deck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Exodus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/Visualizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/StateMachine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameExit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameInstruction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GamePlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameStartGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/ICommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuHelp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuInformation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/MenuStart.class" beforeDir="false" />
+    <list default="true" id="fb077ad7-6ccf-4cfb-99b3-c11408da451c" name="Changes" comment="When gamer click /start game, User with chat id and bank push to db">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="hiddenUrls">
-      <set>
-        <option value="https://github.com/NikRam822/Bot_Tate2.0.2" />
-      </set>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
     </option>
   </component>
-  <component name="ProjectId" id="1krpTSrfrodH739eMEthpVwopYP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.company.main" />
-    </key>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/telegram-bot-clone" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/DAO/mainDAO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/com/company/main/Main.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1youumZBwhnsnPSU3FBZJ9dsh8P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -83,17 +79,100 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb077ad7-6ccf-4cfb-99b3-c11408da451c" name="Changes" comment="" />
+      <created>1632930486772</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632930486772</updated>
+      <workItem from="1632930490481" duration="2159000" />
+      <workItem from="1632937755281" duration="300000" />
+      <workItem from="1632938073985" duration="5995000" />
+      <workItem from="1632944598298" duration="970000" />
+      <workItem from="1632953097432" duration="5288000" />
+    </task>
+    <task id="LOCAL-00001" summary="update .gitignore">
+      <created>1632931092768</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632931092768</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update .gitignore">
+      <created>1632931201860</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1632931201860</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding sqlite and sqliteorm">
+      <created>1632944161299</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632944161299</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update .gitignore">
+      <created>1632944288009</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632944288009</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update .gitignore">
+      <created>1632953572666</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632953572666</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update .gitignore">
+      <created>1632953663133</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632953663133</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update .gitignore">
+      <created>1632953728924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632953728924</updated>
+    </task>
+    <task id="LOCAL-00008" summary="workspace.xml">
+      <created>1632953772549</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1632953772549</updated>
+    </task>
+    <task id="LOCAL-00009" summary="workspace.xml">
+      <created>1632953800584</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1632953800584</updated>
+    </task>
+    <task id="LOCAL-00010" summary="prepare db">
+      <created>1632956276466</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1632956276466</updated>
+    </task>
+    <task id="LOCAL-00011" summary="When gamer click /start game, User with chat id and bank push to db">
+      <created>1632958419216</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632958419216</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -107,88 +186,33 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1632939818307">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1632939818307" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1632942340978">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1632942340978" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632954333929">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632954333929" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1632938353385">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1632938353385" />
-    <state x="524" y="280" key="Github.ShareDialog" timestamp="1632894828849">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="524" y="280" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1632894828849" />
-    <state x="549" y="110" key="Github.UntrackedFilesDialog" timestamp="1632822670049">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1632822670049" />
-
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1632955486975">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1632955486975">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1632955486975">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1632955486975">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1632955486975" />
-
-    <state width="1493" height="6" key="GridCell.Tab.1.bottom" timestamp="1632948542434">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="6" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1632948542434" />
-    <state width="1493" height="6" key="GridCell.Tab.1.center" timestamp="1632948542434">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="6" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1632948542434" />
-    <state width="1493" height="6" key="GridCell.Tab.1.left" timestamp="1632948542434">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="6" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1632948542434" />
-    <state width="1493" height="6" key="GridCell.Tab.1.right" timestamp="1632948542434">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="6" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1632948542434" />
-    <state x="349" y="155" key="IDE.errors.dialog" timestamp="1632954299756">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1632954299756" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1632938303836">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1632938303836" />
-    <state x="446" y="152" key="Vcs.Push.Dialog.v2" timestamp="1632927170240">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="446" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1632927170240" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1632952933976">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1632952933976" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1632944393100">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1632944393100" />
-    <state x="0" y="0" width="579" height="824" key="find.popup" timestamp="1632925846272">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="0" y="0" width="579" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1632925846272" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding sqlite and sqliteorm" />
+    <MESSAGE value="update .gitignore" />
+    <MESSAGE value="workspace.xml" />
+    <MESSAGE value="prepare db" />
+    <MESSAGE value="When gamer click /start game, User with chat id and bank push to db" />
+    <option name="LAST_COMMIT_MESSAGE" value="When gamer click /start game, User with chat id and bank push to db" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/main/Main.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/telegram/commands/MenuStart.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/main/Main.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
