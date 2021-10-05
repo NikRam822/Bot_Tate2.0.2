@@ -14,27 +14,42 @@ public class User {
     @DatabaseField(columnName = BANK)
     private int bank;
     @DatabaseField(columnName = GAME_CODE)
-    private String gameCode;
+    private int gameCode;
     @DatabaseField(columnName = TARGET_NUMBER)
-    private int targetNumber;
+    private Integer targetNumber;
+
+    public void setTargetNumber(Integer targetNumber) {
+        this.targetNumber = targetNumber;
+    }
+
+    public Integer getTargetNumber() {
+        return targetNumber;
+    }
+
 
     public User() {
+
         // ORMLite needs a no-arg constructor
     }
 
+    public User(String chatId, int bank, int gameCode) {
+        this.chatId = chatId;
+        this.bank = bank;
+        this.gameCode = gameCode;
+
+    }
+
     /**
-     *
      * @return
      */
-    public String getGameCode() {
+    public int getGameCode() {
         return gameCode;
     }
 
     /**
-     *
      * @param gameCode
      */
-    public void setGameCode(String gameCode) {
+    public void setGameCode(int gameCode) {
         this.gameCode = gameCode;
     }
 
@@ -68,7 +83,6 @@ public class User {
     }
 
     /**
-     *
      * @param chatId
      */
     public void setChatId(String chatId) {

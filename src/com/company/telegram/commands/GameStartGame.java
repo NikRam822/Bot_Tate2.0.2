@@ -1,5 +1,6 @@
 package com.company.telegram.commands;
 
+import com.company.module.User;
 import com.company.telegram.games.*;
 
 
@@ -15,29 +16,32 @@ public class GameStartGame extends Command {
     public static int gameCode = 0;
 
     @Override
-    public String execute(String data) {
-        Random rn = new Random();
+    public String execute(String data, User user) {
 
-//        setHashMap();
-        int answer = rn.nextInt(10) + 1;
-        System.out.println(answer);
         switch (gameCode) {
             case 0:
+                Random rn = new Random();
+
+//        setHashMap();
+
+            user.setTargetNumber(rn.nextInt(100) + 1);
+
+//                System.out.println(answer);
                 gameCode = 1;
                 return "Ну что? Поехали!\nДелай свою ставку и я загадываю число!";
             case 1:
                 gameCode = 2;
                 return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!";
             case 2:
-                if (parseInt(data) != answer & parseInt(data) > answer) {
+                if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
                     gameCode = 2;
                     return "Больше";
                 }
-                if (parseInt(data) != answer & parseInt(data) < answer) {
+                if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
                     gameCode = 2;
                     return "Меньше";
                 }
-                if (parseInt(data) == answer) {
+                if (parseInt(data) == user.getTargetNumber()) {
                     gameCode = 0;
                     return "Победа,Спасибо за игру!Возвращайтесь еще.";
                 }

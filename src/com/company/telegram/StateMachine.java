@@ -1,5 +1,7 @@
 package com.company.telegram;
 
+import com.company.database.IDataSource;
+import com.company.module.User;
 import com.company.telegram.commands.*;
 
 import java.util.HashMap;
@@ -25,11 +27,11 @@ public class StateMachine {
      * @param command
      * @return
      */
-    public String doCommand(String command) {
+    public String doCommand(String command, User user) {
         try {
             ICommand iCommand = menuCommand.get(command);
-            if(GameStartGame.gameCode!=0){return new GameStartGame().execute(command);}
-            return iCommand.execute(command);
+            if(GameStartGame.gameCode!=0){return new GameStartGame().execute(command,user);}
+            return iCommand.execute(command,user);
         } catch (Exception exception) {
             return "Не понял команду!";
         }
