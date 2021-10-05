@@ -5,7 +5,7 @@ import com.company.module.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HashMapSourse implements IDataSourse {
+public class HashMapSource implements IDataSource {
     private final static Map<String, User> dataUsers = new HashMap<>();
 
     @Override

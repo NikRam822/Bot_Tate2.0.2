@@ -2,7 +2,7 @@ package com.company.database;
 
 import com.company.module.User;
 
-public interface IDataSourse {
+public interface IDataSource {
 
     void saveUser(User user);
 

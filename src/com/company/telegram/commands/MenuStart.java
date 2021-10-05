@@ -14,24 +14,24 @@ public class MenuStart extends Command {
 
     @Override
     public String execute(String data) throws SQLException {
-        String chatId = TelegramBot.CHAT_ID;
-
-        // create an instance of Account
-        User user = new User();
-        user.setChatId(chatId);
-        user.setBank(10000);
-
-        // this uses h2 by default but change to match your database
-        String databaseUrl = "jdbc:sqlite:./mydatabase.db";
-        // create a connection source to our database
-        ConnectionSource connectionSource =
-                new JdbcConnectionSource(databaseUrl);
-
-        Dao<User, String> userDao =
-                DaoManager.createDao(connectionSource, User.class);
-
-        // persist the account object to the database
-        userDao.create(user);
+//        String chatId = TelegramBot.CHAT_ID;
+//
+//        // create an instance of Account
+//        User user = new User();
+//        user.setChatId(chatId);
+//        user.setBank(10000);
+//
+//        // this uses h2 by default but change to match your database
+//        String databaseUrl = "jdbc:sqlite:./mydatabase.db";
+//        // create a connection source to our database
+//        ConnectionSource connectionSource =
+//                new JdbcConnectionSource(databaseUrl);
+//
+//        Dao<User, String> userDao =
+//                DaoManager.createDao(connectionSource, User.class);
+//
+//        // persist the account object to the database
+//        userDao.create(user);
 
         return Visualizer.getHello();
     }
