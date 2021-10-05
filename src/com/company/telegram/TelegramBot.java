@@ -51,6 +51,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 
                 sendMsg(message, stateMachine.doCommand(command, user));
+                hashMap.saveUser(user);
 
             }
         }
