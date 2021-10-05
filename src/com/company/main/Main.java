@@ -1,17 +1,31 @@
 package com.company.main;
 
-import com.company.speedbaccara.GameVisualizer;
-import java.util.Scanner;
+import com.company.database.DBSource;
+import com.company.database.HashMapSource;
+import com.company.database.SQLiteConnection;
+import com.company.telegram.StateMachine;
+import com.company.telegram.TelegramBot;
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 public class Main {
-    public static void main(String[] args) {
-        Menu menu = new Menu();
-        Scanner input = new Scanner(System.in);
-        GameVisualizer.getHello();
-        GameVisualizer.getNoRegistration();
-        for (; ; ) {
-            String command = input.nextLine();
-            menu.doCommandOfRegistration(command);
+    public static void main(String[] args) throws Exception {
+
+
+        ApiContextInitializer.init();
+        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
+        try{
+            StateMachine.setHashMap();
+//            TelegramBot bot = new TelegramBot(new HashMapSource());
+            TelegramBot bot = new TelegramBot(new DBSource(new SQLiteConnection()));
+
+            telegramBotsApi.registerBot(bot);
+
+        } catch (TelegramApiRequestException e){
+            e.printStackTrace();
         }
+
+
     }
 }
