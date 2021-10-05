@@ -1,6 +1,5 @@
 package com.company.telegram;
 
-import com.company.database.HashMapSource;
 import com.company.database.IDataSource;
 import com.company.module.User;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -40,7 +39,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.hasText()) {
                 User user;
                 if (hashMap.getUser(message.getChatId().toString()) == null) {
-                    user = new User(message.getChatId().toString(), 10000, 0);
+                    user = new User(message.getChatId().toString(), 10000, 0, null);
                     hashMap.saveUser(user);
                 } else {
                     user = hashMap.getUser(message.getChatId().toString());

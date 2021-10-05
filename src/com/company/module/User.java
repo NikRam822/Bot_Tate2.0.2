@@ -27,16 +27,13 @@ public class User {
     }
 
 
-    public User() {
+    public User() {}
 
-        // ORMLite needs a no-arg constructor
-    }
-
-    public User(String chatId, int bank, int gameCode) {
+    public User(String chatId, int bank, int gameCode, Integer targetNumber) {
         this.chatId = chatId;
         this.bank = bank;
         this.gameCode = gameCode;
-
+        this.targetNumber = targetNumber;
     }
 
     /**

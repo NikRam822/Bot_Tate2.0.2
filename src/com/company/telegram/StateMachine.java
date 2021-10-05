@@ -1,6 +1,5 @@
 package com.company.telegram;
 
-import com.company.database.IDataSource;
 import com.company.module.User;
 import com.company.telegram.commands.*;
 
