@@ -8,11 +8,13 @@ import java.sql.SQLException;
 
 public class SQLiteConnection {
 
-    private static final String CONNECTION_STRING = "jdbc:sqlite:mydatabase.db";
+//    private static final String CONNECTION_STRING = "jdbc:sqlite:mydatabase.db";
+    private static final String CONNECTION_STRING = "jdbc:sqlite:./mydatabase.db";
+
 
     private final Connection connection;
 
-    SQLiteConnection() throws SQLException {
+    public SQLiteConnection() throws SQLException {
         DriverManager.registerDriver(new JDBC());
         this.connection = DriverManager.getConnection(CONNECTION_STRING);
     }

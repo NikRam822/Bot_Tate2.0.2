@@ -22,24 +22,46 @@ public class GameStartGame extends Command {
                 Random rn = new Random();
                 user.setTargetNumber(rn.nextInt(100) + 1);
                 user.setGameCode(1);
-                return "Ну что? Поехали!\nДелай свою ставку и я загадываю число!";
+                return "Ну что? Поехали!\nС какого раза сможете угадать число?\nВаш Банк: " + user.getBank();
             }
             case 1 -> {
+                if(parseInt(data)>10){
+                    return "С 10> и я могу! Измени ставку н 10<!";
+                }
+
+                user.setSteps(Integer.parseInt(data));
+
                 user.setGameCode(2);
-                return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!";
+                return "Делай свою ставку и я загадываю число!\nВаша ставка?";
             }
-            case 2 -> {
+            case 2->{
+
+                user.setTote(parseInt(data));
+                user.setGameCode(3);
+                return "Ставки сделаны, число загадано! Назови число!";
+            }
+            case 3 -> {
+                user.setSteps(user.getSteps()-1);
+                if(user.getSteps()==0){
+                    user.setBank(user.getBank()- user.getTote());
+                    user.setTote(0);
+                    user.setGameCode(0);
+                    return "Вы проиграли! Повезет в следующий раз)\nЗагаданное число: " + user.getTargetNumber()+"\n/help";
+                }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-                    return "Больше";
+                    return "Много";
                 }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-                    return "Меньше";
+                    return "Мало";
                 }
                 if (parseInt(data) == user.getTargetNumber()) {
                     user.setGameCode(0);
+                    user.setBank(user.getBank()+ user.getTote()*2);
+                    user.setSteps(0);
+                    user.setTote(0);
                     return "Победа,Спасибо за игру!Возвращайтесь еще.";
                 }
-                user.setGameCode(3);
+                user.setGameCode(4);
                 return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!";
             }
         }

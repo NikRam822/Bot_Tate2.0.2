@@ -1,6 +1,8 @@
 package com.company.main;
 
+import com.company.database.DBSource;
 import com.company.database.HashMapSource;
+import com.company.database.SQLiteConnection;
 import com.company.telegram.StateMachine;
 import com.company.telegram.TelegramBot;
 import org.telegram.telegrambots.ApiContextInitializer;
@@ -15,7 +17,9 @@ public class Main {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try{
             StateMachine.setHashMap();
-            TelegramBot bot = new TelegramBot(new HashMapSource());
+//            TelegramBot bot = new TelegramBot(new HashMapSource());
+            TelegramBot bot = new TelegramBot(new DBSource(new SQLiteConnection()));
+
             telegramBotsApi.registerBot(bot);
 
         } catch (TelegramApiRequestException e){

@@ -1,22 +1,57 @@
 package com.company.module;
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "users")
 public class User {
-    public static final String BANK = "bank";
-    public static final String GAME_CODE = "gameCode";
-    public static final String TARGET_NUMBER = "targetNumber";
 
-    @DatabaseField(id = true)
+
     private String chatId;
-    @DatabaseField(columnName = BANK)
+
     private int bank;
-    @DatabaseField(columnName = GAME_CODE)
+
     private int gameCode;
-    @DatabaseField(columnName = TARGET_NUMBER)
+
     private Integer targetNumber;
+    private int tote;
+
+    public User() {
+    }
+
+    public User(String chatId, int bank, int gameCode, Integer targetNumber, int tote, int steps) {
+        this.chatId = chatId;
+        this.bank = bank;
+        this.gameCode = gameCode;
+        this.targetNumber = targetNumber;
+        this.tote = tote;
+        this.steps = steps;
+    }
+
+
+    public User(String chatId, int bank, int gameCode, Integer targetNumber) {
+        this.chatId = chatId;
+        this.bank = bank;
+        this.gameCode = gameCode;
+        this.targetNumber = targetNumber;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
+
+    public void setSteps(int steps) {
+        this.steps = steps;
+    }
+
+    private int steps;
+
+
+    public int getTote() {
+        return tote;
+    }
+
+    public void setTote(int tote) {
+        this.tote = tote;
+    }
+
 
     public void setTargetNumber(Integer targetNumber) {
         this.targetNumber = targetNumber;
@@ -26,15 +61,6 @@ public class User {
         return targetNumber;
     }
 
-
-    public User() {}
-
-    public User(String chatId, int bank, int gameCode, Integer targetNumber) {
-        this.chatId = chatId;
-        this.bank = bank;
-        this.gameCode = gameCode;
-        this.targetNumber = targetNumber;
-    }
 
     /**
      * @return

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBSource implements IDataSource{
+public class DBSource implements IDataSource {
 
     private final SQLiteConnection sqLiteConnection;
 
@@ -18,12 +18,14 @@ public class DBSource implements IDataSource{
     @Override
     public void saveUser(User user) {
         try (PreparedStatement statement = sqLiteConnection.getConnection().prepareStatement(
-                "INSERT INTO user(id, bank, game_code, number) " +
-                        "VALUES(?, ?, ?, ?)")) {
+                "INSERT OR REPLACE INTO users(id, bank, game_code, number, tote, steps) " +
+                        "VALUES(?, ?, ?, ?,?,?)")) {
             statement.setObject(1, user.getChatId());
             statement.setObject(2, user.getBank());
             statement.setObject(3, user.getGameCode());
             statement.setObject(4, user.getTargetNumber());
+            statement.setObject(5, user.getTote());
+            statement.setObject(6, user.getSteps());
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -33,11 +35,14 @@ public class DBSource implements IDataSource{
     @Override
     public User getUser(String chatId) {
         try (Statement statement = sqLiteConnection.getConnection().createStatement()) {
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM users WHERE id="+chatId);
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT * FROM users WHERE id='%s'", chatId));
             return new User(resultSet.getString("id"),
                     resultSet.getInt("bank"),
                     resultSet.getInt("game_code"),
-                    resultSet.getInt("number"));
+                    resultSet.getInt("number"),
+                    resultSet.getInt("tote"),
+                    resultSet.getInt("steps"));
+
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
