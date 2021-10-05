@@ -1,37 +1,36 @@
 package com.company.module;
 
-import java.io.Serializable;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-public class User implements Serializable {
-    private static final long serialVersionUID = 4529685098267757690L; // для Сериализации
-    public  String login;
-    public  String password;
-    public  int bank;
+@DatabaseTable(tableName = "users")
+public class User {
+    public static final String BANK = "bank";
 
+    @DatabaseField(id = true)
+    private String chatId;
+    @DatabaseField(columnName = BANK)
+    private int bank;
 
-   /**
+    public User() {
+        // ORMLite needs a no-arg constructor
+    }
+
+    /**
      * Метод для обращения к банку пользователя.
      * @return банк пользователя.
      */
-    public  int getBank(){
+    public int getBank(){
 
         return this.bank;
-    }
-
-   /**
-     * Метод для обращения к паролю пользователя.
-     * @return пароль пользователя
-     */
-    public String getPassword(){
-        return this.password;
     }
 
     /**
      * Метод для обращения к логину пользователя.
      * @return логин пользователя.
      */
-    public String getLogin(){
-        return this.login;
+    public String getChatId(){
+        return this.chatId;
     }
 
     /**
@@ -42,20 +41,8 @@ public class User implements Serializable {
         this.bank = bank;
     }
 
-    /**
-     * Метод для установления логина пользователя.
-     * @param login логин пользователь.
-     */
-    public void setLogin(String login){
-       this.login =login;
-    }
-
-    /**
-     * Метод для учтановление пароля пользователя.
-     * @param password пароль пользователя.
-     */
-    public void setPassword(String password){
-        this.password =password;
+    public void setChatId(String chatId){
+        this.chatId = chatId;
     }
 
 }

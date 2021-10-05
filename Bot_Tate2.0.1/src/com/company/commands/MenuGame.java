@@ -1,7 +1,5 @@
 package com.company.commands;
 
-import com.company.main.Menu;
-
 public class MenuGame extends Command {
     @Override
     public  void execute() {

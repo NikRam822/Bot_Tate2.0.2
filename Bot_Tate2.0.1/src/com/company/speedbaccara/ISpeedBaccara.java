@@ -1,6 +1,4 @@
-package com.company.speedbaccara;
-
-import com.company.module.Card;
+package com.company.magicknumber;
 
 import java.util.Stack;
 
