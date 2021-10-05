@@ -6,14 +6,17 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "users")
 public class User {
     public static final String BANK = "bank";
-    public static final String GAMECODE = "gamecode";
+    public static final String GAME_CODE = "gameCode";
+    public static final String TARGET_NUMBER = "targetNumber";
 
     @DatabaseField(id = true)
     private String chatId;
     @DatabaseField(columnName = BANK)
     private int bank;
-    @DatabaseField(columnName = GAMECODE)
+    @DatabaseField(columnName = GAME_CODE)
     private String gameCode;
+    @DatabaseField(columnName = TARGET_NUMBER)
+    private int targetNumber;
 
     public User() {
         // ORMLite needs a no-arg constructor

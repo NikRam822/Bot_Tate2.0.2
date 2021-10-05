@@ -1,5 +1,7 @@
 package com.company.telegram;
 
+import com.company.database.HashMapSource;
+import com.company.database.IDataSource;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -9,7 +11,13 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class TelegramBot extends TelegramLongPollingBot {
     public static String CHAT_ID = "";
 
+    private final IDataSource hashMap;
     StateMachine stateMachine = new StateMachine();
+
+    public TelegramBot(IDataSource iDataSource) {
+        hashMap = iDataSource;
+    }
+
     public void sendMsg(Message message, String text) {
 
         SendMessage sendMessage = new SendMessage();
@@ -36,7 +44,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
                 CHAT_ID = message.getChatId().toString();
 
-                sendMsg(message,stateMachine.doCommand(command));
+
+                sendMsg(message, stateMachine.doCommand(command));
 
             }
         }
