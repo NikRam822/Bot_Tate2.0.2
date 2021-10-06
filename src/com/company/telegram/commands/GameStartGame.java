@@ -40,6 +40,9 @@ public class GameStartGame extends Command {
                 if (parseInt(data) > 10) {
                     return "С 10> и я могу! Измени ставку н 10<!";
                 }
+                if (parseInt(data) <= 0) {
+                    return "Не дури! Давай нормально!";
+                }
 
                 user.setSteps(Integer.parseInt(data));
 
