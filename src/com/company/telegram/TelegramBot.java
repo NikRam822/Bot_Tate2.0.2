@@ -8,16 +8,33 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+/**
+ * Класс для реализации логики взаимодействия с телеграммом.
+ */
 public class TelegramBot extends TelegramLongPollingBot {
 
-
+    /**
+     * HashMap для храниние пользователй при реализации в realTime.
+     */
     private final IDataSource hashMap;
+
     StateMachine stateMachine = new StateMachine();
 
+    /**
+     * Конструктор для создания обьекта.
+     *
+     * @param iDataSource HachMap для реализации в realTime.
+     */
     public TelegramBot(IDataSource iDataSource) {
         hashMap = iDataSource;
     }
 
+    /**
+     * Метод для отправки сообщений пользователю.
+     *
+     * @param message Информация о пользователе.
+     * @param text    Сообщение пользователя.
+     */
     public void sendMsg(Message message, String text) {
 
         SendMessage sendMessage = new SendMessage();
@@ -32,7 +49,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-
+    /**
+     * Метод обработки сообщений из Тг.
+     *
+     * @param update Сообщение от пользователя из Тг.
+     */
     public void onUpdateReceived(Update update) {//метод для приема сообщений
         if (update.hasMessage()) {
             Message message = update.getMessage();
@@ -56,10 +77,20 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
+    /**
+     * Геттер имени Бота.
+     *
+     * @return Имя бота.
+     */
     public String getBotUsername() {
         return "tote_project_bot";
     }
 
+    /**
+     * Геттер токена бота из Тг.
+     *
+     * @return уникальный токен бота.
+     */
     public String getBotToken() {
         return "1649189668:AAGDg8CYBi7FRQfzK34zWtAQub_WlsKK2Z4";
     }

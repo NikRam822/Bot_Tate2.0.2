@@ -1,7 +1,5 @@
 package com.company.magicknumber;
 
-import com.company.module.Exodus;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;

@@ -1,27 +1,30 @@
 package com.company.module;
 
-import java.util.Map;
 
+/**
+ * Класс для описания сущности Visualizer.
+ */
 public class Visualizer {
-    /**
-     *
-     */
-    private static final String MENU_EXIT ="Возвращайтесь еще!\n /play - начать игру.\n/information - получить информацию о работе бота.";
-    /**
-     * Класс для описания сущности GameVisualizer.
-     */
 
+    /**
+     * Прощание бота.
+     */
+    private static final String MENU_EXIT = "Возвращайтесь еще!\n /play - начать игру.\n/information - получить информацию о работе бота.";
+
+    /**
+     * Вспомогательное меню пользователя.
+     */
     private static final String MENU_HELP =
             """
                     Опции:
                       /play - начать игру.
                       /information - получить информацию о работе бота.
                     """;
+
     /**
      * Информация о работе бота.
      */
     private static final String INFORMATION = "Игровой бот Tote. Бот включает в себя игры: MagickNumber.\nЭтот бот поможет скоротать время и разнообразить досуг!\n Напиши /play , чтобы начать игру";
-
 
 
     /**
@@ -32,25 +35,14 @@ public class Visualizer {
     /**
      * Приветсвие в игре.
      */
-    private static final String GREETING_SPEED_BACCARA = "Добро пожаловать в игру Magick Number!";
+    private static final String GREETING_MAGICK_NUMBER = "Добро пожаловать в игру Magick Number!";
 
     /**
      * Опции.
      */
-    private static final String INSTRUCTION_SPEED_BACCARA = "Опции:\n/startGame - начать игру\n/instrumentation - инстуркция к игре\n/exit - выход";
+    private static final String INSTRUCTION_MAGICK_NUMBER = "Опции:\n/startGame - начать игру\n/instrumentation - инстуркция к игре\n/exit - выход";
 
-    /**
-     * Ставки и коэффиценты в игре.
-     */
-    private static final String RATE_ODDS = """
 
-            Делайте Ваши ставки!
-                1. Число будет угадано с 1-го раза x100.
-                2. Число будет угадано со 2-го , или с 3-го раза x10.
-                
-                               Для выхода напишите /exit
-            Укажите номер исхода и ставку  через пробел (Пример: 4 5000)!
-            """;
     /**
      * Инструкция к игре.
      */
@@ -61,12 +53,8 @@ public class Visualizer {
                 После каждого предположения я буду говорить горячо,или холодно.
                 Ну что, сыграем ?
                 Коэффициенты ставок:
-                1. Выиграет раздачу - Банкир: x2.00
-                2. Выиграет разадчу - Никто: x21.00
-                3. Выиграет раздачу - Игрок: x2.00
-                4. Будет натуральная победа - Банкир: x10.00
-                5. Будет натуральная победа - Игрок: x10.00
-                В случае ничьи ставки на победу Игрока и Банкира возвращаются с коэфициентом x1.00.
+                Угадываешь - получаешь в 2 раза больше!
+                Не угадываешь - теряешь ставку :(!
                 
                 /startGame - начать игру
                 /exit - выход
@@ -74,52 +62,29 @@ public class Visualizer {
 
     /**
      * Метод для визуализации инструкции пользователю.
+     *
+     * @return Привествие и инструкция к игре.
      */
     public static String getInstructionGreeting() {
 
-        return GREETING_SPEED_BACCARA +"\n"+ INSTRUCTION_SPEED_BACCARA ;
+        return GREETING_MAGICK_NUMBER + "\n" + INSTRUCTION_MAGICK_NUMBER;
     }
 
-    /**
-     * Метод для визуализации возможных ставок.
-     **/
-    public static String getBet() {
-        System.out.print(RATE_ODDS);
-        return RATE_ODDS;
-    }
 
     /**
-     * Метод для визуализации правил игры SpeedBaccara.
+     * Метод для визуализации правил игры MagickNumber
+     *
+     * @return Инструкция по общему функционалу и ставкам.
      */
     public static String getHowPlay() {
         return MANUAL;
     }
 
-    /**
-     * Метод для визуализации раздачи.
-     */
-    public static void getDistributionNumber(int numberGame) {
-        System.out.println("\nРаздача №" + numberGame + ".");
-    }
-
-    /**
-     * Метод для визуализации команды меню.
-     */
-    public static void getMenuCommand(Map<String, String> menuCommand, String command) {
-        System.out.println(menuCommand.get(command));
-    }
-
-    /**
-     * Метод для визуализации команды игры.
-     */
-    public static void getMenuGame(Map<String, String> gameCommand, String command) {
-        System.out.println(gameCommand.get(command));
-    }
 
     /**
      * Метод для визуализации команд бота.
      *
-     * @return
+     * @return Приветствие игры.
      */
     public static String getHello() {
         return GREETING_BOT;
@@ -128,25 +93,28 @@ public class Visualizer {
 
     /**
      * Метод для визуализации информации о работе бота.
+     *
+     * @return Информация о боте.
      */
     public static String getInformation() {
         return INFORMATION;
     }
 
     /**
-     * Метод для визуализации опций команд авторизации.
+     * Метод для визуализации опций команд.
      *
-     * @return
+     * @return Вспомогательное меню.
      */
     public static String getMenuHelp() {
         return MENU_HELP;
     }
 
     /**
+     * Метод для визуализации выхода игры.
      *
-     * @return
+     * @return Информация о выходе из игры.
      */
-    public static String getMenuExit(){
+    public static String getMenuExit() {
         return MENU_EXIT;
     }
 }
