@@ -19,7 +19,7 @@ public class MenuStart extends Command {
      */
     @Override
     public String execute(String data, User user) {
-        return Visualizer.getHello();
+        return Visualizer.GREETING_BOT;
     }
 }
 

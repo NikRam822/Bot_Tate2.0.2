@@ -17,6 +17,6 @@ public class GameInstruction extends Command {
      */
     @Override
     public String execute(String data, User user) {
-        return Visualizer.getHowPlay();
+        return Visualizer.MANUAL;
     }
 }

@@ -19,6 +19,8 @@ public class StateMachine {
      * Сеттер комманд в HashMap.
      */
     public static void setHashMap() {
+        menuCommand.put("/addBank", new GameAddBank());
+        menuCommand.put("/getBank", new GameGetBank());
         menuCommand.put("/startGame", new GameStartGame());
         menuCommand.put("/exit", new GameExit());
         menuCommand.put("/instrumentation", new GameInstruction());
@@ -38,7 +40,7 @@ public class StateMachine {
 
         try {
             ICommand iCommand = menuCommand.get(command);
-            if (user.getGameCode() != 0 & !command.equals("/exit")) {
+            if (user.getGameCode() != 0 && !command.equals("/exit")) {
                 return new GameStartGame().execute(command, user);
             }
             return iCommand.execute(command, user);

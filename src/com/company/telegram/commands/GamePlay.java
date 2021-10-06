@@ -17,6 +17,6 @@ public class GamePlay extends Command {
      */
     @Override
     public String execute(String data, User user) {
-        return Visualizer.getInstructionGreeting();
+        return Visualizer.GREETING_MAGICK_NUMBER  + Visualizer.INSTRUCTION_MAGICK_NUMBER;
     }
 }
