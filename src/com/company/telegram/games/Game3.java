@@ -6,9 +6,18 @@ import com.company.module.Visualizer;
 
 import static java.lang.Integer.parseInt;
 
-
+/**
+ * Класс для реализации основного процесса игры.
+ */
 public class Game3 extends Game {
 
+    /**
+     * Метод реализации основной игровой логики.
+     *
+     * @param data Текст, введенный пользователем.
+     * @param user Пользователь.
+     * @return Игровые данные. Ответ пользователю.
+     */
     @Override
     public String execute(String data, User user) {
         user.setSteps(user.getSteps() - 1);

@@ -66,10 +66,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     user = hashMap.getUser(message.getChatId().toString());
                 }
                 String command = message.getText();
-
 //                sendMsg(message,message.getChatId().toString());
-
-
                 sendMsg(message, stateMachine.doCommand(command, user));
                 hashMap.saveUser(user);
 

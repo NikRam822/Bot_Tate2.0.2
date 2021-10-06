@@ -7,6 +7,7 @@ import com.company.module.Visualizer;
  * Класс реализации программной логики команды /instruction.
  */
 public class GameInstruction extends Command {
+
     /**
      * Метод реализации програмной логики команды /instruction.
      *
