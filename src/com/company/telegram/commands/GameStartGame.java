@@ -35,7 +35,7 @@ public class GameStartGame extends Command {
                 return "Делай свою ставку и я загадываю число!\nВаша ставка?";
             }
             case 2->{
-
+                if(parseInt(data)> user.getBank()){return "У вас нет такой суммы! Измените ставку!";}
                 user.setTote(parseInt(data));
                 user.setGameCode(3);
                 return "Ставки сделаны, число загадано! Назови число!";
@@ -46,7 +46,7 @@ public class GameStartGame extends Command {
                     user.setBank(user.getBank()- user.getTote());
                     user.setTote(0);
                     user.setGameCode(0);
-                    return "Вы проиграли! Повезет в следующий раз)\nЗагаданное число: " + user.getTargetNumber()+"\n/help";
+                    return "Вы проиграли! Повезет в следующий раз)\n/help\nЗагаданное число: " + user.getTargetNumber();
                 }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
                     return "Много";
@@ -59,7 +59,7 @@ public class GameStartGame extends Command {
                     user.setBank(user.getBank()+ user.getTote()*2);
                     user.setSteps(0);
                     user.setTote(0);
-                    return "Победа,Спасибо за игру!Возвращайтесь еще.";
+                    return "Победа,Спасибо за игру!Возвращайтесь еще.\n/help\nВаш Банк: "+user.getBank() ;
                 }
                 user.setGameCode(4);
                 return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!";

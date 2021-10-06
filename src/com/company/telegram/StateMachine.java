@@ -29,7 +29,7 @@ public class StateMachine {
     public String doCommand(String command, User user) {
         try {
             ICommand iCommand = menuCommand.get(command);
-            if(user.getGameCode()!=0){return new GameStartGame().execute(command,user);}
+            if(user.getGameCode()!=0 & !command.equals("/exit")){return new GameStartGame().execute(command,user);}
             return iCommand.execute(command,user);
         } catch (Exception exception) {
             return "Не понял команду!";
