@@ -1,6 +1,7 @@
 package com.company.telegram.commands;
 
 import com.company.module.User;
+import com.company.module.Visualizer;
 import com.company.telegram.games.*;
 
 
@@ -34,28 +35,31 @@ public class GameStartGame extends Command {
                 Random rn = new Random();
                 user.setTargetNumber(rn.nextInt(100) + 1);
                 user.setGameCode(1);
-                return "Ну что? Поехали!\nС какого раза сможете угадать число?\nВаш Банк: " + user.getBank();
+                return Visualizer.getGameStart() + user.getBank()+ Visualizer.getGameExit();
             }
             case 1 -> {
                 if (parseInt(data) > 10) {
-                    return "С 10> и я могу! Измени ставку н 10<!";
+                    return "С 10> и я могу! Измени ставку н 10<!" + Visualizer.getGameExit();
                 }
                 if (parseInt(data) <= 0) {
-                    return "Не дури! Давай нормально!";
+                    return "Какая интересная ставка...! Напиши положительное число!" + Visualizer.getGameExit();
                 }
 
                 user.setSteps(Integer.parseInt(data));
 
                 user.setGameCode(2);
-                return "Делай свою ставку и я загадываю число!\nВаша ставка?";
+                return "Делай свою ставку и я загадываю число!\nВаша ставка?" + Visualizer.getGameExit();
             }
             case 2 -> {
                 if (parseInt(data) > user.getBank()) {
-                    return "У вас нет такой суммы! Измените ставку!";
+                    return "У вас нет такой суммы! Измените ставку!"+ Visualizer.getGameExit();
+                }
+                if (parseInt(data) < 0) {
+                    return "Cтавка не может быть отрицательной! Измените ставку!"+ Visualizer.getGameExit();
                 }
                 user.setTote(parseInt(data));
                 user.setGameCode(3);
-                return "Ставки сделаны, число загадано! Назови число!";
+                return "Ставки сделаны, число загадано! Назови число!"+ Visualizer.getGameExit();
             }
             case 3 -> {
                 user.setSteps(user.getSteps() - 1);
@@ -63,13 +67,13 @@ public class GameStartGame extends Command {
                     user.setBank(user.getBank() - user.getTote());
                     user.setTote(0);
                     user.setGameCode(0);
-                    return "Вы проиграли! Повезет в следующий раз)\n/help\nЗагаданное число: " + user.getTargetNumber();
+                    return "Вы проиграли! Повезет в следующий раз)\n/help\nЗагаданное число: " + user.getTargetNumber() + Visualizer.getGameExit();
                 }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-                    return "Много";
+                    return "Много\nОсталось попыток: " + user.getSteps() + Visualizer.getGameExit();
                 }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-                    return "Мало";
+                    return "Мало\nОсталось попыток: " + user.getSteps()+ Visualizer.getGameExit();
                 }
                 if (parseInt(data) == user.getTargetNumber()) {
                     user.setGameCode(0);
@@ -79,7 +83,7 @@ public class GameStartGame extends Command {
                     return "Победа,Спасибо за игру!Возвращайтесь еще.\n/help\nВаш Банк: " + user.getBank();
                 }
                 user.setGameCode(4);
-                return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!";
+                return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!"+ Visualizer.getGameExit();
             }
         }
 
