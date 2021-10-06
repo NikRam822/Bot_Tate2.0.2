@@ -18,7 +18,7 @@ public class GameStartGame extends Command {
     /**
      * HashMap для реализации патерна интрефес-абстрктный класс, для описния логики команд.
      */
-    static Map<String, Game> gameCommand = new HashMap<>();
+//    static Map<String, Game> gameCommand = new HashMap<>();
 
     /**
      * Метод реализации програмной логики команды /startGame.
@@ -39,27 +39,27 @@ public class GameStartGame extends Command {
             }
             case 1 -> {
                 if (parseInt(data) > 10) {
-                    return "С 10> и я могу! Измени ставку н 10<!" + Visualizer.getGameExit();
+                    return Visualizer.getErrorStepsMore() + Visualizer.getGameExit();
                 }
                 if (parseInt(data) <= 0) {
-                    return "Какая интересная ставка...! Напиши положительное число!" + Visualizer.getGameExit();
+                    return Visualizer.getErrorStepsNoMore() + Visualizer.getGameExit();
                 }
 
                 user.setSteps(Integer.parseInt(data));
 
                 user.setGameCode(2);
-                return "Делай свою ставку и я загадываю число!\nВаша ставка?" + Visualizer.getGameExit();
+                return Visualizer.getDoTote() + Visualizer.getGameExit();
             }
             case 2 -> {
                 if (parseInt(data) > user.getBank()) {
-                    return "У вас нет такой суммы! Измените ставку!"+ Visualizer.getGameExit();
+                    return Visualizer.getErrorToteMore() + Visualizer.getGameExit();
                 }
                 if (parseInt(data) < 0) {
-                    return "Cтавка не может быть отрицательной! Измените ставку!"+ Visualizer.getGameExit();
+                    return Visualizer.getErrorToteNoMore()+ Visualizer.getGameExit();
                 }
                 user.setTote(parseInt(data));
                 user.setGameCode(3);
-                return "Ставки сделаны, число загадано! Назови число!"+ Visualizer.getGameExit();
+                return Visualizer.getGoodToteStartGame()+ Visualizer.getGameExit();
             }
             case 3 -> {
                 user.setSteps(user.getSteps() - 1);
@@ -67,23 +67,23 @@ public class GameStartGame extends Command {
                     user.setBank(user.getBank() - user.getTote());
                     user.setTote(0);
                     user.setGameCode(0);
-                    return "Вы проиграли! Повезет в следующий раз)\n/help\nЗагаданное число: " + user.getTargetNumber() + Visualizer.getGameExit();
+                    return Visualizer.getLoser() + user.getTargetNumber() + Visualizer.getGameExit();
                 }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-                    return "Много\nОсталось попыток: " + user.getSteps() + Visualizer.getGameExit();
+                    return Visualizer.getMore() + user.getSteps() + Visualizer.getGameExit();
                 }
                 if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-                    return "Мало\nОсталось попыток: " + user.getSteps()+ Visualizer.getGameExit();
+                    return Visualizer.getNoMore() + user.getSteps()+ Visualizer.getGameExit();
                 }
                 if (parseInt(data) == user.getTargetNumber()) {
                     user.setGameCode(0);
                     user.setBank(user.getBank() + user.getTote() * 2);
                     user.setSteps(0);
                     user.setTote(0);
-                    return "Победа,Спасибо за игру!Возвращайтесь еще.\n/help\nВаш Банк: " + user.getBank();
+                    return Visualizer.getWin() + user.getBank();
                 }
                 user.setGameCode(4);
-                return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!"+ Visualizer.getGameExit();
+                return Visualizer.getTryCreate()+ Visualizer.getGameExit();
             }
         }
 
@@ -108,18 +108,18 @@ public class GameStartGame extends Command {
 
     //}
 
-    /**
-     * Метод для выполнения команд в игре.
-     *
-     * @param gameCode Код состояние пользователя в игре.
-     * @return Ответ пользователю.
-     */
-    public String doCommandGame(String gameCode) {
-        try {
-            IGame iGame = gameCommand.get(gameCode);
-            return iGame.execute();
-        } catch (Exception exception) {
-            return "Не понял команду!";
-        }
-    }
+//    /**
+//     * Метод для выполнения команд в игре.
+//     *
+//     * @param gameCode Код состояние пользователя в игре.
+//     * @return Ответ пользователю.
+//     */
+//    public String doCommandGame(String gameCode) {
+//        try {
+//            IGame iGame = gameCommand.get(gameCode);
+//            return iGame.execute();
+//        } catch (Exception exception) {
+//            return "Не понял команду!";
+//        }
+//    }
 }

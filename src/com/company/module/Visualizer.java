@@ -259,7 +259,7 @@ public class Visualizer {
      *
      * @return Информация о проигрыше.
      */
-    public static String getLOSER() {
+    public static String getLoser() {
         return LOSER;
     }
 
@@ -268,7 +268,7 @@ public class Visualizer {
      *
      * @return Сообщение о слишком большом числе.
      */
-    public static String getMORE() {
+    public static String getMore() {
         return MORE;
     }
 
@@ -286,7 +286,7 @@ public class Visualizer {
      *
      * @return Сообщение о выигрыше.
      */
-    public static String getWIN() {
+    public static String getWin() {
         return WIN;
     }
 
