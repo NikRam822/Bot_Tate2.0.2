@@ -1,21 +1,56 @@
 package com.company.module;
 
-
+/**
+ * Класс, описывающий сущность Пользователь
+ */
 public class User {
 
-
+    /**
+     * Уникальный индентификатор.
+     */
     private String chatId;
 
+    /**
+     * Банк пользователя.
+     */
     private int bank;
 
+    /**
+     * Игровой код, для конторля состояния пользователя в игре.
+     */
     private int gameCode;
 
+    /**
+     * Загаданное ботом число.
+     */
     private Integer targetNumber;
+
+    /**
+     * Ставка пользователя.
+     */
     private int tote;
 
+    /**
+     * Кол-во попыток на уго=адывания числа.
+     */
+    private int steps;
+
+    /**
+     * Конструктор по умолчанию.
+     */
     public User() {
     }
 
+    /**
+     * Полный конструктор для создания пользователя.
+     *
+     * @param chatId       Уникальный идентификатор.
+     * @param bank         Банк пользователя.
+     * @param gameCode     Игровой код.
+     * @param targetNumber Загаданное число.
+     * @param tote         Ставка пользователя.
+     * @param steps        Кол-во попыток на угадывания числа.
+     */
     public User(String chatId, int bank, int gameCode, Integer targetNumber, int tote, int steps) {
         this.chatId = chatId;
         this.bank = bank;
@@ -25,7 +60,14 @@ public class User {
         this.steps = steps;
     }
 
-
+    /**
+     * Частичный конструктор для создания пользователя.
+     *
+     * @param chatId       Уникальный идентификатор.
+     * @param bank         Банк пользователя.
+     * @param gameCode     Игровой код.
+     * @param targetNumber Загаданное число.
+     */
     public User(String chatId, int bank, int gameCode, Integer targetNumber) {
         this.chatId = chatId;
         this.bank = bank;
@@ -33,44 +75,75 @@ public class User {
         this.targetNumber = targetNumber;
     }
 
+    /**
+     * Геттер для доступа к кол-ву попыток на угадыания числа.
+     *
+     * @return Кол-во попыток на угадыания числа.
+     */
     public int getSteps() {
         return steps;
     }
 
+    /**
+     * Сеттер для установления кол-ва попыток на угадывание.
+     *
+     * @param steps Кол-во попыток на угадыания числа.
+     */
     public void setSteps(int steps) {
         this.steps = steps;
     }
 
-    private int steps;
 
-
+    /**
+     * Геттер для получения ставки.
+     *
+     * @return Ставка пользователя.
+     */
     public int getTote() {
         return tote;
     }
 
+    /**
+     * Сеттер для установления ставки.
+     *
+     * @param tote Ставка пользователя.
+     */
     public void setTote(int tote) {
         this.tote = tote;
     }
 
-
+    /**
+     * Сеттер для установления загаданного ботом числа.
+     *
+     * @param targetNumber Загаданное ботом число.
+     */
     public void setTargetNumber(Integer targetNumber) {
         this.targetNumber = targetNumber;
     }
 
+    /**
+     * Геттер для доступа к загадонному ботом числу.
+     *
+     * @return Загаданное ботом число.
+     */
     public Integer getTargetNumber() {
         return targetNumber;
     }
 
 
     /**
-     * @return
+     * Геттер для доступа к игровому коду пользователя.
+     *
+     * @return Игровой код пользователя для контроля состояния пользователя в игре.
      */
     public int getGameCode() {
         return gameCode;
     }
 
     /**
-     * @param gameCode
+     * Сеттер для установления игрвого кода пользователя.
+     *
+     * @param gameCode Игровой код пользователя для контроля состояния пользователя в игре.
      */
     public void setGameCode(int gameCode) {
         this.gameCode = gameCode;
@@ -88,16 +161,16 @@ public class User {
     }
 
     /**
-     * Метод для обращения к логину пользователя.
+     * Геттер для обращения к уникальному идентификатору пользоватля.
      *
-     * @return логин пользователя.
+     * @return Уникальный идентификатор пользоватля.
      */
     public String getChatId() {
         return this.chatId;
     }
 
     /**
-     * Метод для установления банка.
+     * Сеттер для установления банка.
      *
      * @param bank банк пользователя.
      */
@@ -106,7 +179,9 @@ public class User {
     }
 
     /**
-     * @param chatId
+     * Сеттер для установления уникального идентификатора доступа.
+     *
+     * @param chatId Уникальный идентификатор пользоватля.
      */
     public void setChatId(String chatId) {
         this.chatId = chatId;

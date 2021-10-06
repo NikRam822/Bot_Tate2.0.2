@@ -1,14 +1,28 @@
 package com.company.telegram.games;
 
 
-import com.company.telegram.commands.GameStartGame;
+import com.company.module.User;
+import com.company.module.Visualizer;
 
+import java.util.Random;
+
+/**
+ * Класс реализации начальной стадии игры.
+ */
 public class Game0 extends Game {
-    String gameCode = "g1";
+
+    /**
+     * Метод, реализующий логику начальной стадии игры.
+     *
+     * @param data Текст, введенный пользователем.
+     * @param user Пользователь.
+     * @return Приветсвие в игре и банк пользователя.
+     */
     @Override
-    public String execute() {
-//        GameStartGame gameStartGame = new GameStartGame();
-//        gameStartGame.gameCode="g1";
-        return "Ну что? Поехали!\nДелай свою ставку и я загадываю число!";
+    public String execute(String data, User user) {
+        Random rn = new Random();
+        user.setTargetNumber(rn.nextInt(100) + 1);
+        user.setGameCode(1);
+        return Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT;
     }
 }
