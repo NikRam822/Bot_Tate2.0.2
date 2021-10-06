@@ -6,11 +6,17 @@ import com.company.telegram.commands.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс для реализации програмной логики команд.
+ */
 public class StateMachine {
+    /**
+     * HashMap комманд.
+     */
     static Map<String, Command> menuCommand = new HashMap<>();
 
     /**
-     *
+     * Сеттер комманд в HashMap.
      */
     public static void setHashMap() {
         menuCommand.put("/startGame", new GameStartGame());
@@ -23,14 +29,18 @@ public class StateMachine {
     }
 
     /**
-     * @param command
-     * @return
+     * Метод для выполнения команд меню.
+     *
+     * @param command Текст,введенный пользователем.
+     * @return Ответ пользователю.
      */
     public String doCommand(String command, User user) {
         try {
             ICommand iCommand = menuCommand.get(command);
-            if(user.getGameCode()!=0 & !command.equals("/exit")){return new GameStartGame().execute(command,user);}
-            return iCommand.execute(command,user);
+            if (user.getGameCode() != 0 & !command.equals("/exit")) {
+                return new GameStartGame().execute(command, user);
+            }
+            return iCommand.execute(command, user);
         } catch (Exception exception) {
             return "Не понял команду!";
         }

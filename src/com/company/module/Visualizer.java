@@ -1,27 +1,30 @@
 package com.company.module;
 
-import java.util.Map;
 
+/**
+ * Класс для описания сущности Visualizer.
+ */
 public class Visualizer {
-    /**
-     *
-     */
-    private static final String MENU_EXIT ="Возвращайтесь еще!\n /play - начать игру.\n/information - получить информацию о работе бота.";
-    /**
-     * Класс для описания сущности GameVisualizer.
-     */
 
+    /**
+     * Прощание бота.
+     */
+    private static final String MENU_EXIT = "Возвращайтесь еще!\n /play - начать игру.\n/information - получить информацию о работе бота.";
+
+    /**
+     * Вспомогательное меню пользователя.
+     */
     private static final String MENU_HELP =
             """
                     Опции:
                       /play - начать игру.
                       /information - получить информацию о работе бота.
                     """;
+
     /**
      * Информация о работе бота.
      */
     private static final String INFORMATION = "Игровой бот Tote. Бот включает в себя игры: MagickNumber.\nЭтот бот поможет скоротать время и разнообразить досуг!\n Напиши /play , чтобы начать игру";
-
 
 
     /**
@@ -59,46 +62,29 @@ public class Visualizer {
 
     /**
      * Метод для визуализации инструкции пользователю.
+     *
+     * @return Привествие и инструкция к игре.
      */
     public static String getInstructionGreeting() {
 
-        return GREETING_MAGICK_NUMBER +"\n"+ INSTRUCTION_MAGICK_NUMBER;
+        return GREETING_MAGICK_NUMBER + "\n" + INSTRUCTION_MAGICK_NUMBER;
     }
 
 
-
     /**
-     * Метод для визуализации правил игры SpeedBaccara.
+     * Метод для визуализации правил игры MagickNumber
+     *
+     * @return Инструкция по общему функционалу и ставкам.
      */
     public static String getHowPlay() {
         return MANUAL;
     }
 
-    /**
-     * Метод для визуализации раздачи.
-     */
-    public static void getDistributionNumber(int numberGame) {
-        System.out.println("\nРаздача №" + numberGame + ".");
-    }
-
-    /**
-     * Метод для визуализации команды меню.
-     */
-    public static void getMenuCommand(Map<String, String> menuCommand, String command) {
-        System.out.println(menuCommand.get(command));
-    }
-
-    /**
-     * Метод для визуализации команды игры.
-     */
-    public static void getMenuGame(Map<String, String> gameCommand, String command) {
-        System.out.println(gameCommand.get(command));
-    }
 
     /**
      * Метод для визуализации команд бота.
      *
-     * @return
+     * @return Приветствие игры.
      */
     public static String getHello() {
         return GREETING_BOT;
@@ -107,25 +93,28 @@ public class Visualizer {
 
     /**
      * Метод для визуализации информации о работе бота.
+     *
+     * @return Информация о боте.
      */
     public static String getInformation() {
         return INFORMATION;
     }
 
     /**
-     * Метод для визуализации опций команд авторизации.
+     * Метод для визуализации опций команд.
      *
-     * @return
+     * @return Вспомогательное меню.
      */
     public static String getMenuHelp() {
         return MENU_HELP;
     }
 
     /**
+     * Метод для визуализации выхода игры.
      *
-     * @return
+     * @return Информация о выходе из игры.
      */
-    public static String getMenuExit(){
+    public static String getMenuExit() {
         return MENU_EXIT;
     }
 }

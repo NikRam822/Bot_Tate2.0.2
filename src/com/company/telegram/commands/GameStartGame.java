@@ -10,10 +10,22 @@ import java.util.Random;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * Класс реализации программной логики команды /startGame.
+ */
 public class GameStartGame extends Command {
-
+    /**
+     * HashMap для реализации патерна интрефес-абстрктный класс, для описния логики команд.
+     */
     static Map<String, Game> gameCommand = new HashMap<>();
 
+    /**
+     * Метод реализации програмной логики команды /startGame.
+     *
+     * @param data Текст,введнный пользователем.
+     * @param user Пользователь.
+     * @return Ответ пользовтелю.
+     */
     @Override
     public String execute(String data, User user) {
 
@@ -25,7 +37,7 @@ public class GameStartGame extends Command {
                 return "Ну что? Поехали!\nС какого раза сможете угадать число?\nВаш Банк: " + user.getBank();
             }
             case 1 -> {
-                if(parseInt(data)>10){
+                if (parseInt(data) > 10) {
                     return "С 10> и я могу! Измени ставку н 10<!";
                 }
 
@@ -34,16 +46,18 @@ public class GameStartGame extends Command {
                 user.setGameCode(2);
                 return "Делай свою ставку и я загадываю число!\nВаша ставка?";
             }
-            case 2->{
-                if(parseInt(data)> user.getBank()){return "У вас нет такой суммы! Измените ставку!";}
+            case 2 -> {
+                if (parseInt(data) > user.getBank()) {
+                    return "У вас нет такой суммы! Измените ставку!";
+                }
                 user.setTote(parseInt(data));
                 user.setGameCode(3);
                 return "Ставки сделаны, число загадано! Назови число!";
             }
             case 3 -> {
-                user.setSteps(user.getSteps()-1);
-                if(user.getSteps()==0){
-                    user.setBank(user.getBank()- user.getTote());
+                user.setSteps(user.getSteps() - 1);
+                if (user.getSteps() == 0) {
+                    user.setBank(user.getBank() - user.getTote());
                     user.setTote(0);
                     user.setGameCode(0);
                     return "Вы проиграли! Повезет в следующий раз)\n/help\nЗагаданное число: " + user.getTargetNumber();
@@ -56,10 +70,10 @@ public class GameStartGame extends Command {
                 }
                 if (parseInt(data) == user.getTargetNumber()) {
                     user.setGameCode(0);
-                    user.setBank(user.getBank()+ user.getTote()*2);
+                    user.setBank(user.getBank() + user.getTote() * 2);
                     user.setSteps(0);
                     user.setTote(0);
-                    return "Победа,Спасибо за игру!Возвращайтесь еще.\n/help\nВаш Банк: "+user.getBank() ;
+                    return "Победа,Спасибо за игру!Возвращайтесь еще.\n/help\nВаш Банк: " + user.getBank();
                 }
                 user.setGameCode(4);
                 return "Ставки сделаны! Ну,что же ,начнем!\nПопробуй угадать число!";
@@ -87,6 +101,12 @@ public class GameStartGame extends Command {
 
     //}
 
+    /**
+     * Метод для выполнения команд в игре.
+     *
+     * @param gameCode Код состояние пользователя в игре.
+     * @return Ответ пользователю.
+     */
     public String doCommandGame(String gameCode) {
         try {
             IGame iGame = gameCommand.get(gameCode);

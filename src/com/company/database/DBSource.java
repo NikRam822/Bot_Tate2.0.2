@@ -7,14 +7,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Класс для создания Бд.
+ */
 public class DBSource implements IDataSource {
-
+    /**
+     * Подключение к бд.
+     */
     private final SQLiteConnection sqLiteConnection;
 
+    /**
+     * Конструктор класса.
+     *
+     * @param sqLiteConnection подключение к бд
+     * @throws SQLException возможные ошибки при подключении.
+     */
     public DBSource(SQLiteConnection sqLiteConnection) throws SQLException {
         this.sqLiteConnection = new SQLiteConnection();
     }
 
+    /**
+     * Сохранение ползователя в бд.
+     *
+     * @param user Пользователь.
+     */
     @Override
     public void saveUser(User user) {
         try (PreparedStatement statement = sqLiteConnection.getConnection().prepareStatement(
@@ -32,6 +48,12 @@ public class DBSource implements IDataSource {
         }
     }
 
+    /**
+     * Геттер для доступа к пользователю из бд.
+     *
+     * @param chatId Уникальный идентификатор чата.
+     * @return Пользователь(id, банк пользователя, игровой код, загаданное число, ставка, кол - во попвыток для угадывания числа)
+     */
     @Override
     public User getUser(String chatId) {
         try (Statement statement = sqLiteConnection.getConnection().createStatement()) {
