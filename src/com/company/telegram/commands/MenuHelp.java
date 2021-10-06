@@ -7,6 +7,7 @@ import com.company.module.Visualizer;
  * Класс реализации программной логики команды /help.
  */
 public class MenuHelp extends Command {
+
     /**
      * Метод реализации програмной логики команды /help.
      *

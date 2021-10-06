@@ -35,6 +35,7 @@ public class StateMachine {
      * @return Ответ пользователю.
      */
     public String doCommand(String command, User user) {
+
         try {
             ICommand iCommand = menuCommand.get(command);
             if (user.getGameCode() != 0 & !command.equals("/exit")) {

@@ -181,7 +181,7 @@ public class User {
     /**
      * Сеттер для установления уникального идентификатора доступа.
      *
-     * @param chatId
+     * @param chatId Уникальный идентификатор пользоватля.
      */
     public void setChatId(String chatId) {
         this.chatId = chatId;
