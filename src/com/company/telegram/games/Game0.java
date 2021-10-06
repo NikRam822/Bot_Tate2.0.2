@@ -23,6 +23,6 @@ public class Game0 extends Game {
         Random rn = new Random();
         user.setTargetNumber(rn.nextInt(100) + 1);
         user.setGameCode(1);
-        return Visualizer.getGameStart() + user.getBank() + Visualizer.getGameExit();
+        return Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT;
     }
 }

@@ -14,11 +14,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class TelegramBot extends TelegramLongPollingBot {
 
     /**
-     * HashMap для храниние пользователй при реализации в realTime.
+     * DataSource для храниние пользователй при реализации в realTime.
      */
-    private final IDataSource hashMap;
+    private final IDataSource dataSource;
 
-    StateMachine stateMachine = new StateMachine();
+    private final StateMachine stateMachine = new StateMachine();
 
     /**
      * Конструктор для создания обьекта.
@@ -26,7 +26,7 @@ public class TelegramBot extends TelegramLongPollingBot {
      * @param iDataSource HachMap для реализации в realTime.
      */
     public TelegramBot(IDataSource iDataSource) {
-        hashMap = iDataSource;
+        dataSource = iDataSource;
     }
 
     /**
@@ -59,16 +59,16 @@ public class TelegramBot extends TelegramLongPollingBot {
             Message message = update.getMessage();
             if (message.hasText()) {
                 User user;
-                if (hashMap.getUser(message.getChatId().toString()) == null) {
+                if (dataSource.getUser(message.getChatId().toString()) == null) {
                     user = new User(message.getChatId().toString(), 10000, 0, null);
-                    hashMap.saveUser(user);
+                    dataSource.saveUser(user);
                 } else {
-                    user = hashMap.getUser(message.getChatId().toString());
+                    user = dataSource.getUser(message.getChatId().toString());
                 }
                 String command = message.getText();
 //                sendMsg(message,message.getChatId().toString());
                 sendMsg(message, stateMachine.doCommand(command, user));
-                hashMap.saveUser(user);
+                dataSource.saveUser(user);
 
             }
         }

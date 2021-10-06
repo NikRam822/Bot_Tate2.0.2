@@ -17,6 +17,6 @@ public class MenuInformation extends Command {
      */
     @Override
     public String execute(String data, User user) {
-        return Visualizer.getInformation();
+        return Visualizer.INFORMATION;
     }
 }

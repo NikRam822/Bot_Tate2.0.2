@@ -25,22 +25,22 @@ public class Game3 extends Game {
             user.setBank(user.getBank() - user.getTote());
             user.setTote(0);
             user.setGameCode(0);
-            return Visualizer.getLoser() + user.getTargetNumber() + Visualizer.getGameExit();
+            return Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT;
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-            return Visualizer.getMore() + user.getSteps() + Visualizer.getGameExit();
+            return Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT;
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-            return Visualizer.getNoMore() + user.getSteps() + Visualizer.getGameExit();
+            return Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT;
         }
         if (parseInt(data) == user.getTargetNumber()) {
             user.setGameCode(0);
             user.setBank(user.getBank() + user.getTote() * 2);
             user.setSteps(0);
             user.setTote(0);
-            return Visualizer.getWin() + user.getBank();
+            return Visualizer.WIN + user.getBank();
         }
         user.setGameCode(4);
-        return Visualizer.getTryCreate() + Visualizer.getGameExit();
+        return Visualizer.TRY_CREATE + Visualizer.GAME_EXIT;
     }
 }

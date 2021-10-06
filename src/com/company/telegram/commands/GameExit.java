@@ -18,6 +18,6 @@ public class GameExit extends Command {
     @Override
     public String execute(String data, User user) {
         user.setGameCode(0);
-        return Visualizer.getMenuExit();
+        return Visualizer.MENU_EXIT;
     }
 }
