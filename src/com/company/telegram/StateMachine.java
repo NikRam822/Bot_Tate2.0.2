@@ -10,15 +10,14 @@ import java.util.Map;
  * Класс для реализации програмной логики команд.
  */
 public class StateMachine {
+
     /**
      * HashMap комманд.
      */
     static Map<String, ICommand> menuCommand = new HashMap<>();
 
-    /**
-     * Сеттер комманд в HashMap.
-     */
-     static  {
+
+    static {
         menuCommand.put("/addBank", new GameAddBank());
         menuCommand.put("/getBank", new GameGetBank());
         menuCommand.put("/startGame", new GameStartGame());

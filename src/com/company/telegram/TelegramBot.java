@@ -92,34 +92,37 @@ public class TelegramBot extends TelegramLongPollingBot {
      * @return уникальный токен бота.
      */
     public String getBotToken() {
-        String fileName = "token.txt";
 
+        String contents;
+
+        String file = "token.txt";
+
+        contents = readFile(file);
+
+        return contents;
+
+    }
+
+    /**
+     * Метод для чтения из фала.
+     *
+     * @param file имя файла.
+     * @return строка с содержимым из файла.
+     */
+    private String readFile(String file) {
         String contents = null;
-
+        BufferedReader reader;
         try {
-            contents = readUsingBufferedReader(fileName);
-        } catch (IOException e) {
-            System.out.println("лоооох");
+            reader = new BufferedReader(new FileReader(file));
+            String currentLine = reader.readLine();
+            contents = currentLine;
+            reader.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-//        return "1649189668:AAGDg8CYBi7FRQfzK34zWtAQub_WlsKK2Z4";
         return contents;
     }
-
-    private  String readUsingBufferedReader(String fileName) throws IOException {
-        BufferedReader reader = new BufferedReader( new FileReader(fileName));
-        String line ;
-        StringBuilder stringBuilder = new StringBuilder();
-        String ls = System.getProperty("line.separator");
-        while( ( line = reader.readLine() ) != null ) {
-            stringBuilder.append( line );
-        }
-
-        stringBuilder.deleteCharAt(stringBuilder.length()-1);
-        return stringBuilder.toString();
-    }
-
 
 
 }
