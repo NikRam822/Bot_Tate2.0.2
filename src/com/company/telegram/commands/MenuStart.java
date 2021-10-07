@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Класс реализации программной логики команды /start.
  */
-public class MenuStart extends Command {
+public class MenuStart implements ICommand {
 
     /**
      * Метод реализации програмной логики команды /start.

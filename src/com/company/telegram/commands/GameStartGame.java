@@ -8,7 +8,7 @@ import com.company.telegram.games.*;
 /**
  * Класс реализации программной логики команды /startGame.
  */
-public class GameStartGame extends Command {
+public class GameStartGame implements ICommand {
 
 
     /**

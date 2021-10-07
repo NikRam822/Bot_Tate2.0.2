@@ -13,7 +13,7 @@ public class StateMachine {
     /**
      * HashMap комманд.
      */
-    static Map<String, Command> menuCommand = new HashMap<>();
+    static Map<String, ICommand> menuCommand = new HashMap<>();
 
     /**
      * Сеттер комманд в HashMap.

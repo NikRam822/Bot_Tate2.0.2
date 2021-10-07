@@ -6,7 +6,7 @@ import com.company.module.Visualizer;
 /**
  * Класс реализации программной логики команды /exit.
  */
-public class GameExit extends Command {
+public class GameExit implements ICommand {
 
     /**
      * Метод реализации програмной логики команды /exit.
