@@ -31,7 +31,7 @@ public class User {
     private int tote;
 
     /**
-     * Кол-во попыток на уго=адывания числа.
+     * Кол-во попыток на угадывание числа.
      */
     private int steps;
 

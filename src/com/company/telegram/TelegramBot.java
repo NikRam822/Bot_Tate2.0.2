@@ -8,6 +8,10 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * Класс для реализации логики взаимодействия с телеграммом.
  */
@@ -66,7 +70,6 @@ public class TelegramBot extends TelegramLongPollingBot {
                     user = dataSource.getUser(message.getChatId().toString());
                 }
                 String command = message.getText();
-//                sendMsg(message,message.getChatId().toString());
                 sendMsg(message, stateMachine.doCommand(command, user));
                 dataSource.saveUser(user);
 
@@ -89,7 +92,35 @@ public class TelegramBot extends TelegramLongPollingBot {
      * @return уникальный токен бота.
      */
     public String getBotToken() {
-        return "1649189668:AAGDg8CYBi7FRQfzK34zWtAQub_WlsKK2Z4";
+        String fileName = "token.txt";
+
+        String contents = null;
+
+        try {
+            contents = readUsingBufferedReader(fileName);
+        } catch (IOException e) {
+            System.out.println("лоооох");
+            e.printStackTrace();
+        }
+
+//        return "1649189668:AAGDg8CYBi7FRQfzK34zWtAQub_WlsKK2Z4";
+        return contents;
     }
+
+    private  String readUsingBufferedReader(String fileName) throws IOException {
+        BufferedReader reader = new BufferedReader( new FileReader(fileName));
+        String line ;
+        StringBuilder stringBuilder = new StringBuilder();
+        String ls = System.getProperty("line.separator");
+        while( ( line = reader.readLine() ) != null ) {
+            stringBuilder.append( line );
+        }
+
+        stringBuilder.deleteCharAt(stringBuilder.length()-1);
+        return stringBuilder.toString();
+    }
+
+
+
 }
 

@@ -18,7 +18,7 @@ public class StateMachine {
     /**
      * Сеттер комманд в HashMap.
      */
-    public static void setHashMap() {
+     static  {
         menuCommand.put("/addBank", new GameAddBank());
         menuCommand.put("/getBank", new GameGetBank());
         menuCommand.put("/startGame", new GameStartGame());

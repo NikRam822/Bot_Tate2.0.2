@@ -20,7 +20,7 @@ public class Main {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
-            StateMachine.setHashMap();
+//            StateMachine.setHashMap();
 //            TelegramBot bot = new TelegramBot(new HashMapSource()); /*Код для RealTime реализации через HashMap.*/
             TelegramBot bot = new TelegramBot(new DBSource(new SQLiteConnection()));
 
