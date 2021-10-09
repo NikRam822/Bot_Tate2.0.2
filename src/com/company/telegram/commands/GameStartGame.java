@@ -1,6 +1,5 @@
 package com.company.telegram.commands;
 
-import com.company.telegram.games.Game0;
 import com.company.module.User;
 import com.company.telegram.games.*;
 
@@ -24,19 +23,20 @@ public class GameStartGame implements ICommand {
         switch (user.getGameCode()) {
             case 0 -> {
 
-                return new Game0().execute(data, user);
+                return GameStates.GREETING.realisation.execute(data, user);
+
             }
             case 1 -> {
 
-                return new Game1().execute(data, user);
+                return GameStates.CREATE_STEPS.realisation.execute(data, user);
             }
             case 2 -> {
 
-                return new Game2().execute(data, user);
+                return GameStates.DO_TOTE.realisation.execute(data, user);
             }
             case 3 -> {
 
-                return new Game3().execute(data, user);
+                return GameStates.PLAY.realisation.execute(data, user);
             }
         }
 
