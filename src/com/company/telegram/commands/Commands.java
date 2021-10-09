@@ -1,6 +1,10 @@
 package com.company.telegram.commands;
 
+/**
+ * Enum для добавления комманд.
+ */
 public enum Commands {
+
 
     ADD_BANK("/addBank", new GameAddBank()),
     EXIT("/exit", new GameExit()),
@@ -12,6 +16,22 @@ public enum Commands {
     INFORMATION("/information", new MenuInformation()),
     START("/start", new MenuStart());
 
+    /**
+     * Команда для пользователя.
+     */
+    public  String command;
+
+    /**
+     * Реализация программной логики команды.
+     */
+    public  ICommand realization;
+
+    /**
+     * Конструктор класса
+     *
+     * @param command команда для пользователя.
+     * @param realization реализации прогрммной логики команды.
+     */
     Commands(String command, ICommand realization) {
         this.command = command;
         this.realization = realization;
@@ -19,6 +39,5 @@ public enum Commands {
 
 
 
-    public  String command;
-    public  ICommand realization;
+
 }
