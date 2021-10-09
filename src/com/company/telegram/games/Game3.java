@@ -21,7 +21,7 @@ public class Game3 extends Game {
     @Override
     public String execute(String data, User user) {
         user.setSteps(user.getSteps() - 1);
-        if (user.getSteps() == 0) {
+        if (user.getSteps() == 0 && parseInt(data)!=user.getTargetNumber()) {
             user.setBank(user.getBank() - user.getTote());
             user.setTote(0);
             user.setGameCode(0);

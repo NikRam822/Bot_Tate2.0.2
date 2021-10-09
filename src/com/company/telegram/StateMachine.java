@@ -18,15 +18,10 @@ public class StateMachine {
 
 
     static {
-        menuCommand.put("/addBank", new GameAddBank());
-        menuCommand.put("/getBank", new GameGetBank());
-        menuCommand.put("/startGame", new GameStartGame());
-        menuCommand.put("/exit", new GameExit());
-        menuCommand.put("/instrumentation", new GameInstruction());
-        menuCommand.put("/play", new GamePlay());
-        menuCommand.put("/information", new MenuInformation());
-        menuCommand.put("/help", new MenuHelp());
-        menuCommand.put("/start", new MenuStart());
+        for (int i = 0; i < Commands.values().length; i++) {
+            menuCommand.put(Commands.values()[i].command, Commands.values()[i].realization);
+        }
+
     }
 
     /**

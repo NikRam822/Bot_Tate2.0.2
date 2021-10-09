@@ -2,6 +2,7 @@ package com.company.main;
 
 import com.company.database.DBSource;
 import com.company.database.SQLiteConnection;
+import com.company.telegram.StateMachine;
 import com.company.telegram.TelegramBot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
