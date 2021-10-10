@@ -93,14 +93,18 @@ public class TelegramBot extends TelegramLongPollingBot {
      */
     public String getBotToken() {
 
-        String contents;
+        String contents = null;
 
         String file = "token.txt";
 
-        contents = readFile(file);
+        try {
+            contents = readFile(file);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return contents;
-
     }
 
     /**
@@ -109,19 +113,18 @@ public class TelegramBot extends TelegramLongPollingBot {
      * @param file имя файла.
      * @return строка с содержимым из файла.
      */
-    private String readFile(String file) {
-        String contents = null;
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String currentLine = reader.readLine();
-            contents = currentLine;
+    private String readFile(String file) throws IOException {
+
+        String contents;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+
+            contents = reader.readLine();
             reader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+            return contents;
         }
 
-        return contents;
+
     }
 
 
