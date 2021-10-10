@@ -5,6 +5,7 @@ import com.company.telegram.commands.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 /**
  * Класс для реализации програмной логики команд.
@@ -18,9 +19,7 @@ public class StateMachine {
 
 
     static {
-        for (int i = 0; i < Commands.values().length; i++) {
-            menuCommand.put(Commands.values()[i].command, Commands.values()[i].realization);
-        }
+        IntStream.range(0, Commands.values().length).forEach(i -> menuCommand.put(Commands.values()[i].command, Commands.values()[i].realization));
 
     }
 
