@@ -2,6 +2,7 @@ package com.company.telegram;
 
 import com.company.module.User;
 import com.company.telegram.commands.*;
+import com.company.telegram.games.GameStates;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class StateMachine {
 
         try {
             ICommand iCommand = menuCommand.get(command);
-            if (user.getGameCode() != 0 && !command.equals("/exit")) {
+            if (user.getGameCode() != GameStates.GREETING.gameCode && !command.equals("/exit")) {
                 return new GameStartGame().execute(command, user);
             }
             return iCommand.execute(command, user);

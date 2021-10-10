@@ -22,6 +22,7 @@ public enum GameStates {
      * @param realisation Реализация програмной логики игры.
      */
     GameStates(int gameCode,IGame realisation) {
+        this.gameCode=gameCode;
         this.realisation = realisation;
     }
 
