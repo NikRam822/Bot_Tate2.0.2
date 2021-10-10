@@ -1,5 +1,7 @@
 package com.company.module;
 
+import com.company.telegram.games.GameStates;
+
 /**
  * Класс, описывающий сущность Пользователь
  */
@@ -18,7 +20,7 @@ public class User {
     /**
      * Игровой код, для конторля состояния пользователя в игре.
      */
-    private int gameCode;
+    private GameStates gameCode;
 
     /**
      * Загаданное ботом число.
@@ -51,7 +53,7 @@ public class User {
      * @param tote         Ставка пользователя.
      * @param steps        Кол-во попыток на угадывания числа.
      */
-    public User(String chatId, int bank, int gameCode, Integer targetNumber, int tote, int steps) {
+    public User(String chatId, int bank, GameStates gameCode, Integer targetNumber, int tote, int steps) {
         this.chatId = chatId;
         this.bank = bank;
         this.gameCode = gameCode;
@@ -68,7 +70,7 @@ public class User {
      * @param gameCode     Игровой код.
      * @param targetNumber Загаданное число.
      */
-    public User(String chatId, int bank, int gameCode, Integer targetNumber) {
+    public User(String chatId, int bank, GameStates gameCode, Integer targetNumber) {
         this.chatId = chatId;
         this.bank = bank;
         this.gameCode = gameCode;
@@ -136,7 +138,7 @@ public class User {
      *
      * @return Игровой код пользователя для контроля состояния пользователя в игре.
      */
-    public int getGameCode() {
+    public GameStates getGameCode() {
         return gameCode;
     }
 
@@ -145,7 +147,7 @@ public class User {
      *
      * @param gameCode Игровой код пользователя для контроля состояния пользователя в игре.
      */
-    public void setGameCode(int gameCode) {
+    public void setGameCode(GameStates gameCode) {
         this.gameCode = gameCode;
     }
 

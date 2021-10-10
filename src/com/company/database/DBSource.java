@@ -1,6 +1,7 @@
 package com.company.database;
 
 import com.company.module.User;
+import com.company.telegram.games.GameStates;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -60,7 +61,7 @@ public class DBSource implements IDataSource {
             ResultSet resultSet = statement.executeQuery(String.format("SELECT * FROM users WHERE id='%s'", chatId));
             return new User(resultSet.getString("id"),
                     resultSet.getInt("bank"),
-                    resultSet.getInt("game_code"),
+                    (GameStates) resultSet.getObject("game_code"),
                     resultSet.getInt("number"),
                     resultSet.getInt("tote"),
                     resultSet.getInt("steps"));

@@ -35,7 +35,7 @@ public class StateMachine {
 
         try {
             ICommand iCommand = menuCommand.get(command);
-            if (user.getGameCode() != GameStates.GREETING.gameCode && !command.equals("/exit")) {
+            if (user.getGameCode() != GameStates.GREETING && !command.equals("/exit")) {
                 return new GameStartGame().execute(command, user);
             }
             return iCommand.execute(command, user);

@@ -19,8 +19,9 @@ public class Main {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
 //            TelegramBot bot = new TelegramBot(new HashMapSource()); /*Код для RealTime реализации через HashMap.*/
-            TelegramBot bot = new TelegramBot(new DBSource(new SQLiteConnection()));
-
+            DBSource dbSource = new DBSource(new SQLiteConnection());
+           // TelegramBot bot = new TelegramBot(new DBSource(new SQLiteConnection()));
+            TelegramBot bot = new TelegramBot(dbSource);
             telegramBotsApi.registerBot(bot);
 
         } catch (TelegramApiRequestException e) {

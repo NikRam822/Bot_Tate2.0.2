@@ -2,6 +2,7 @@ package com.company.telegram;
 
 import com.company.database.IDataSource;
 import com.company.module.User;
+import com.company.telegram.games.GameStates;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -64,7 +65,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.hasText()) {
                 User user;
                 if (dataSource.getUser(message.getChatId().toString()) == null) {
-                    user = new User(message.getChatId().toString(), 10000, 0, null);
+                    user = new User(message.getChatId().toString(), 10000, GameStates.GREETING, null);
                     dataSource.saveUser(user);
                 } else {
                     user = dataSource.getUser(message.getChatId().toString());
