@@ -15,7 +15,11 @@ public enum GameStates {
      */
     public IGame realisation;
 
+    /**
+     * Код состояния игры.
+     */
     public int gameCode;
+
     /**
      * Конструктор класса.
      *
