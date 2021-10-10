@@ -21,13 +21,13 @@ public class Game2 extends Game {
     @Override
     public String execute(String data, User user) {
         if (parseInt(data) > user.getBank()) {
-            return Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT;
+            return super.sendResponse(user,Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE.gameCode);
         }
         if (parseInt(data) < 0) {
-            return Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT;
+            return super.sendResponse(user,Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE.gameCode);
         }
         user.setTote(parseInt(data));
         user.setGameCode(GameStates.PLAY.gameCode);
-        return Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT;
+        return super.sendResponse(user,Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT,GameStates.PLAY.gameCode);
     }
 }

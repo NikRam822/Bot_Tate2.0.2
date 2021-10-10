@@ -24,23 +24,19 @@ public class Game3 extends Game {
         if (user.getSteps() == 0 && parseInt(data)!=user.getTargetNumber()) {
             user.setBank(user.getBank() - user.getTote());
             user.setTote(0);
-            user.setGameCode(GameStates.GREETING.gameCode);
-            return Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT;
+            return super.sendResponse(user,Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT,GameStates.GREETING.gameCode);
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-            return Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT;
+            return super.sendResponse(user, Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT,GameStates.PLAY.gameCode);
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-            return Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT;
+            return super.sendResponse(user,Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT,GameStates.PLAY.gameCode);
         }
         if (parseInt(data) == user.getTargetNumber()) {
-            user.setGameCode(GameStates.GREETING.gameCode);
             user.setBank(user.getBank() + user.getTote() * 2);
             user.setSteps(0);
-            user.setTote(0);
-            return Visualizer.WIN + user.getBank();
+            return super.sendResponse(user,Visualizer.WIN + user.getBank(),GameStates.GREETING.gameCode);
         }
-        user.setGameCode(GameStates.GREETING.gameCode);
-        return Visualizer.TRY_CREATE + Visualizer.GAME_EXIT;
+        return super.sendResponse(user,Visualizer.TRY_CREATE + Visualizer.GAME_EXIT,GameStates.GREETING.gameCode);
     }
 }

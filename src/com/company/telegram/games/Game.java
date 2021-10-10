@@ -15,7 +15,12 @@ public abstract class Game implements IGame {
      * @return Ответ пользователю.
      */
     @Override
-    public String execute(String data, User user) {
-        return null;
+    public   String execute(String data, User user) {
+        return null ;
+    }
+
+    protected String sendResponse(User user, String data,  int gameCode ){
+        user.setGameCode(gameCode);
+        return data;
     }
 }
