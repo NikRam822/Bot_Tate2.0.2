@@ -35,25 +35,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a949c340-4709-45f2-8a9e-5a2c8dd03205" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/database/DBSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/database/DBSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/module/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/module/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/StateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/StateMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/TelegramBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/GameExit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/GameExit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/commands/GameStartGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/commands/GameStartGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/games/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/games/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/games/Game0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/games/Game0.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/games/Game1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/games/Game1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/games/Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/games/Game2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/telegram/games/Game3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/telegram/games/Game3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/module/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/module/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/StateMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/StateMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/TelegramBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameExit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameExit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameStartGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/telegram/commands/GameStartGame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

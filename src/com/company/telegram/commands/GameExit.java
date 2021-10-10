@@ -18,7 +18,7 @@ public class GameExit implements ICommand {
      */
     @Override
     public String execute(String data, User user) {
-        user.setGameCode(GameStates.GREETING);
+        user.setGameCode(GameStates.GREETING.gameCode);
         return Visualizer.MENU_EXIT;
     }
 }

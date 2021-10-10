@@ -1,6 +1,9 @@
 package com.company.module;
 
+import com.company.telegram.commands.Commands;
 import com.company.telegram.games.GameStates;
+
+import java.util.Arrays;
 
 /**
  * Класс, описывающий сущность Пользователь
@@ -20,7 +23,7 @@ public class User {
     /**
      * Игровой код, для конторля состояния пользователя в игре.
      */
-    private GameStates gameCode;
+    private int gameCode;
 
     /**
      * Загаданное ботом число.
@@ -53,7 +56,7 @@ public class User {
      * @param tote         Ставка пользователя.
      * @param steps        Кол-во попыток на угадывания числа.
      */
-    public User(String chatId, int bank, GameStates gameCode, Integer targetNumber, int tote, int steps) {
+    public User(String chatId, int bank, int gameCode, Integer targetNumber, int tote, int steps) {
         this.chatId = chatId;
         this.bank = bank;
         this.gameCode = gameCode;
@@ -70,7 +73,7 @@ public class User {
      * @param gameCode     Игровой код.
      * @param targetNumber Загаданное число.
      */
-    public User(String chatId, int bank, GameStates gameCode, Integer targetNumber) {
+    public User(String chatId, int bank, int gameCode, Integer targetNumber) {
         this.chatId = chatId;
         this.bank = bank;
         this.gameCode = gameCode;
@@ -139,7 +142,7 @@ public class User {
      * @return Игровой код пользователя для контроля состояния пользователя в игре.
      */
     public GameStates getGameCode() {
-        return gameCode;
+        return Arrays.stream(GameStates.values()).filter((t)->t.gameCode ==gameCode).findFirst().get();
     }
 
     /**
@@ -147,7 +150,7 @@ public class User {
      *
      * @param gameCode Игровой код пользователя для контроля состояния пользователя в игре.
      */
-    public void setGameCode(GameStates gameCode) {
+    public void setGameCode(int gameCode) {
         this.gameCode = gameCode;
     }
 
