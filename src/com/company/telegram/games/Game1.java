@@ -29,7 +29,7 @@ public class Game1 extends Game {
 
         user.setSteps(Integer.parseInt(data));
 
-        user.setGameCode(2);
+        user.setGameCode(GameStates.DO_TOTE.gameCode);
         return Visualizer.DO_TOTE + Visualizer.GAME_EXIT;
     }
 }

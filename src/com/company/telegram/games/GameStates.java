@@ -5,22 +5,23 @@ package com.company.telegram.games;
  */
 public enum GameStates {
 
-    GREETING(new Game0()),
-    CREATE_STEPS(new Game1()),
-    DO_TOTE(new Game2()),
-    PLAY(new Game3());
+    GREETING(0,new Game0()),
+    CREATE_STEPS(1,new Game1()),
+    DO_TOTE(2,new Game2()),
+    PLAY(3,new Game3());
 
     /**
      * Реализация програмной логики игры.
      */
     public IGame realisation;
 
+    public int gameCode;
     /**
      * Конструктор класса.
      *
      * @param realisation Реализация програмной логики игры.
      */
-    GameStates(IGame realisation) {
+    GameStates(int gameCode,IGame realisation) {
         this.realisation = realisation;
     }
 

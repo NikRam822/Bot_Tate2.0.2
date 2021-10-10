@@ -22,7 +22,7 @@ public class Game0 extends Game {
     public String execute(String data, User user) {
         Random rn = new Random();
         user.setTargetNumber(rn.nextInt(100) + 1);
-        user.setGameCode(1);
+        user.setGameCode(GameStates.CREATE_STEPS.gameCode);
         return Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT;
     }
 }

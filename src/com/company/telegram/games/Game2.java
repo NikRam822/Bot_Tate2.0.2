@@ -27,7 +27,7 @@ public class Game2 extends Game {
             return Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT;
         }
         user.setTote(parseInt(data));
-        user.setGameCode(3);
+        user.setGameCode(GameStates.PLAY.gameCode);
         return Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT;
     }
 }
