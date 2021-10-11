@@ -35,11 +35,12 @@ public class StateMachine {
 
         try {
             ICommand iCommand = menuCommand.get(command);
+
+            return iCommand.execute(command, user);
+        } catch (Exception exception) {
             if (user.getGameCode() != GameStates.GREETING && !command.equals("/exit")) {
                 return new GameStartGame().execute(command, user);
             }
-            return iCommand.execute(command, user);
-        } catch (Exception exception) {
             return "Не понял команду!";
         }
     }

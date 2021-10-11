@@ -100,12 +100,13 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         try {
             contents = readFile(file);
-
+            return contents;
 
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-        return contents;
+
     }
 
     /**
