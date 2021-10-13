@@ -11,28 +11,19 @@ import com.company.telegram.commands.Commands;
 public abstract class Game implements IGame {
 
     /**
-     * Метод для реализации игровой логики состояений.
-     * @param data Текст, введенный пользователем.
-     * @param user Пользователь.
-     * @return Ответ пользователю.
-     */
-    @Override
-    public   String execute(String data, User user) {
-        return null ;
-    }
-
-    /**
-     *Метод отправки ответа пользовтаелю.
-     *
-     * @param user пользователь.
-     * @param response ответ пользователя.
-     * @param gameCode код статуса.
+     * Метод, реализующий основную логику состояний.
+     * @param user пользователь
+     * @param response ответ пользователю.
+     * @param gameCode игровой код.
      * @return ответ пользователю.
      */
-    protected String sendResponse(User user, String response,  GameStates gameCode ){
+    @Override
+    public   String execute(User user, String response, GameStates gameCode) {
         user.setGameCode(gameCode);
         return response;
     }
+
+
 
     /**
      * Метод обработки введенных чисел.
