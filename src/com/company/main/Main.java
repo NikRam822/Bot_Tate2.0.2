@@ -20,7 +20,6 @@ public class Main {
         try {
 //            TelegramBot bot = new TelegramBot(new HashMapSource()); /*Код для RealTime реализации через HashMap.*/
             DBSource dbSource = new DBSource(new SQLiteConnection());
-           // TelegramBot bot = new TelegramBot(new DBSource(new SQLiteConnection()));
             TelegramBot bot = new TelegramBot(dbSource);
             telegramBotsApi.registerBot(bot);
 

@@ -65,7 +65,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.hasText()) {
                 User user;
                 if (dataSource.getUser(message.getChatId().toString()) == null) {
-                    user = new User(message.getChatId().toString(), 10000, GameStates.GREETING.gameCode, null);
+                    user = new User(message.getChatId().toString(), 10000, GameStates.GREETING, null);
                     dataSource.saveUser(user);
                 } else {
                     user = dataSource.getUser(message.getChatId().toString());

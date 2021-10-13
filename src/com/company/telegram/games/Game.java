@@ -29,7 +29,7 @@ public abstract class Game implements IGame {
      * @param gameCode код статуса.
      * @return ответ пользователю.
      */
-    protected String sendResponse(User user, String response,  int gameCode ){
+    protected String sendResponse(User user, String response,  GameStates gameCode ){
         user.setGameCode(gameCode);
         return response;
     }
