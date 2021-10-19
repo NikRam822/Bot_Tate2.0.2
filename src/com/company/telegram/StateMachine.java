@@ -42,6 +42,7 @@ public class StateMachine {
                 return new GameStartGame().execute(command, user);
             }
             return "Не понял команду!";
+
         }
     }
 }
