@@ -15,13 +15,5 @@ public interface IGame {
      */
     String execute(String data, User user);
 
-    /**
-     * Перегружнный метод для реализации логики контрля состояний.
-     *
-     * @param user Пользовтатель.
-     * @param response Ответ пользовтелю.
-     * @param gameCode Код состояния пользователя.
-     * @return Ответ пользовтелю
-     */
-    String execute(User user, String response, GameStates gameCode);
+
 }

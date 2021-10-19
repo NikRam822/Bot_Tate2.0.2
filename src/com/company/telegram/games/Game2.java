@@ -24,12 +24,12 @@ public class Game2 extends Game {
         if (super.doProcessingOfNumber(data) == false) return "Введите число!" + Visualizer.GAME_EXIT;
 
         if (parseInt(data) > user.getBank()) {
-            return super.execute(user, Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
+            return super.sendResponseAndSetGameCode(user, Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
         }
         if (parseInt(data) <= 0) {
-            return super.execute(user, Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
+            return super.sendResponseAndSetGameCode(user, Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
         }
         user.setTote(parseInt(data));
-        return super.execute(user, Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT, GameStates.PLAY);
+        return super.sendResponseAndSetGameCode(user, Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT, GameStates.PLAY);
     }
 }
