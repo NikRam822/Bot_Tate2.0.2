@@ -11,6 +11,7 @@ import java.util.Random;
  */
 public class Game0 extends Game {
 
+
     /**
      * Метод, реализующий логику начальной стадии игры.
      *
@@ -22,6 +23,8 @@ public class Game0 extends Game {
     public String execute(String data, User user) {
         Random rn = new Random();
         user.setTargetNumber(rn.nextInt(100) + 1);
-        return super.sendResponseAndSetGameCode(user, Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT, GameStates.CREATE_STEPS);
+        setResponse(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT);
+        setGameCode(GameStates.CREATE_STEPS);
+        return super.execute(data,user);//super.sendResponseAndSetGameCode(user, Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT, GameStates.CREATE_STEPS);
     }
 }

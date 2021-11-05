@@ -24,12 +24,18 @@ public class Game2 extends Game {
         if (super.doProcessingOfNumber(data) == false) return "Введите число!" + Visualizer.GAME_EXIT;
 
         if (parseInt(data) > user.getBank()) {
-            return super.sendResponseAndSetGameCode(user, Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
+            setResponse(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT);
+            setGameCode( GameStates.DO_TOTE);
+            return super.execute(data, user);//sendResponseAndSetGameCode(user, Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
         }
         if (parseInt(data) <= 0) {
-            return super.sendResponseAndSetGameCode(user, Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
+            setResponse(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT);
+            setGameCode(GameStates.DO_TOTE);
+            return super.execute(data, user);//sendResponseAndSetGameCode(user, Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT, GameStates.DO_TOTE);
         }
         user.setTote(parseInt(data));
-        return super.sendResponseAndSetGameCode(user, Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT, GameStates.PLAY);
+        setResponse(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT);
+        setGameCode(GameStates.PLAY);
+        return super.execute(data,user);//sendResponseAndSetGameCode(user, Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT, GameStates.PLAY);
     }
 }
