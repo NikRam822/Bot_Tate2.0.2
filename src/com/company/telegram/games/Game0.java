@@ -25,6 +25,6 @@ public class Game0 extends Game {
         user.setTargetNumber(rn.nextInt(100) + 1);
         setResponse(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT);
         setGameCode(GameStates.CREATE_STEPS);
-        return super.execute(data,user);//super.sendResponseAndSetGameCode(user, Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT, GameStates.CREATE_STEPS);
+        return super.execute(data,user);
     }
 }

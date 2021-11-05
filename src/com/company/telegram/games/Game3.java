@@ -26,27 +26,27 @@ public class Game3 extends Game {
             user.setTote(0);
             setResponse( Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT);
             setGameCode(GameStates.GREETING);
-            return super.execute(data,user);//sendResponseAndSetGameCode(user, Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT, GameStates.GREETING);
+            return super.execute(data,user);
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
             setResponse(Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT);
             setGameCode(GameStates.PLAY);
-            return super.execute(data, user);//sendResponseAndSetGameCode(user, Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT, GameStates.PLAY);
+            return super.execute(data, user);
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
             setResponse(Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT);
             setGameCode(GameStates.PLAY);
-            return super.execute(data, user);//sendResponseAndSetGameCode(user, Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT, GameStates.PLAY);
+            return super.execute(data, user);
         }
         if (parseInt(data) == user.getTargetNumber()) {
             user.setBank(user.getBank() + user.getTote() * 2);
             user.setSteps(0);
             setResponse(Visualizer.WIN + user.getBank());
             setGameCode(GameStates.GREETING);
-            return super.execute(data, user);//sendResponseAndSetGameCode(user, Visualizer.WIN + user.getBank(), GameStates.GREETING);
+            return super.execute(data, user);
         }
         setResponse(Visualizer.TRY_CREATE + Visualizer.GAME_EXIT);
         setGameCode(GameStates.GREETING);
-        return super.execute(data, user);//sendResponseAndSetGameCode(user, Visualizer.TRY_CREATE + Visualizer.GAME_EXIT, GameStates.GREETING);
+        return super.execute(data, user);
     }
 }
