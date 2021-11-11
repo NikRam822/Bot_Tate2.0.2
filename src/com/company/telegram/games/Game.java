@@ -12,19 +12,6 @@ public abstract class Game implements IGame {
 
 
 
-    public void setResponse(String response) {
-        this.response = response;
-    }
-
-
-
-    public void setGameCode(GameStates gameCode) {
-        this.gameCode = gameCode;
-    }
-
-    private String response;
-
-    private GameStates gameCode;
 
     /**
      * Абстрактный метод интерфейса.
@@ -34,22 +21,25 @@ public abstract class Game implements IGame {
      * @return Ответ пользователю
      */
     @Override
-    public  String execute(String data, User user){
-        user.setGameCode(gameCode);
+  abstract   public  String execute(String data, User user);
+
+    protected String initResponse(String response){
         return response;
+}
 
-    }
+protected GameStates initGameCode(GameStates gameCode,User user){
+        user.setGameCode(gameCode);
+        return gameCode;
+}
 
-
-
-
+abstract String getResponseAndSetGameCode(String response, GameStates gameCode);
     /**
      * Метод обработки введенных чисел.
      *
      * @param number число.
      * @return Число, или не число.
      */
-    protected boolean doProcessingOfNumber(String number) {
+    protected boolean checkTypeOfNumber(String number) {
         try {
             if (!number.equals(Commands.EXIT.command) && Integer.parseInt(number) > -1) {
                 return true;

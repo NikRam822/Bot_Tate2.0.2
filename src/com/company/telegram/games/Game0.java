@@ -23,8 +23,15 @@ public class Game0 extends Game {
     public String execute(String data, User user) {
         Random rn = new Random();
         user.setTargetNumber(rn.nextInt(100) + 1);
-        setResponse(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT);
-        setGameCode(GameStates.CREATE_STEPS);
-        return super.execute(data,user);
+
+        return getResponseAndSetGameCode(
+                super.initResponse(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT),
+                super.initGameCode(GameStates.CREATE_STEPS, user));//super.execute(data,user);
+    }
+
+    @Override
+    String getResponseAndSetGameCode(String response, GameStates gameCode) {
+
+        return response;
     }
 }

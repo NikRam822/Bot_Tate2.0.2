@@ -24,29 +24,35 @@ public class Game3 extends Game {
         if (user.getSteps() == 0 && parseInt(data) != user.getTargetNumber()) {
             user.setBank(user.getBank() - user.getTote());
             user.setTote(0);
-            setResponse( Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT);
-            setGameCode(GameStates.GREETING);
-            return super.execute(data,user);
+            return getResponseAndSetGameCode(
+                    super.initResponse(Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT),
+                    super.initGameCode(GameStates.GREETING, user));
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-            setResponse(Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT);
-            setGameCode(GameStates.PLAY);
-            return super.execute(data, user);
+            return getResponseAndSetGameCode(
+                    super.initResponse(Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT),
+                    super.initGameCode(GameStates.PLAY, user));
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-            setResponse(Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT);
-            setGameCode(GameStates.PLAY);
-            return super.execute(data, user);
+            return getResponseAndSetGameCode(
+                    super.initResponse(Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT),
+                    super.initGameCode(GameStates.PLAY, user));
         }
         if (parseInt(data) == user.getTargetNumber()) {
             user.setBank(user.getBank() + user.getTote() * 2);
             user.setSteps(0);
-            setResponse(Visualizer.WIN + user.getBank());
-            setGameCode(GameStates.GREETING);
-            return super.execute(data, user);
+            return getResponseAndSetGameCode(
+                    super.initResponse(Visualizer.WIN + user.getBank()),
+                    super.initGameCode(GameStates.GREETING, user));
         }
-        setResponse(Visualizer.TRY_CREATE + Visualizer.GAME_EXIT);
-        setGameCode(GameStates.GREETING);
-        return super.execute(data, user);
+        return getResponseAndSetGameCode(
+                super.initResponse(Visualizer.TRY_CREATE + Visualizer.GAME_EXIT),
+                super.initGameCode(GameStates.GREETING, user));
     }
+
+    @Override
+    String getResponseAndSetGameCode(String response, GameStates gameCode) {
+        return response;
+    }
+
 }

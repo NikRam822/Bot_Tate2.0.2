@@ -21,21 +21,29 @@ public class Game2 extends Game {
     @Override
     public String execute(String data, User user) {
 
-        if (!super.doProcessingOfNumber(data)) return "Введите число!" + Visualizer.GAME_EXIT;
+        if (!super.checkTypeOfNumber(data)) return "Введите число!" + Visualizer.GAME_EXIT;
 
         if (parseInt(data) > user.getBank()) {
-            setResponse(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT);
-            setGameCode( GameStates.DO_TOTE);
-            return super.execute(data, user);
+
+            return getResponseAndSetGameCode(
+                    super.initResponse(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT),
+                    super.initGameCode(GameStates.DO_TOTE, user));
         }
         if (parseInt(data) <= 0) {
-            setResponse(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT);
-            setGameCode(GameStates.DO_TOTE);
-            return super.execute(data, user);
+
+            return getResponseAndSetGameCode(
+                    super.initResponse(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT),
+                    super.initGameCode(GameStates.DO_TOTE, user));
         }
         user.setTote(parseInt(data));
-        setResponse(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT);
-        setGameCode(GameStates.PLAY);
-        return super.execute(data,user);
+        return getResponseAndSetGameCode(
+                super.initResponse(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT),
+                super.initGameCode(GameStates.PLAY, user));
+    }
+
+    @Override
+    String getResponseAndSetGameCode(String response, GameStates gameCode) {
+
+        return response;
     }
 }
