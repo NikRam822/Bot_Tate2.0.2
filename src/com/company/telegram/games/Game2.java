@@ -11,39 +11,29 @@ import static java.lang.Integer.parseInt;
  */
 public class Game2 extends Game {
 
-    /**
-     * Метод для реализации создания ставок на победу.
-     *
-     * @param data Текст,введенный пользователем.
-     * @param user Пользователь.
-     * @return Ответ пользовтаелю об успешности\ не успешности созздания ставки.
-     */
-    @Override
-    public String execute(String data, User user) {
 
-        if (!super.checkTypeOfNumber(data)) return "Введите число!" + Visualizer.GAME_EXIT;
+
+    @Override
+    void doGameLogic(User user,String data) {
+
+        if (!super.checkTypeOfNumber(data)){
+            super.dialogManager.setResponseAndGameCode("Введите число!" + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
+        return;
+        }
 
         if (parseInt(data) > user.getBank()) {
 
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.DO_TOTE, user));
+          super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
+          return;
+
         }
         if (parseInt(data) <= 0) {
+            super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
 
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.DO_TOTE, user));
+            return;
         }
         user.setTote(parseInt(data));
-        return getResponseAndSetGameCode(
-                super.initResponse(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT),
-                super.initGameCode(GameStates.PLAY, user));
-    }
+        super.dialogManager.setResponseAndGameCode(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT,GameStates.PLAY);
 
-    @Override
-    String getResponseAndSetGameCode(String response, GameStates gameCode) {
-
-        return response;
     }
 }

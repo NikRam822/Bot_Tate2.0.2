@@ -11,48 +11,32 @@ import static java.lang.Integer.parseInt;
  */
 public class Game3 extends Game {
 
-    /**
-     * Метод реализации основной игровой логики.
-     *
-     * @param data Текст, введенный пользователем.
-     * @param user Пользователь.
-     * @return Игровые данные. Ответ пользователю.
-     */
     @Override
-    public String execute(String data, User user) {
+    void doGameLogic(User user,String data) {
+
         user.setSteps(user.getSteps() - 1);
         if (user.getSteps() == 0 && parseInt(data) != user.getTargetNumber()) {
             user.setBank(user.getBank() - user.getTote());
             user.setTote(0);
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.GREETING, user));
+            super.dialogManager.setResponseAndGameCode(Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT,GameStates.GREETING);
+            return ;
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.PLAY, user));
+            super.dialogManager.setResponseAndGameCode(Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT,GameStates.PLAY);
+            return ;
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.PLAY, user));
+            super.dialogManager.setResponseAndGameCode(Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT,GameStates.PLAY);
+            return ;
         }
         if (parseInt(data) == user.getTargetNumber()) {
             user.setBank(user.getBank() + user.getTote() * 2);
             user.setSteps(0);
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.WIN + user.getBank()),
-                    super.initGameCode(GameStates.GREETING, user));
+            super.dialogManager.setResponseAndGameCode(Visualizer.WIN + user.getBank(),GameStates.GREETING);
+            return ;
         }
-        return getResponseAndSetGameCode(
-                super.initResponse(Visualizer.TRY_CREATE + Visualizer.GAME_EXIT),
-                super.initGameCode(GameStates.GREETING, user));
-    }
+        super.dialogManager.setResponseAndGameCode(Visualizer.TRY_CREATE + Visualizer.GAME_EXIT,GameStates.GREETING);
 
-    @Override
-    String getResponseAndSetGameCode(String response, GameStates gameCode) {
-        return response;
     }
 
 }

@@ -11,40 +11,27 @@ import static java.lang.Integer.parseInt;
  */
 public class Game1 extends Game {
 
-    /**
-     * Метод реализации игровых ставок на количество попыток для угадыаания числа.
-     *
-     * @param data Текст, введенный пользвателем.
-     * @param user Пользовтаель.
-     * @return Ответ пользователю об успешности\ не успешности введненной ставки.
-     */
+
+
     @Override
-    public String execute(String data, User user) {
-        if (!super.checkTypeOfNumber(data)) return "Введите число!" + Visualizer.GAME_EXIT;
+    void doGameLogic(User user, String data) {
+
+        if (!super.checkTypeOfNumber(data))
+            super.dialogManager.setResponseAndGameCode("Введите число!" + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+
 
         if (parseInt(data) > 10) {
+        super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_STEPS_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
 
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.ERROR_STEPS_MORE + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.CREATE_STEPS, user));
         }
         if (parseInt(data) <= 0) {
+super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_STEPS_NO_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
 
-            return getResponseAndSetGameCode(
-                    super.initResponse(Visualizer.ERROR_STEPS_NO_MORE + Visualizer.GAME_EXIT),
-                    super.initGameCode(GameStates.CREATE_STEPS, user));
         }
 
         user.setSteps(Integer.parseInt(data));
+    super.dialogManager.setResponseAndGameCode(Visualizer.DO_TOTE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
 
-        return getResponseAndSetGameCode(
-                super.initResponse(Visualizer.DO_TOTE + Visualizer.GAME_EXIT),
-                super.initGameCode(GameStates.DO_TOTE, user));
     }
 
-    @Override
-    String getResponseAndSetGameCode(String response, GameStates gameCode) {
-
-        return response;
-    }
 }

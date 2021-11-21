@@ -10,7 +10,7 @@ import com.company.telegram.commands.Commands;
  */
 public abstract class Game implements IGame {
 
-
+DialogManager dialogManager = new DialogManager();
 
 
     /**
@@ -21,18 +21,19 @@ public abstract class Game implements IGame {
      * @return Ответ пользователю
      */
     @Override
-  abstract   public  String execute(String data, User user);
-
-    protected String initResponse(String response){
-        return response;
-}
-
-protected GameStates initGameCode(GameStates gameCode,User user){
+     public  String execute(String data, User user){
+        doGameLogic(user,data);
+        String response= dialogManager.getResponse();
+        GameStates gameCode=dialogManager.getGameCode();
         user.setGameCode(gameCode);
-        return gameCode;
-}
+        return response;
+    };
 
-abstract String getResponseAndSetGameCode(String response, GameStates gameCode);
+
+
+
+
+abstract void doGameLogic(User user,String data);
     /**
      * Метод обработки введенных чисел.
      *
