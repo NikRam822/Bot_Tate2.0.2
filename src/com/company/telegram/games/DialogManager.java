@@ -13,10 +13,14 @@ public class DialogManager {
     public GameStates getGameCode() {
         return gameCode;
     }
-
-    public void setResponseAndGameCode(String response, GameStates gameCode) {
+    DialogManager(String response,GameStates gameCode){
         this.response = response;
         this.gameCode = gameCode;
     }
+
+//    public void setResponseAndGameCode(String response, GameStates gameCode) {
+//        this.response = response;
+//        this.gameCode = gameCode;
+//    }
 
 }

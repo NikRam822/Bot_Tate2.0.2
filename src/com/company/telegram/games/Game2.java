@@ -14,26 +14,25 @@ public class Game2 extends Game {
 
 
     @Override
-    void doGameLogic(User user,String data) {
+    DialogManager doGameLogic(User user,String data) {
 
         if (!super.checkTypeOfNumber(data)){
-            super.dialogManager.setResponseAndGameCode("Введите число!" + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
-        return;
+
+        return new DialogManager("Введите число!" + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
         }
 
         if (parseInt(data) > user.getBank()) {
 
-          super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
-          return;
+          return new DialogManager(Visualizer.ERROR_TOTE_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
 
         }
         if (parseInt(data) <= 0) {
-            super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
 
-            return;
+            return new DialogManager(Visualizer.ERROR_TOTE_NO_MORE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
         }
         user.setTote(parseInt(data));
-        super.dialogManager.setResponseAndGameCode(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT,GameStates.PLAY);
+        return new DialogManager(Visualizer.GOOD_TOTE_START_GAME + Visualizer.GAME_EXIT,GameStates.PLAY);
+
 
     }
 }

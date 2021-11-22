@@ -14,23 +14,26 @@ public class Game1 extends Game {
 
 
     @Override
-    void doGameLogic(User user, String data) {
+    DialogManager doGameLogic(User user, String data) {
 
-        if (!super.checkTypeOfNumber(data))
-            super.dialogManager.setResponseAndGameCode("Введите число!" + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+        if (!super.checkTypeOfNumber(data)){
+            return new DialogManager("Введите число!" + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+        }
 
 
         if (parseInt(data) > 10) {
-        super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_STEPS_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+            return new DialogManager(Visualizer.ERROR_STEPS_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
 
         }
         if (parseInt(data) <= 0) {
-super.dialogManager.setResponseAndGameCode(Visualizer.ERROR_STEPS_NO_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+            return new DialogManager(Visualizer.ERROR_STEPS_NO_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+
 
         }
 
         user.setSteps(Integer.parseInt(data));
-    super.dialogManager.setResponseAndGameCode(Visualizer.DO_TOTE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
+        return new DialogManager(Visualizer.DO_TOTE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
+
 
     }
 
