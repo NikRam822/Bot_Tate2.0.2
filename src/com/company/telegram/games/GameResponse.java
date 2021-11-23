@@ -1,6 +1,6 @@
 package com.company.telegram.games;
 
-public class DialogManager {
+public class GameResponse {
 
     private String response;
 
@@ -13,14 +13,9 @@ public class DialogManager {
     public GameStates getGameCode() {
         return gameCode;
     }
-    DialogManager(String response,GameStates gameCode){
+    GameResponse(String response, GameStates gameCode){
         this.response = response;
         this.gameCode = gameCode;
     }
-
-//    public void setResponseAndGameCode(String response, GameStates gameCode) {
-//        this.response = response;
-//        this.gameCode = gameCode;
-//    }
-
+    
 }

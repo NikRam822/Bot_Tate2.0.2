@@ -22,7 +22,7 @@ public abstract class Game implements IGame {
      */
     @Override
      public  String execute(String data, User user){
-        DialogManager dialogSettings = doGameLogic(user, data);
+        GameResponse dialogSettings = doGameLogic(user, data);
         String response= dialogSettings.getResponse();
         GameStates gameCode=dialogSettings.getGameCode();
         user.setGameCode(gameCode);
@@ -33,7 +33,7 @@ public abstract class Game implements IGame {
 
 
 
-abstract DialogManager doGameLogic(User user,String data);
+abstract GameResponse doGameLogic(User user, String data);
     /**
      * Метод обработки введенных чисел.
      *

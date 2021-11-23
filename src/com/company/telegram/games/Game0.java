@@ -12,10 +12,10 @@ import java.util.Random;
 public class Game0 extends Game {
 
     @Override
-    DialogManager doGameLogic(User user, String data) {
+    GameResponse doGameLogic(User user, String data) {
         Random rn = new Random();
         user.setTargetNumber(rn.nextInt(100) + 1);
-        return  new DialogManager(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+        return  new GameResponse(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
 
     }
 
