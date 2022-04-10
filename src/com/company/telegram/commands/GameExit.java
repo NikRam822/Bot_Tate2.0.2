@@ -2,11 +2,12 @@ package com.company.telegram.commands;
 
 import com.company.module.User;
 import com.company.module.Visualizer;
+import com.company.telegram.games.GameStates;
 
 /**
  * Класс реализации программной логики команды /exit.
  */
-public class GameExit extends Command {
+public class GameExit implements ICommand {
 
     /**
      * Метод реализации програмной логики команды /exit.
@@ -17,7 +18,7 @@ public class GameExit extends Command {
      */
     @Override
     public String execute(String data, User user) {
-        user.setGameCode(0);
+        user.setGameCode(GameStates.GREETING);
         return Visualizer.MENU_EXIT;
     }
 }

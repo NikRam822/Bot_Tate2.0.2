@@ -6,7 +6,7 @@ import com.company.module.Visualizer;
 /**
  * Класс реализации программной логики команды /information.
  */
-public class MenuInformation extends Command {
+public class MenuInformation implements ICommand {
 
     /**
      * Метод реализации програмной логики команды /information.

@@ -11,36 +11,28 @@ import static java.lang.Integer.parseInt;
  */
 public class Game3 extends Game {
 
-    /**
-     * Метод реализации основной игровой логики.
-     *
-     * @param data Текст, введенный пользователем.
-     * @param user Пользователь.
-     * @return Игровые данные. Ответ пользователю.
-     */
     @Override
-    public String execute(String data, User user) {
+    GameResponse doGameLogic(User user, String data) {
+
         user.setSteps(user.getSteps() - 1);
-        if (user.getSteps() == 0) {
+        if (user.getSteps() == 0 && parseInt(data) != user.getTargetNumber()) {
             user.setBank(user.getBank() - user.getTote());
             user.setTote(0);
-            user.setGameCode(0);
-            return Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT;
+            return new GameResponse(Visualizer.LOSER + user.getTargetNumber() + Visualizer.GAME_EXIT,GameStates.GREETING) ;
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) > user.getTargetNumber()) {
-            return Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT;
+            return new GameResponse(Visualizer.MORE + user.getSteps() + Visualizer.GAME_EXIT,GameStates.PLAY) ;
         }
         if (parseInt(data) != user.getTargetNumber() & parseInt(data) < user.getTargetNumber()) {
-            return Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT;
+            return new GameResponse(Visualizer.NO_MORE + user.getSteps() + Visualizer.GAME_EXIT,GameStates.PLAY) ;
         }
         if (parseInt(data) == user.getTargetNumber()) {
-            user.setGameCode(0);
             user.setBank(user.getBank() + user.getTote() * 2);
             user.setSteps(0);
-            user.setTote(0);
-            return Visualizer.WIN + user.getBank();
+            return new GameResponse(Visualizer.WIN + user.getBank(),GameStates.GREETING);
         }
-        user.setGameCode(4);
-        return Visualizer.TRY_CREATE + Visualizer.GAME_EXIT;
+        return new GameResponse(Visualizer.TRY_CREATE + Visualizer.GAME_EXIT,GameStates.GREETING);
+
     }
+
 }

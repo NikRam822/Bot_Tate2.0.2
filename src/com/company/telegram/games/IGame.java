@@ -14,4 +14,6 @@ public interface IGame {
      * @return Ответ пользовтаелю
      */
     String execute(String data, User user);
+
+
 }

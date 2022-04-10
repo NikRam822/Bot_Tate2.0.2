@@ -38,7 +38,7 @@ public class DBSource implements IDataSource {
                         "VALUES(?, ?, ?, ?,?,?)")) {
             statement.setObject(1, user.getChatId());
             statement.setObject(2, user.getBank());
-            statement.setObject(3, user.getGameCode());
+            statement.setObject(3, user.getGameCode().gameCode);
             statement.setObject(4, user.getTargetNumber());
             statement.setObject(5, user.getTote());
             statement.setObject(6, user.getSteps());

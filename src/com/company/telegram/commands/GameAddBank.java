@@ -6,7 +6,7 @@ import com.company.module.Visualizer;
 /**
  *  Класс реализации программной логики команды /addBank.
  */
-public class GameAddBank extends Command {
+public class GameAddBank implements ICommand {
     /**
      * Метод реализации програмной логики команды /addBank.
      *

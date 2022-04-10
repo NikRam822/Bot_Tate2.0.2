@@ -6,7 +6,7 @@ import com.company.module.Visualizer;
 /**
  *  Класс реализации программной логики команды /getBank.
  */
-public class GameGetBank extends Command {
+public class GameGetBank implements ICommand {
     /**
      * Метод реализации програмной логики команды /getBank.
      *

@@ -6,7 +6,7 @@ import com.company.module.Visualizer;
 /**
  * Класс реализации программной логики команды /play.
  */
-public class GamePlay extends Command {
+public class GamePlay implements ICommand {
 
     /**
      * Метод реализации програмной логики команды /play.

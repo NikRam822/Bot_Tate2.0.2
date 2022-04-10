@@ -11,18 +11,15 @@ import java.util.Random;
  */
 public class Game0 extends Game {
 
-    /**
-     * Метод, реализующий логику начальной стадии игры.
-     *
-     * @param data Текст, введенный пользователем.
-     * @param user Пользователь.
-     * @return Приветсвие в игре и банк пользователя.
-     */
     @Override
-    public String execute(String data, User user) {
+    GameResponse doGameLogic(User user, String data) {
         Random rn = new Random();
         user.setTargetNumber(rn.nextInt(100) + 1);
-        user.setGameCode(1);
-        return Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT;
+        return  new GameResponse(Visualizer.GAME_START + user.getBank() + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+
     }
+
+
+
+
 }

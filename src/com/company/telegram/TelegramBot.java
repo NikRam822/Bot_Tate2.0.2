@@ -2,11 +2,16 @@ package com.company.telegram;
 
 import com.company.database.IDataSource;
 import com.company.module.User;
+import com.company.telegram.games.GameStates;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Класс для реализации логики взаимодействия с телеграммом.
@@ -60,13 +65,12 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.hasText()) {
                 User user;
                 if (dataSource.getUser(message.getChatId().toString()) == null) {
-                    user = new User(message.getChatId().toString(), 10000, 0, null);
+                    user = new User(message.getChatId().toString(), 10000, GameStates.GREETING, null);
                     dataSource.saveUser(user);
                 } else {
                     user = dataSource.getUser(message.getChatId().toString());
                 }
                 String command = message.getText();
-//                sendMsg(message,message.getChatId().toString());
                 sendMsg(message, stateMachine.doCommand(command, user));
                 dataSource.saveUser(user);
 
@@ -89,7 +93,41 @@ public class TelegramBot extends TelegramLongPollingBot {
      * @return уникальный токен бота.
      */
     public String getBotToken() {
-        return "1649189668:AAGDg8CYBi7FRQfzK34zWtAQub_WlsKK2Z4";
+
+        String contents = null;
+
+        String file = "token.txt";
+
+        try {
+            contents = readFile(file);
+            return contents;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
+
+    /**
+     * Метод для чтения из фала.
+     *
+     * @param file имя файла.
+     * @return строка с содержимым из файла.
+     */
+    private String readFile(String file) throws IOException {
+
+        String contents;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+
+            contents = reader.readLine();
+            return contents;
+        }
+
+
+    }
+
+
 }
 

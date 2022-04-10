@@ -6,7 +6,7 @@ import com.company.module.Visualizer;
 /**
  * Класс реализации программной логики команды /instruction.
  */
-public class GameInstruction extends Command {
+public class GameInstruction implements ICommand {
 
     /**
      * Метод реализации програмной логики команды /instruction.

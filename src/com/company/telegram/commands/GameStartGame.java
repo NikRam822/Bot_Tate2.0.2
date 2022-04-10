@@ -1,14 +1,14 @@
 package com.company.telegram.commands;
 
-import com.company.telegram.games.Game0;
 import com.company.module.User;
-import com.company.telegram.games.*;
+
+import static com.company.telegram.games.GameStates.*;
 
 
 /**
  * Класс реализации программной логики команды /startGame.
  */
-public class GameStartGame extends Command {
+public class GameStartGame implements ICommand {
 
 
     /**
@@ -22,21 +22,22 @@ public class GameStartGame extends Command {
     public String execute(String data, User user) {
 
         switch (user.getGameCode()) {
-            case 0 -> {
+            case  GREETING -> {
 
-                return new Game0().execute(data, user);
+                return GREETING.realisation.execute(data, user);
+
             }
-            case 1 -> {
+            case CREATE_STEPS -> {
 
-                return new Game1().execute(data, user);
+                return CREATE_STEPS.realisation.execute(data, user);
             }
-            case 2 -> {
+            case DO_TOTE -> {
 
-                return new Game2().execute(data, user);
+                return DO_TOTE.realisation.execute(data, user);
             }
-            case 3 -> {
+            case PLAY -> {
 
-                return new Game3().execute(data, user);
+                return PLAY.realisation.execute(data, user);
             }
         }
 

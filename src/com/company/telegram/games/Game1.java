@@ -11,25 +11,30 @@ import static java.lang.Integer.parseInt;
  */
 public class Game1 extends Game {
 
-    /**
-     * Метод реализации игровых ставок на количество попыток для угадыаания числа.
-     *
-     * @param data Текст, введенный пользвателем.
-     * @param user Пользовтаель.
-     * @return Ответ пользователю об успешности\ не успешности введненной ставки.
-     */
+
+
     @Override
-    public String execute(String data, User user) {
+    GameResponse doGameLogic(User user, String data) {
+
+        if (!super.checkTypeOfNumber(data)){
+            return new GameResponse("Введите число!" + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+        }
+
+
         if (parseInt(data) > 10) {
-            return Visualizer.ERROR_STEPS_MORE + Visualizer.GAME_EXIT;
+            return new GameResponse(Visualizer.ERROR_STEPS_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+
         }
         if (parseInt(data) <= 0) {
-            return Visualizer.ERROR_STEPS_NO_MORE + Visualizer.GAME_EXIT;
+            return new GameResponse(Visualizer.ERROR_STEPS_NO_MORE + Visualizer.GAME_EXIT,GameStates.CREATE_STEPS);
+
+
         }
 
         user.setSteps(Integer.parseInt(data));
+        return new GameResponse(Visualizer.DO_TOTE + Visualizer.GAME_EXIT,GameStates.DO_TOTE);
 
-        user.setGameCode(2);
-        return Visualizer.DO_TOTE + Visualizer.GAME_EXIT;
+
     }
+
 }
